@@ -236,3 +236,20 @@ def test_ocr_text_is_editable(tmp_path):
     assert ops.is_ocr_span(span)
     ops.replace_span(page, span, "El arrendatario pagará 900 euros.")
     assert "900 euros" in page.get_text()
+
+
+@pytest.mark.skipif(not ops.ocr_languages(), reason="Tesseract not installed")
+def test_ocr_to_text(tmp_path):
+    import io
+    from PIL import Image, ImageDraw, ImageFont
+    img = Image.new("RGB", (1700, 500), "white")
+    ImageDraw.Draw(img).text((120, 150), "Contrato de arrendamiento", fill="black",
+                             font=ImageFont.truetype(ops.font_file("DejaVu Sans"), 60))
+    buf = io.BytesIO()
+    img.save(buf, "PNG")
+    doc = pymupdf.open()
+    page = doc.new_page(width=612, height=180)
+    page.insert_image(page.rect, stream=buf.getvalue())
+    path = tmp_path / "scan.pdf"
+    doc.save(path)
+    assert "Contrato de arrendamiento" in ops.ocr_text(str(path), "spa")

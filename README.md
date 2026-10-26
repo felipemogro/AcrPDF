@@ -68,7 +68,7 @@ todo el documento muestran una vista previa antes de aplicarse o guardarse.
 |---|---|---|---|---|---|
 | Unir | Comprimir (3 niveles) | Imágenes (JPG, PNG, SVG…) | JPG / PNG | Numerar páginas | Desbloquear |
 | Dividir | Reparar | Word | Word | Marca de agua | Proteger |
-| Eliminar páginas | OCR | PowerPoint | PowerPoint | Recortar márgenes | Firmar |
+| Eliminar páginas | OCR (a .txt) | PowerPoint | PowerPoint | Recortar márgenes | Firmar |
 | Extraer páginas | | Excel | Excel | Formularios | Censurar |
 | Ordenar | | HTML o URL | PDF/A | | Proteger DNI/NIE |
 | Rotar | | Escanear (móvil o escáner) | Texto · Markdown | | Comparar |
@@ -85,7 +85,7 @@ Descarga el paquete `.deb` de la página de
 [Releases](https://github.com/felipemogro/AcrPDF/releases) e instálalo:
 
 ```bash
-sudo apt install ./acrpdf_2.1.0_amd64.deb
+sudo apt install ./acrpdf_2.2.0_amd64.deb
 ```
 
 APT instala las dependencias (Ghostscript, utilidades NSS, CUPS) y, como recomendadas,
@@ -93,6 +93,13 @@ LibreOffice, Tesseract en español e inglés y SANE. La aplicación lleva su pro
 Python en `/opt/acrpdf` y no modifica los paquetes Python del sistema.
 
 Desinstalar: `sudo apt remove acrpdf`.
+
+### Actualizaciones
+
+La aplicación comprueba una vez al día si hay una versión nueva en
+[Releases](https://github.com/felipemogro/AcrPDF/releases). Si la hay, ofrece descargarla,
+verifica su suma SHA-256 y la instala pidiendo la contraseña del sistema. También se puede
+comprobar en *Ayuda → Buscar actualizaciones…* y desactivar en *Edición → Preferencias*.
 
 ## Compilar desde el código
 

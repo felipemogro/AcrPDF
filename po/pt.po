@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: ACRPDF Reader 2.0.0\n"
 "Report-Msgid-Bugs-To: felipemogro@hotmail.com\n"
-"POT-Creation-Date: 2026-10-26 17:53+0100\n"
+"POT-Creation-Date: 2026-10-26 18:55+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: Felipe Mogro <felipemogro@hotmail.com>\n"
 "Language: pt\n"
@@ -73,6 +73,10 @@ msgstr "90° sentido horário"
 
 msgid "90° counter-clockwise"
 msgstr "90° sentido anti-horário"
+
+#, python-format
+msgid "ACRPDF Reader %(new)s is available (you have %(old)s)."
+msgstr "ACRPDF Reader %(new)s está disponível (você tem a %(old)s)."
 
 msgid "AI (summaries and translations)"
 msgstr "IA (resumos e traduções)"
@@ -154,6 +158,9 @@ msgstr "Permitir editar, preencher e comentar"
 
 msgid "Allow printing"
 msgstr "Permitir imprimir"
+
+msgid "Also create a searchable PDF"
+msgstr "Criar também um PDF pesquisável"
 
 msgid "Angle:"
 msgstr "Ângulo:"
@@ -279,6 +286,12 @@ msgstr "Caixa"
 msgid "Check box"
 msgstr "Caixa de seleção"
 
+msgid "Check for updates automatically (GitHub)"
+msgstr "Procurar atualizações automaticamente (GitHub)"
+
+msgid "Check for updates…"
+msgstr "Procurar atualizações…"
+
 msgid "Check mark"
 msgstr "Marca ✓"
 
@@ -397,6 +410,9 @@ msgstr "Copiar texto da página"
 #, python-format
 msgid "Could not connect to %s."
 msgstr "Não foi possível conectar a %s."
+
+msgid "Could not connect to GitHub."
+msgstr "Não foi possível conectar ao GitHub."
 
 msgid "Could not connect to the Anthropic API."
 msgstr "Não foi possível conectar à API da Anthropic."
@@ -564,6 +580,10 @@ msgstr "Concluído: %d arquivo(s) criado(s)."
 msgid "Down"
 msgstr "Descer"
 
+#, python-format
+msgid "Downloading %s…"
+msgstr "Baixando %s…"
+
 msgid "Drag to move, use the handles to resize, Del to delete."
 msgstr "Arraste para mover, use as alças para redimensionar e Del para excluir."
 
@@ -658,6 +678,9 @@ msgstr "Extrair páginas…"
 
 msgid "Extract the embedded images"
 msgstr "Extrair as imagens incorporadas"
+
+msgid "Extract the text of scanned PDFs to an editable .txt file."
+msgstr "Extrai o texto de PDF digitalizados para um arquivo .txt editável."
 
 msgid "Extreme compression (less quality, 72 dpi)"
 msgstr "Compressão extrema (menos qualidade, 72 dpi)"
@@ -898,6 +921,17 @@ msgstr "Inserir de arquivo…"
 msgid "Insert image"
 msgstr "Inserir imagem"
 
+#, python-format
+msgid ""
+"Install it with:\n"
+"sudo apt install %s"
+msgstr ""
+"Instale com:\n"
+"sudo apt install %s"
+
+msgid "Install now"
+msgstr "Instalar agora"
+
 msgid "Intact (CA not verified)"
 msgstr "Íntegra (AC não verificada)"
 
@@ -934,6 +968,9 @@ msgstr "Idioma:"
 
 msgid "Larger text"
 msgstr "Texto maior"
+
+msgid "Later"
+msgstr "Mais tarde"
 
 msgid "Later changes"
 msgstr "Alterações posteriores"
@@ -999,9 +1036,6 @@ msgstr "Principal"
 
 msgid "Make a new PDF with selected pages."
 msgstr "Cria um novo PDF com as páginas escolhidas."
-
-msgid "Make scanned PDFs searchable and selectable."
-msgstr "Torna PDF digitalizados pesquisáveis e selecionáveis."
 
 msgid "Manage certificates"
 msgstr "Gerenciar certificados"
@@ -1084,6 +1118,9 @@ msgstr "Nenhuma imagem selecionada"
 
 msgid "No new fields were detected."
 msgstr "Nenhum campo novo foi detectado."
+
+msgid "No published versions were found."
+msgstr "Nenhuma versão publicada foi encontrada."
 
 msgid "No results"
 msgstr "Sem resultados"
@@ -1436,6 +1473,10 @@ msgstr "Arquivos recentes"
 msgid "Recognize text (OCR)"
 msgstr "Reconhecer texto (OCR)"
 
+#, python-format
+msgid "Recognized text: %s"
+msgstr "Texto reconhecido: %s"
+
 msgid "Recognizing text…"
 msgstr "Reconhecendo texto…"
 
@@ -1518,6 +1559,9 @@ msgstr "Obrigatório"
 msgid "Resolution:"
 msgstr "Resolução:"
 
+msgid "Review and correct the recognized text, then save it as a .txt file."
+msgstr "Revise e corrija o texto reconhecido e salve-o como arquivo .txt."
+
 msgid "Rotate PDF"
 msgstr "Girar PDF"
 
@@ -1553,6 +1597,9 @@ msgstr "Salvar PDF"
 
 msgid "Save as"
 msgstr "Salvar como"
+
+msgid "Save as .txt…"
+msgstr "Salvar como .txt…"
 
 msgid "Save as:"
 msgstr "Salvar como:"
@@ -1823,9 +1870,6 @@ msgstr "Campo de texto"
 msgid "Text or image over your pages."
 msgstr "Texto ou imagem sobre as suas páginas."
 
-msgid "Text recognized. Click any word to edit it; Ctrl+F searches the text."
-msgstr "Texto reconhecido. Clique em qualquer palavra para editá-la; Ctrl+F pesquisa o texto."
-
 msgid "Text stamps (vector)"
 msgstr "Carimbos de texto (vetoriais)"
 
@@ -1860,11 +1904,23 @@ msgstr "O documento não está protegido."
 msgid "The document was changed after signing."
 msgstr "O documento foi alterado depois de assinado."
 
+msgid "The download failed."
+msgstr "O download falhou."
+
+msgid "The downloaded package is damaged (checksum mismatch)."
+msgstr "O pacote baixado está danificado (soma de verificação não confere)."
+
 msgid "The file could not be repaired."
 msgstr "Não foi possível reparar o arquivo."
 
+msgid "The installation was cancelled."
+msgstr "A instalação foi cancelada."
+
 msgid "The language change applies after restarting ACRPDF."
 msgstr "A mudança de idioma é aplicada ao reiniciar o ACRPDF."
+
+msgid "The latest version has no package for this computer."
+msgstr "A última versão não tem pacote para este computador."
 
 msgid "The model declined this request."
 msgstr "O modelo recusou este pedido."
@@ -1897,6 +1953,15 @@ msgstr "Não há texto na área selecionada."
 
 msgid "Thickness:"
 msgstr "Espessura:"
+
+msgid ""
+"This copy runs from the source code. Update it with:\n"
+"\n"
+"git pull && make deb && make install"
+msgstr ""
+"Esta cópia roda a partir do código-fonte. Atualize com:\n"
+"\n"
+"git pull && make deb && make install"
 
 #, python-format
 msgid "This document has %d signature field(s) waiting to be signed."
@@ -1977,6 +2042,12 @@ msgstr "Sem título.pdf"
 msgid "Up"
 msgstr "Subir"
 
+msgid "Update available"
+msgstr "Atualização disponível"
+
+msgid "Updates"
+msgstr "Atualizações"
+
 msgid "Upload"
 msgstr "Enviar imagem"
 
@@ -2023,6 +2094,10 @@ msgstr "Valor"
 #, python-brace-format
 msgid "Variables: {n} page, {total} total, {date} today"
 msgstr "Variáveis: {n} página, {total} total, {date} hoje"
+
+#, python-format
+msgid "Version %s is installed. Restart ACRPDF Reader now?"
+msgstr "A versão %s está instalada. Reiniciar o ACRPDF Reader agora?"
 
 msgid "View, edit, fill, sign and certify PDF documents."
 msgstr "Veja, edite, preencha, assine e certifique documentos PDF."
@@ -2073,6 +2148,10 @@ msgstr "Senha incorreta."
 
 msgid "Wrong primary password for the Firefox certificate store."
 msgstr "Senha principal incorreta para o repositório de certificados do Firefox."
+
+#, python-format
+msgid "You have the latest version (%s)."
+msgstr "Você tem a versão mais recente (%s)."
 
 msgid "Zoom in"
 msgstr "Ampliar"

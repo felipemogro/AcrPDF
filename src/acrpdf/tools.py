@@ -57,8 +57,8 @@ TOOLS = [
          "Optimize PDF", "⇲", "#3d9b35", suffix="_compressed", options=["compress"]),
     Tool("repair", N_("Repair PDF"), N_("Recover data from damaged PDF files."), "Optimize PDF", "⚒", "#3d9b35",
          suffix="_repaired"),
-    Tool("ocr", N_("OCR PDF"), N_("Make scanned PDFs searchable and selectable."), "Optimize PDF", "◎",
-         "#3d9b35", suffix="_ocr", options=["ocr"]),
+    Tool("ocr", N_("OCR PDF"), N_("Extract the text of scanned PDFs to an editable .txt file."), "Optimize PDF",
+         "◎", "#3d9b35", suffix="_ocr", ext="txt", options=["ocr"]),
     Tool("images2pdf", N_("Images to PDF"), N_("JPG, PNG, SVG… to a single PDF."), "Convert to PDF", "▧",
          "#e8a317", "images", True, "file", options=["page"]),
     Tool("word2pdf", N_("Word to PDF"), N_("DOC, DOCX, ODT, RTF to PDF."), "Convert to PDF", "W", "#2b5797",
@@ -195,6 +195,9 @@ class Options(QWidget):
         default = "+".join(lang for lang in ("spa", "eng") if lang in langs) or (langs[0] if langs else "eng")
         combo.addItems([default] + [lang for lang in langs if lang != default])
         self.form.addRow(_("Language:"), combo)
+        searchable = QCheckBox(_("Also create a searchable PDF"))
+        self.form.addRow(searchable)
+        self.getters.append(lambda: {"searchable": searchable.isChecked()})
         if not langs:
             warn = QLabel(_("Tesseract is not installed: sudo apt install tesseract-ocr tesseract-ocr-spa"))
             warn.setStyleSheet("color:#c62828;")
@@ -406,7 +409,11 @@ def run_tool(tool, inputs, target, opts):
         elif k == "repair":
             outputs += ops.repair(path, out)
         elif k == "ocr":
-            outputs += ops.ocr(path, out, opts.get("language", "spa+eng"))
+            with open(out, "w", encoding="utf-8") as f:
+                f.write(ops.ocr_text(path, opts.get("language", "spa+eng")))
+            outputs.append(out)
+            if opts.get("searchable"):
+                outputs += ops.ocr(path, _out_name(target, path, "_ocr", "pdf"), opts.get("language", "spa+eng"))
         elif k == "excel2pdf":
             outputs += ops.excel_to_pdf(path, _out_name(target, path, "", "pdf"), opts.get("landscape", False),
                                         opts.get("fit_width", True))
@@ -891,12 +898,12 @@ class ToolDialog(QDialog):
         self.progress.hide()
         self.run_btn.setEnabled(True)
         self.outputs = outputs
-        if self.tool.key == "ocr" and outputs and self.main is not None:
-            for path in outputs[1:]:
-                self.main.open_file(path)
-            self.accept()
-            self.main.open_ocr_result(outputs[0], temporary=False)
-            return
+        if self.tool.key == "ocr" and outputs:
+            first = outputs[0]
+            with open(first, encoding="utf-8") as f:
+                text = f.read()
+            review = dialogs.TextResultDialog(self, _("Recognized text: %s") % os.path.basename(first), text, first)
+            review.exec()
         text = _("Done: %d file(s) created.") % len(outputs) + "\n" + "\n".join(outputs[:20])
         if message:
             text = message + "\n\n" + text

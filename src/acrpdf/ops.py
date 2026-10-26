@@ -1086,6 +1086,27 @@ def ocr(path, out_path, language="spa+eng", dpi=300):
     return [out_path]
 
 
+def ocr_text(path, language="spa+eng", dpi=300, progress=None):
+    if not ocr_languages():
+        raise OperationError(_("Tesseract OCR is not installed. Install the packages "
+                               "tesseract-ocr and tesseract-ocr-spa."))
+    doc = pymupdf.open(path)
+    parts = []
+    with tempfile.TemporaryDirectory(prefix="acrpdf-ocr-") as tmp:
+        for page in doc:
+            text = page.get_text(sort=True)
+            if len(text.strip()) <= 20:
+                image = os.path.join(tmp, f"{page.number}.png")
+                page.get_pixmap(dpi=dpi).save(image)
+                text = subprocess.run(["tesseract", image, "stdout", "-l", language, "--psm", "3",
+                                       "-c", "preserve_interword_spaces=1"],
+                                      capture_output=True, text=True, timeout=600).stdout
+            parts.append(f"===== {_('Page %d') % (page.number + 1)} =====\n\n{text.strip()}\n")
+            if progress:
+                progress(page.number + 1, doc.page_count)
+    return "\n".join(parts)
+
+
 def images_to_pdf(paths, out_path, page_size="a4", margin=20, landscape=False):
     doc = pymupdf.open()
     for p in paths:

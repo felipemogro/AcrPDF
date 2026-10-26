@@ -3,7 +3,8 @@ import sys
 import tempfile
 
 import pymupdf
-from PyQt6.QtCore import QLibraryInfo, QLocale, QRectF, QSettings, QSize, Qt, QTranslator
+from PyQt6.QtCore import (QLibraryInfo, QLocale, QProcess, QRectF, QSettings, QSize, Qt, QThread, QTimer,
+                          QTranslator, pyqtSignal)
 from PyQt6.QtGui import QAction, QActionGroup, QCursor, QFont, QIcon, QImage, QKeySequence, QPainter
 from PyQt6.QtPrintSupport import QPrintDialog, QPrinter
 from PyQt6.QtWidgets import (QApplication, QComboBox, QDoubleSpinBox, QFileDialog, QFontComboBox, QFrame,
@@ -12,7 +13,7 @@ from PyQt6.QtWidgets import (QApplication, QComboBox, QDoubleSpinBox, QFileDialo
                              QPushButton, QScrollArea, QSizePolicy, QSpinBox, QTabWidget, QToolBar,
                              QToolButton, QVBoxLayout, QWidget)
 
-from . import APP_ID, APP_NAME, __version__, certstore, dialogs, i18n, ops, signing, tools
+from . import APP_ID, APP_NAME, __version__, certstore, dialogs, i18n, ops, signing, tools, updater
 from .dialogs import glyph_icon, graphic_pixmap, rgb
 from .document import DocumentTab
 from .i18n import N_, _
@@ -100,6 +101,22 @@ def app_icon():
     return QIcon(os.path.join(RES, "acrpdf.svg"))
 
 
+class Task(QThread):
+    done = pyqtSignal(object)
+    failed = pyqtSignal(str)
+    progress = pyqtSignal(int, int)
+
+    def __init__(self, fn, *args):
+        super().__init__()
+        self.fn, self.args = fn, args
+
+    def run(self):
+        try:
+            self.done.emit(self.fn(*self.args))
+        except Exception as exc:
+            self.failed.emit(str(exc))
+
+
 def stretch():
     w = QWidget()
     w.setSizePolicy(QSizePolicy.Policy.Expanding, QSizePolicy.Policy.Preferred)
@@ -127,6 +144,7 @@ class MainWindow(QMainWindow):
             self.restoreGeometry(geometry)
         for f in files:
             self.open_file(f)
+        QTimer.singleShot(5000, lambda: self.check_updates(manual=False))
 
     def _act(self, text, slot, shortcut=None, glyph=None):
         a = QAction(text, self)
@@ -207,6 +225,7 @@ class MainWindow(QMainWindow):
         m.addAction(self._act(_("Certificates…"), self.certificates))
         m.addAction(self._act(_("PDF printer…"), self.printer_info))
         m = mb.addMenu(_("&Help"))
+        m.addAction(self._act(_("Check for updates…"), lambda: self.check_updates(manual=True)))
         m.addAction(self._act(_("About ACRPDF Reader"), self.about))
 
     def _build_toolbars(self):
@@ -1076,27 +1095,23 @@ class MainWindow(QMainWindow):
         src = os.path.join(folder, "in.pdf")
         with open(src, "wb") as f:
             f.write(t.bytes())
-        out = os.path.join(folder, os.path.splitext(t.title)[0] + "_ocr.pdf")
         languages = "+".join(lang for lang in ("spa", "eng") if lang in ops.ocr_languages()) or "eng"
-        self.statusBar().showMessage(_("Recognizing text…"))
-        QApplication.setOverrideCursor(Qt.CursorShape.WaitCursor)
+        progress = QProgressDialog(_("Recognizing text…"), None, 0, t.doc.page_count, self)
+        progress.setWindowModality(Qt.WindowModality.WindowModal)
+        progress.setMinimumDuration(0)
+
+        def step(done, total):
+            progress.setValue(done)
+            QApplication.processEvents()
         try:
-            ops.ocr(src, out, languages)
+            text = ops.ocr_text(src, languages, progress=step)
         except ops.OperationError as exc:
-            QApplication.restoreOverrideCursor()
             QMessageBox.critical(self, _("OCR PDF"), str(exc))
             return
-        QApplication.restoreOverrideCursor()
-        self.open_ocr_result(out)
-
-    def open_ocr_result(self, path, temporary=True):
-        if temporary:
-            self._new_tab(pymupdf.open(path), os.path.basename(path))
-        else:
-            self.open_file(path)
-        self.select_group("edit")
-        self.set_tool("edit_text")
-        self.statusBar().showMessage(_("Text recognized. Click any word to edit it; Ctrl+F searches the text."), 10000)
+        finally:
+            progress.close()
+        dialogs.TextResultDialog(self, _("Recognized text: %s") % t.title, text,
+                                 os.path.splitext(self._derived_path(t, "_ocr"))[0] + ".txt").exec()
 
     def detect_fields(self):
         t = self.require_doc()
@@ -1323,6 +1338,60 @@ class MainWindow(QMainWindow):
 
     def toggle_full_screen(self):
         self.showNormal() if self.isFullScreen() else self.showFullScreen()
+
+    def check_updates(self, manual=False):
+        if getattr(self, "_update_task", None) is not None and self._update_task.isRunning():
+            return
+        task = Task(updater.check, manual, self.settings)
+        task.done.connect(lambda release: self._update_found(release, manual))
+        task.failed.connect(lambda msg: manual and QMessageBox.information(self, _("Updates"), msg))
+        self._update_task = task
+        task.start()
+
+    def _update_found(self, release, manual):
+        if release is None:
+            if manual:
+                QMessageBox.information(self, _("Updates"),
+                                        _("You have the latest version (%s).") % __version__)
+            return
+        box = QMessageBox(self)
+        box.setWindowTitle(_("Update available"))
+        box.setText(_("ACRPDF Reader %(new)s is available (you have %(old)s).")
+                    % {"new": release.version, "old": __version__})
+        box.setDetailedText(release.notes)
+        install = box.addButton(_("Install now"), QMessageBox.ButtonRole.AcceptRole)
+        box.addButton(_("Later"), QMessageBox.ButtonRole.RejectRole)
+        box.exec()
+        if box.clickedButton() is not install:
+            return
+        if not updater.installed_from_package():
+            QMessageBox.information(self, _("Updates"),
+                                    _("This copy runs from the source code. Update it with:\n\n"
+                                      "git pull && make deb && make install"))
+            return
+        progress = QProgressDialog(_("Downloading %s…") % release.version, None, 0, 100, self)
+        progress.setWindowModality(Qt.WindowModality.WindowModal)
+        progress.setMinimumDuration(0)
+        task = Task(lambda: updater.download(release, lambda d, t: task.progress.emit(d, t)))
+        task.progress.connect(lambda d, t: progress.setValue(int(d * 100 / t) if t else 0))
+        task.done.connect(lambda path: (progress.close(), self._install_update(path, release)))
+        task.failed.connect(lambda msg: (progress.close(), QMessageBox.critical(self, _("Updates"), msg)))
+        self._update_task = task
+        task.start()
+
+    def _install_update(self, path, release):
+        QApplication.setOverrideCursor(Qt.CursorShape.WaitCursor)
+        try:
+            updater.install(path)
+        except updater.UpdateError as exc:
+            QApplication.restoreOverrideCursor()
+            QMessageBox.critical(self, _("Updates"), str(exc))
+            return
+        QApplication.restoreOverrideCursor()
+        answer = QMessageBox.question(self, _("Updates"),
+                                      _("Version %s is installed. Restart ACRPDF Reader now?") % release.version)
+        if answer == QMessageBox.StandardButton.Yes and self.close():
+            QProcess.startDetached("/usr/bin/acrpdf", [])
 
     def about(self):
         QMessageBox.about(self, _("About ACRPDF Reader"),

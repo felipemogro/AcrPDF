@@ -1459,6 +1459,9 @@ class PreferencesDialog(QDialog):
         self.compression.setToolTip(_("Applied when saving and, before signing, to the document that gets signed. "
                                       "Documents that are already signed are never recompressed."))
         form.addRow(_("Compress when saving:"), self.compression)
+        self.auto_update = QCheckBox(_("Check for updates automatically (GitHub)"))
+        self.auto_update.setChecked(settings.value("updates/auto", "true") == "true")
+        form.addRow(self.auto_update)
 
         from . import ai
         self.ai = ai
@@ -1545,6 +1548,7 @@ class PreferencesDialog(QDialog):
         settings.setValue("language", self.language.currentData())
         settings.setValue("author", self.author.text())
         settings.setValue("save/compression", self.compression.currentData())
+        settings.setValue("updates/auto", "true" if self.auto_update.isChecked() else "false")
         key = self.provider.currentData()
         settings.setValue("ai/provider", key)
         model = self.model.currentData() if self.model.currentText() == self.model.itemText(self.model.currentIndex()) \
@@ -1556,6 +1560,47 @@ class PreferencesDialog(QDialog):
             settings.setValue(f"ai/{key}_model", model or "")
         if self.api_key.text().strip():
             self.ai.set_api_key(self.api_key.text().strip(), key)
+
+
+class TextResultDialog(QDialog):
+
+    def __init__(self, parent, title, text, default_path):
+        super().__init__(parent)
+        self.setWindowTitle(title)
+        self.default_path = default_path
+        self.saved_path = None
+        lay = QVBoxLayout(self)
+        note = QLabel(_("Review and correct the recognized text, then save it as a .txt file."))
+        note.setStyleSheet("color:#555;")
+        lay.addWidget(note)
+        self.edit = QPlainTextEdit(text)
+        self.edit.setFont(QFontDatabase.systemFont(QFontDatabase.SystemFont.FixedFont))
+        lay.addWidget(self.edit, 1)
+        row = QHBoxLayout()
+        copy = QPushButton(_("Copy"))
+        copy.clicked.connect(lambda: QApplication.clipboard().setText(self.edit.toPlainText()))
+        close = QPushButton(_("Close"))
+        close.clicked.connect(self.reject)
+        save = QPushButton(_("Save as .txt…"))
+        save.setObjectName("primary")
+        save.clicked.connect(self._save)
+        row.addWidget(copy)
+        row.addStretch()
+        row.addWidget(close)
+        row.addWidget(save)
+        lay.addLayout(row)
+        self.resize(820, 760)
+
+    def _save(self):
+        path, _f = QFileDialog.getSaveFileName(self, _("Save as"), self.default_path, _("Text") + " (*.txt)")
+        if not path:
+            return
+        if not path.lower().endswith(".txt"):
+            path += ".txt"
+        with open(path, "w", encoding="utf-8") as f:
+            f.write(self.edit.toPlainText())
+        self.saved_path = path
+        self.accept()
 
 
 class MarkdownDialog(QDialog):

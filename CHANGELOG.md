@@ -3,6 +3,22 @@
 Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/); el proyecto
 sigue [versionado semántico](https://semver.org/lang/es/).
 
+## [2.2.0] - 2026-10-26
+
+### Añadido
+- Actualizaciones automáticas desde GitHub Releases: comprobación diaria (desactivable en
+  *Preferencias*) y *Ayuda → Buscar actualizaciones…*. El paquete descargado se verifica con
+  su suma SHA-256 y se instala con `pkexec`.
+
+### Cambiado
+- El OCR guarda el texto reconocido en un archivo `.txt`, con un editor para revisarlo y
+  corregirlo antes de guardar. La herramienta por lotes puede crear además un PDF buscable.
+
+### Corregido
+- Censurar o editar un documento firmado reescribía el archivo e invalidaba las firmas: ahora
+  los cambios se guardan como revisión incremental.
+- Las herramientas abiertas desde *Inicio* usan el documento abierto en lugar de pedir otro.
+
 ## [2.1.0] - 2026-10-26
 
 ### Añadido
