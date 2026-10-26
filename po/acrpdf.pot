@@ -1,0 +1,2131 @@
+# Translations template for ACRPDF Reader.
+# Copyright (C) 2026 ORGANIZATION
+# This file is distributed under the same license as the ACRPDF Reader
+# project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: ACRPDF Reader 2.0.4\n"
+"Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
+"POT-Creation-Date: 2026-10-26 17:53+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#, python-format
+msgid "%(file)s: %(n)d ID numbers hidden"
+msgstr ""
+
+#, python-format
+msgid "%(i)d of %(n)d"
+msgstr ""
+
+#, python-format
+msgid "%d differences highlighted."
+msgstr ""
+
+#, python-format
+msgid "%d fields created. Click one to adjust it."
+msgstr ""
+
+msgid "&Edit"
+msgstr ""
+
+msgid "&File"
+msgstr ""
+
+msgid "&Help"
+msgstr ""
+
+msgid "&Tools"
+msgstr ""
+
+msgid "&View"
+msgstr ""
+
+msgid "(not saved)"
+msgstr ""
+
+msgid "(text watermark)"
+msgstr ""
+
+msgid ""
+"1. Connect the phone to the same Wi-Fi network.\n"
+"2. Scan the QR code with the camera.\n"
+"3. Take a photo of each page; they appear here.\n"
+"\n"
+"The link only works while this window is open."
+msgstr ""
+
+msgid "90° clockwise"
+msgstr ""
+
+msgid "90° counter-clockwise"
+msgstr ""
+
+msgid "AI (summaries and translations)"
+msgstr ""
+
+msgid "AI assistant"
+msgstr ""
+
+msgid "API key:"
+msgstr ""
+
+msgid "APPROVED"
+msgstr ""
+
+msgid "About ACRPDF Reader"
+msgstr ""
+
+msgid "Add a trusted timestamp (TSA, needs Internet)"
+msgstr ""
+
+msgid "Add at least one file."
+msgstr ""
+
+msgid "Add files"
+msgstr ""
+
+msgid "Add files and drag them to change the order."
+msgstr ""
+
+msgid "Add files…"
+msgstr ""
+
+msgid "Add image"
+msgstr ""
+
+msgid "Add initials…"
+msgstr ""
+
+msgid "Add page numbers"
+msgstr ""
+
+msgid "Add signature (draw, type or upload PNG/SVG)…"
+msgstr ""
+
+msgid "Add step"
+msgstr ""
+
+msgid "Add text"
+msgstr ""
+
+msgid "Add text, images, shapes and change fonts."
+msgstr ""
+
+msgid "Add watermark"
+msgstr ""
+
+msgid "Add watermark with the purpose"
+msgstr ""
+
+msgid "Adjust the position and size of the signature, then press Sign."
+msgstr ""
+
+msgid ""
+"After Continue you can move and resize the signature on the page before "
+"signing."
+msgstr ""
+
+msgid "All PDF tools"
+msgstr ""
+
+msgid "All files"
+msgstr ""
+
+msgid "All supported files"
+msgstr ""
+
+msgid "Allow copying text"
+msgstr ""
+
+msgid "Allow editing, filling and commenting"
+msgstr ""
+
+msgid "Allow printing"
+msgstr ""
+
+msgid "Angle:"
+msgstr ""
+
+msgid "Appearance"
+msgstr ""
+
+msgid ""
+"Applied when saving and, before signing, to the document that gets "
+"signed. Documents that are already signed are never recompressed."
+msgstr ""
+
+msgid "Apply"
+msgstr ""
+
+msgid "Apply (Ctrl+Enter)"
+msgstr ""
+
+msgid "Apply to document"
+msgstr ""
+
+msgid "Arrow"
+msgstr ""
+
+msgid ""
+"At least one signature is invalid: the document was altered or the "
+"signature is damaged."
+msgstr ""
+
+msgid "Author name for comments:"
+msgstr ""
+
+msgid "Auto"
+msgstr ""
+
+msgid "Automatic (cheapest available)"
+msgstr ""
+
+msgid "Black"
+msgstr ""
+
+msgid "Black and white"
+msgstr ""
+
+msgid "Black box (remove completely)"
+msgstr ""
+
+msgid "Blank PDF"
+msgstr ""
+
+msgid "Blank.pdf"
+msgstr ""
+
+msgid "Blue"
+msgstr ""
+
+msgid "Bookmarks"
+msgstr ""
+
+msgid "Bottom"
+msgstr ""
+
+msgid "Bottom center"
+msgstr ""
+
+msgid "Bottom left"
+msgstr ""
+
+msgid "Bottom right"
+msgstr ""
+
+msgid "Built with PyMuPDF, pyHanko and Qt 6."
+msgstr ""
+
+msgid "CONFIDENTIAL"
+msgstr ""
+
+msgid "COPY"
+msgstr ""
+
+msgid "Cancel"
+msgstr ""
+
+msgid "Cancel (Esc)"
+msgstr ""
+
+msgid "Cannot remove every page."
+msgstr ""
+
+msgid "Center"
+msgstr ""
+
+msgid "Certificate"
+msgstr ""
+
+#, python-format
+msgid "Certificate «%s» imported."
+msgstr ""
+
+msgid "Certificates"
+msgstr ""
+
+#, python-format
+msgid ""
+"Certificates imported into ACRPDF are copied to %s (only your user can "
+"read them). Certificates from Firefox/Thunderbird are used directly from "
+"their store."
+msgstr ""
+
+msgid "Certificates…"
+msgstr ""
+
+msgid "Certify document (author signature, DocMDP)"
+msgstr ""
+
+msgid "Chain your favourite tools and reuse them any time."
+msgstr ""
+
+msgid "Check"
+msgstr ""
+
+msgid "Check box"
+msgstr ""
+
+msgid "Check mark"
+msgstr ""
+
+msgid "Check the result. Nothing has been changed yet."
+msgstr ""
+
+msgid "Choose PNG / SVG…"
+msgstr ""
+
+msgid "Choose an image."
+msgstr ""
+
+msgid "Choose color"
+msgstr ""
+
+msgid "Choose exactly two PDF files (original first)."
+msgstr ""
+
+msgid "Choose image…"
+msgstr ""
+
+msgid "Choose stamp…"
+msgstr ""
+
+msgid "Clear"
+msgstr ""
+
+msgid "Clear, concise summaries with the key points."
+msgstr ""
+
+msgid "Click a field to move or resize it. Del deletes it."
+msgstr ""
+
+msgid "Click on a text to edit it."
+msgstr ""
+
+msgid "Click or drag on the page to create the field; then resize it."
+msgstr ""
+
+msgid ""
+"Click the fields to fill them in place, or use «Sign ▾» to add your "
+"signature."
+msgstr ""
+
+msgid "Click where you want to type."
+msgstr ""
+
+msgid "Close"
+msgstr ""
+
+msgid "Color"
+msgstr ""
+
+msgid "Color:"
+msgstr ""
+
+msgid "Combine PDFs, images and documents in the order you want."
+msgstr ""
+
+msgid "Comment"
+msgstr ""
+
+msgid "Comments"
+msgstr ""
+
+msgid "Company seal or rubber stamp image (PNG with transparency or SVG)."
+msgstr ""
+
+msgid "Compare PDF"
+msgstr ""
+
+msgid "Compress PDF"
+msgstr ""
+
+msgid "Compress when saving:"
+msgstr ""
+
+msgid "Compress…"
+msgstr ""
+
+msgid "Configure…"
+msgstr ""
+
+msgid "Conformance:"
+msgstr ""
+
+msgid "Contact:"
+msgstr ""
+
+msgid "Continue"
+msgstr ""
+
+msgid "Convert every page to an image"
+msgstr ""
+
+msgid "Convert from PDF"
+msgstr ""
+
+msgid "Convert to PDF"
+msgstr ""
+
+msgid "Converting web addresses needs Google Chrome or Chromium installed."
+msgstr ""
+
+#, python-format
+msgid "Copied: %s"
+msgstr ""
+
+msgid "Copy"
+msgstr ""
+
+msgid "Copy all text"
+msgstr ""
+
+msgid "Copy page text"
+msgstr ""
+
+#, python-format
+msgid "Could not connect to %s."
+msgstr ""
+
+msgid "Could not connect to the Anthropic API."
+msgstr ""
+
+#, python-format
+msgid "Could not open the certificate: %s"
+msgstr ""
+
+#, python-format
+msgid ""
+"Could not open the file:\n"
+"%s"
+msgstr ""
+
+#, python-format
+msgid "Could not reach Ollama at %s. Is it running?"
+msgstr ""
+
+#, python-format
+msgid "Could not read the certificate from Firefox: %s"
+msgstr ""
+
+msgid "Coverage"
+msgstr ""
+
+msgid "Create"
+msgstr ""
+
+msgid "Create PDF"
+msgstr ""
+
+msgid "Create PDF from files…"
+msgstr ""
+
+msgid "Create a workflow"
+msgstr ""
+
+msgid "Create initials"
+msgstr ""
+
+msgid "Create signature"
+msgstr ""
+
+msgid "Create…"
+msgstr ""
+
+msgid "Crop PDF"
+msgstr ""
+
+msgid "Crop all pages"
+msgstr ""
+
+msgid "Crop page"
+msgstr ""
+
+msgid "Crop this page"
+msgstr ""
+
+msgid "Cross"
+msgstr ""
+
+msgid "Current password:"
+msgstr ""
+
+msgid "Custom"
+msgstr ""
+
+msgid "Custom ranges"
+msgstr ""
+
+msgid "Custom subtitle"
+msgstr ""
+
+msgid "Custom text (optional)"
+msgstr ""
+
+msgid "DOC, DOCX, ODT, RTF to PDF."
+msgstr ""
+
+msgid "DRAFT"
+msgstr ""
+
+msgid "Date"
+msgstr ""
+
+msgid "Date only"
+msgstr ""
+
+#, python-format
+msgid "Date: %s"
+msgstr ""
+
+msgid "Delete"
+msgstr ""
+
+#, python-format
+msgid "Delete %d page?"
+msgid_plural "Delete %d pages?"
+msgstr[0] ""
+msgstr[1] ""
+
+msgid "Delete (Del)"
+msgstr ""
+
+msgid "Delete comment"
+msgstr ""
+
+msgid "Delete field"
+msgstr ""
+
+msgid "Delete field (Del)"
+msgstr ""
+
+msgid "Delete page"
+msgstr ""
+
+msgid "Delete pages"
+msgstr ""
+
+msgid "Delete saved signature"
+msgstr ""
+
+msgid "Delete the pages you list."
+msgstr ""
+
+msgid "Detailed, by sections"
+msgstr ""
+
+msgid "Details"
+msgstr ""
+
+msgid "Details only"
+msgstr ""
+
+msgid "Detect fields"
+msgstr ""
+
+msgid "Detect fields automatically, create fillable forms or fill them in."
+msgstr ""
+
+msgid "Digital signature"
+msgstr ""
+
+msgid "Digitally signed by:"
+msgstr ""
+
+msgid "Discard (Esc)"
+msgstr ""
+
+msgid "Document mode (grayscale, more contrast)"
+msgstr ""
+
+msgid "Document properties…"
+msgstr ""
+
+msgid "Documents"
+msgstr ""
+
+#, python-format
+msgid "Done: %d file(s) created."
+msgstr ""
+
+msgid "Down"
+msgstr ""
+
+msgid "Drag to move, use the handles to resize, Del to delete."
+msgstr ""
+
+msgid "Drag to move, use the handles to resize, then press Place or Enter."
+msgstr ""
+
+msgid "Draw"
+msgstr ""
+
+msgid "Draw the area to keep."
+msgstr ""
+
+msgid "Draw the rectangle where the signature will appear."
+msgstr ""
+
+msgid "Dropdown"
+msgstr ""
+
+msgid "Duplicate"
+msgstr ""
+
+msgid "E-mail prepared in your mail client."
+msgstr ""
+
+msgid "Each page as a JPG image, or extract the images."
+msgstr ""
+
+msgid "Each page as a PNG image."
+msgstr ""
+
+msgid "Edit PDF"
+msgstr ""
+
+msgid "Edit text"
+msgstr ""
+
+msgid "Edit text…"
+msgstr ""
+
+msgid "Editable DOCX keeping the layout."
+msgstr ""
+
+msgid "Ellipse"
+msgstr ""
+
+msgid "Empty"
+msgstr ""
+
+msgid "Encrypt with AES-256 and set permissions."
+msgstr ""
+
+msgid "Encrypt with password"
+msgstr ""
+
+#, python-format
+msgid ""
+"Encrypted with AES-256:\n"
+"%s"
+msgstr ""
+
+msgid "Encryption: AES-256"
+msgstr ""
+
+msgid "Enter at least one password."
+msgstr ""
+
+msgid "Error"
+msgstr ""
+
+msgid "Ethernet"
+msgstr ""
+
+msgid "Every N pages"
+msgstr ""
+
+msgid "Excel to PDF"
+msgstr ""
+
+msgid "Export to"
+msgstr ""
+
+msgid "Extract"
+msgstr ""
+
+msgid "Extract pages"
+msgstr ""
+
+msgid "Extract pages…"
+msgstr ""
+
+msgid "Extract the embedded images"
+msgstr ""
+
+msgid "Extreme compression (less quality, 72 dpi)"
+msgstr ""
+
+msgid "FINAL"
+msgstr ""
+
+msgid "Field"
+msgstr ""
+
+msgid "Field properties"
+msgstr ""
+
+msgid "Fields"
+msgstr ""
+
+msgid "File"
+msgstr ""
+
+#, python-format
+msgid ""
+"File not found:\n"
+"%s"
+msgstr ""
+
+msgid "File:"
+msgstr ""
+
+#, python-format
+msgid ""
+"File: %(file)s\n"
+"Pages: %(pages)d\n"
+"Size: %(size).1f KB\n"
+"Encrypted: %(enc)s\n"
+"Form: %(form)s"
+msgstr ""
+
+msgid "Files (drag and drop here; the order matters for merging):"
+msgstr ""
+
+msgid "File…"
+msgstr ""
+
+msgid "Fill & Sign"
+msgstr ""
+
+#, python-format
+msgid "Fill «%s»"
+msgstr ""
+
+msgid "Find in document…"
+msgstr ""
+
+msgid "Find:"
+msgstr ""
+
+msgid "Find…"
+msgstr ""
+
+msgid "Firefox primary password:"
+msgstr ""
+
+msgid "First number:"
+msgstr ""
+
+msgid "Fit all columns to the page width"
+msgstr ""
+
+msgid "Fit page"
+msgstr ""
+
+msgid "Fit width"
+msgstr ""
+
+msgid "Flatten form"
+msgstr ""
+
+msgid "Font"
+msgstr ""
+
+msgid "Font (embedded in the PDF)"
+msgstr ""
+
+msgid "Font size:"
+msgstr ""
+
+msgid "Font:"
+msgstr ""
+
+msgid "Footer"
+msgstr ""
+
+msgid "Forget saved password"
+msgstr ""
+
+msgid "Format:"
+msgstr ""
+
+msgid "Found in"
+msgstr ""
+
+msgid "Full screen"
+msgstr ""
+
+msgid "Ghostscript PDF/A resources were not found."
+msgstr ""
+
+msgid "Ghostscript is not installed."
+msgstr ""
+
+msgid "Grayscale"
+msgstr ""
+
+msgid "Group"
+msgstr ""
+
+msgid "HTML to PDF"
+msgstr ""
+
+msgid "Hand / fill forms"
+msgstr ""
+
+msgid "Headings, lists, tables and links as Markdown (ideal for notes and LLMs)."
+msgstr ""
+
+msgid ""
+"Hello,\n"
+"\n"
+"Please sign the attached document with your digital certificate (for "
+"example with ACRPDF Reader, Adobe Acrobat Reader or AutoFirma) and send "
+"it back.\n"
+"\n"
+"Thank you."
+msgstr ""
+
+msgid "Hide the DNI/NIE in the visible name (***4567**, AEPD)"
+msgstr ""
+
+msgid "High quality (images at 300 dpi)"
+msgstr ""
+
+msgid "Highlight"
+msgstr ""
+
+msgid "Highlight the differences between two versions."
+msgstr ""
+
+msgid "Home"
+msgstr ""
+
+msgid "How it looks inside a digital signature"
+msgstr ""
+
+msgid "I am the author of this document"
+msgstr ""
+
+msgid "ID numbers found"
+msgstr ""
+
+msgid "ISO archival format for long-term preservation."
+msgstr ""
+
+msgid "Image"
+msgstr ""
+
+msgid "Image (OCR)"
+msgstr ""
+
+msgid "Image above, details below"
+msgstr ""
+
+msgid "Image left, details right"
+msgstr ""
+
+msgid "Image only"
+msgstr ""
+
+msgid "Image stamp"
+msgstr ""
+
+msgid "Image:"
+msgstr ""
+
+msgid "Images"
+msgstr ""
+
+msgid "Images to PDF"
+msgstr ""
+
+msgid "Import"
+msgstr ""
+
+msgid "Import .p12/.pfx…"
+msgstr ""
+
+msgid "Import a .p12/.pfx into ACRPDF"
+msgstr ""
+
+msgid "Import certificate"
+msgstr ""
+
+msgid "Import or choose a certificate first."
+msgstr ""
+
+msgid "Import…"
+msgstr ""
+
+msgid "Ink:"
+msgstr ""
+
+msgid "Insert blank"
+msgstr ""
+
+msgid "Insert blank page"
+msgstr ""
+
+msgid "Insert file"
+msgstr ""
+
+msgid "Insert files"
+msgstr ""
+
+msgid "Insert from file…"
+msgstr ""
+
+msgid "Insert image"
+msgstr ""
+
+msgid "Intact (CA not verified)"
+msgstr ""
+
+msgid "Intelligence"
+msgstr ""
+
+msgid "Intensity:"
+msgstr ""
+
+msgid "Invalid"
+msgstr ""
+
+#, python-format
+msgid "Invalid page range: %s"
+msgstr ""
+
+msgid "Invisible signature"
+msgstr ""
+
+msgid "Issuer"
+msgstr ""
+
+msgid "JPG, PNG, SVG… to a single PDF."
+msgstr ""
+
+msgid "Keep margin:"
+msgstr ""
+
+msgid "Landscape"
+msgstr ""
+
+msgid "Language:"
+msgstr ""
+
+msgid "Larger text"
+msgstr ""
+
+msgid "Later changes"
+msgstr ""
+
+msgid "Layout:"
+msgstr ""
+
+msgid "Leave empty if Firefox has no primary password"
+msgstr ""
+
+msgid "Letter"
+msgstr ""
+
+msgid "Letter size:"
+msgstr ""
+
+msgid "Level:"
+msgstr ""
+
+#, python-format
+msgid "LibreOffice could not convert %s"
+msgstr ""
+
+msgid "LibreOffice is not installed (needed to convert office documents)."
+msgstr ""
+
+msgid "License: AGPL-3.0-or-later"
+msgstr ""
+
+msgid "Line"
+msgstr ""
+
+msgid "Line spacing:"
+msgstr ""
+
+msgid "List"
+msgstr ""
+
+msgid "List box"
+msgstr ""
+
+msgid "Load models"
+msgstr ""
+
+msgid "Location:"
+msgstr ""
+
+#, python-format
+msgid "Location: %s"
+msgstr ""
+
+msgid "Lock the document after signing"
+msgstr ""
+
+msgid "Lossless (fonts and structure only)"
+msgstr ""
+
+msgid "Low compression (high quality, 300 dpi)"
+msgstr ""
+
+msgid "Main"
+msgstr ""
+
+msgid "Make a new PDF with selected pages."
+msgstr ""
+
+msgid "Make scanned PDFs searchable and selectable."
+msgstr ""
+
+msgid "Manage certificates"
+msgstr ""
+
+msgid "Margin:"
+msgstr ""
+
+msgid "Mask, keeping 4 digits (AEPD): ***4567**"
+msgstr ""
+
+msgid "Masked"
+msgstr ""
+
+msgid "Merge PDF"
+msgstr ""
+
+msgid "Merge into an image (the watermark cannot be removed)"
+msgstr ""
+
+msgid "Mode:"
+msgstr ""
+
+msgid "Model:"
+msgstr ""
+
+msgid "Mosaic (repeated)"
+msgstr ""
+
+msgid "Move / resize"
+msgstr ""
+
+msgid "Multi-line"
+msgstr ""
+
+msgid "My workflow"
+msgstr ""
+
+msgid "Name / subtitle:"
+msgstr ""
+
+msgid "Name Surname"
+msgstr ""
+
+msgid "Name and date"
+msgstr ""
+
+msgid "Name · date"
+msgstr ""
+
+msgid "Name:"
+msgstr ""
+
+msgid "Network card:"
+msgstr ""
+
+msgid "New"
+msgstr ""
+
+msgid "New document.pdf"
+msgstr ""
+
+#, python-format
+msgid "No API key configured for %s (Preferences → AI)."
+msgstr ""
+
+msgid "No Anthropic API key configured (Preferences → AI)."
+msgstr ""
+
+msgid "No certificates: import a .p12/.pfx"
+msgstr ""
+
+msgid "No digital signatures"
+msgstr ""
+
+msgid "No image"
+msgstr ""
+
+msgid "No image selected"
+msgstr ""
+
+msgid "No new fields were detected."
+msgstr ""
+
+msgid "No results"
+msgstr ""
+
+msgid "No scanner found (package sane-utils)"
+msgstr ""
+
+msgid "No subtitle"
+msgstr ""
+
+msgid "No suitable model found; choose one in Preferences → AI."
+msgstr ""
+
+msgid "No system keyring found: passwords cannot be remembered."
+msgstr ""
+
+msgid "No text"
+msgstr ""
+
+msgid "No text found at that point."
+msgstr ""
+
+msgid "None found (you can still add the watermark)"
+msgstr ""
+
+msgid "Note"
+msgstr ""
+
+msgid "Number"
+msgstr ""
+
+msgid "Numbering:"
+msgstr ""
+
+msgid "OCR PDF"
+msgstr ""
+
+#, python-brace-format
+msgid "ONLY FOR {purpose} · {date}"
+msgstr ""
+
+msgid "Office documents"
+msgstr ""
+
+msgid "Ollama URL:"
+msgstr ""
+
+msgid "One short paragraph"
+msgstr ""
+
+msgid "One slide per page."
+msgstr ""
+
+msgid "Only certificates imported into ACRPDF can be removed here."
+msgstr ""
+
+msgid "Only over the images (e.g. photo of the card)"
+msgstr ""
+
+msgid "Opacity:"
+msgstr ""
+
+msgid "Open"
+msgstr ""
+
+msgid "Open file"
+msgstr ""
+
+msgid "Open folder"
+msgstr ""
+
+msgid "Open in ACRPDF"
+msgstr ""
+
+msgid "Open recent"
+msgstr ""
+
+msgid "Open…"
+msgstr ""
+
+msgid "Optimize PDF"
+msgstr ""
+
+#, python-format
+msgid "Option %d"
+msgstr ""
+
+msgid "Options (one per line):"
+msgstr ""
+
+msgid "Options…"
+msgstr ""
+
+msgid "Organize PDF"
+msgstr ""
+
+msgid "Organize pages"
+msgstr ""
+
+msgid "Original"
+msgstr ""
+
+msgid "Original colors"
+msgstr ""
+
+msgid "Other font:"
+msgstr ""
+
+msgid "Output folder"
+msgstr ""
+
+msgid "Output folder:"
+msgstr ""
+
+msgid "Overview and key points"
+msgstr ""
+
+msgid "PAID"
+msgstr ""
+
+msgid "PDF forms"
+msgstr ""
+
+msgid "PDF printer"
+msgstr ""
+
+msgid "PDF printer…"
+msgstr ""
+
+msgid "PDF security"
+msgstr ""
+
+msgid "PDF to Excel"
+msgstr ""
+
+msgid "PDF to JPG"
+msgstr ""
+
+msgid "PDF to Markdown"
+msgstr ""
+
+msgid "PDF to PDF/A"
+msgstr ""
+
+msgid "PDF to PNG"
+msgstr ""
+
+msgid "PDF to PowerPoint"
+msgstr ""
+
+msgid "PDF to Word"
+msgstr ""
+
+msgid "PDF to text"
+msgstr ""
+
+msgid "PDF viewer, editor and digital signing tool for Linux."
+msgstr ""
+
+msgid ""
+"PNG or JPG (a transparent background is best) or SVG (vector, always "
+"sharp — the format used by professional signature pads)."
+msgstr ""
+
+msgid "PPT, PPTX, ODP to PDF."
+msgstr ""
+
+msgid "Page"
+msgstr ""
+
+#, python-format
+msgid "Page %(n)d of %(total)d"
+msgstr ""
+
+#, python-format
+msgid "Page %d"
+msgstr ""
+
+msgid "Page numbers"
+msgstr ""
+
+msgid "Page size:"
+msgstr ""
+
+#, python-brace-format
+msgid "Page {n}"
+msgstr ""
+
+#, python-brace-format
+msgid "Page {n} of {total}"
+msgstr ""
+
+msgid "Pages"
+msgstr ""
+
+msgid "Pages (drag to reorder):"
+msgstr ""
+
+#, python-format
+msgid "Pages extracted to %s"
+msgstr ""
+
+msgid "Pages per file:"
+msgstr ""
+
+msgid "Pages sent:"
+msgstr ""
+
+msgid "Pages:"
+msgstr ""
+
+#, python-format
+msgid "Password for %s:"
+msgstr ""
+
+msgid "Password to open:"
+msgstr ""
+
+msgid "Password:"
+msgstr ""
+
+msgid "Permanently remove sensitive text or areas."
+msgstr ""
+
+msgid "Permissions password:"
+msgstr ""
+
+msgid "Phone camera"
+msgstr ""
+
+msgid "Place"
+msgstr ""
+
+msgid "Place stamp"
+msgstr ""
+
+msgid "Plain text of every page."
+msgstr ""
+
+msgid "Position, format and typography of your choice."
+msgstr ""
+
+msgid "Position:"
+msgstr ""
+
+msgid "PowerPoint to PDF"
+msgstr ""
+
+msgid "Preferences"
+msgstr ""
+
+msgid "Preferences…"
+msgstr ""
+
+msgid "Prepare form"
+msgstr ""
+
+msgid "Preview"
+msgstr ""
+
+#, python-format
+msgid "Preview: %s"
+msgstr ""
+
+msgid "Print"
+msgstr ""
+
+msgid ""
+"Print from any program (LibreOffice, Firefox, Chrome…) to the "
+"<b>ACRPDF</b> printer and the PDF is saved in your <b>~/PDF</b> folder."
+msgstr ""
+
+msgid "Printing could not be started."
+msgstr ""
+
+msgid "Printing…"
+msgstr ""
+
+msgid "Print…"
+msgstr ""
+
+msgid "Procedure / purpose:"
+msgstr ""
+
+msgid "Process the first file and show the result before saving anything"
+msgstr ""
+
+msgid "Properties"
+msgstr ""
+
+msgid "Properties…"
+msgstr ""
+
+msgid "Protect"
+msgstr ""
+
+msgid "Protect DNI / NIE"
+msgstr ""
+
+msgid "Protect PDF"
+msgstr ""
+
+msgid "Protect with password"
+msgstr ""
+
+msgid "Protected document"
+msgstr ""
+
+msgid "Provider:"
+msgstr ""
+
+msgid "Quit"
+msgstr ""
+
+msgid "RECEIVED"
+msgstr ""
+
+msgid "REJECTED"
+msgstr ""
+
+msgid "REVIEWED"
+msgstr ""
+
+msgid "Radio button"
+msgstr ""
+
+msgid "Ranges:"
+msgstr ""
+
+msgid "Rate limit reached; try again in a minute."
+msgstr ""
+
+msgid "Ready"
+msgstr ""
+
+msgid "Reason:"
+msgstr ""
+
+#, python-format
+msgid "Reason: %s"
+msgstr ""
+
+msgid "Recent files"
+msgstr ""
+
+msgid "Recognize text (OCR)"
+msgstr ""
+
+msgid "Recognizing text…"
+msgstr ""
+
+msgid "Recommended (images at 200 dpi)"
+msgstr ""
+
+msgid "Recommended compression (good quality, 150 dpi)"
+msgstr ""
+
+msgid "Recover data from damaged PDF files."
+msgstr ""
+
+msgid "Rectangle"
+msgstr ""
+
+msgid "Redact"
+msgstr ""
+
+msgid "Redact PDF"
+msgstr ""
+
+msgid "Redact area"
+msgstr ""
+
+msgid "Redact permanently"
+msgstr ""
+
+msgid "Redact searched text"
+msgstr ""
+
+msgid "Redact text"
+msgstr ""
+
+msgid "Redo"
+msgstr ""
+
+msgid "Reduce file size keeping the best possible quality."
+msgstr ""
+
+msgid "Remember the password in the system keyring"
+msgstr ""
+
+msgid "Remove"
+msgstr ""
+
+msgid "Remove pages"
+msgstr ""
+
+msgid "Remove password"
+msgstr ""
+
+msgid "Remove the password of PDFs you can open."
+msgstr ""
+
+msgid "Remove white background"
+msgstr ""
+
+#, python-format
+msgid "Remove «%s» from ACRPDF?"
+msgstr ""
+
+msgid "Removed:"
+msgstr ""
+
+msgid "Repair PDF"
+msgstr ""
+
+msgid "Repeat password:"
+msgstr ""
+
+msgid "Request signatures"
+msgstr ""
+
+msgid "Request signatures…"
+msgstr ""
+
+msgid "Required"
+msgstr ""
+
+msgid "Resolution:"
+msgstr ""
+
+msgid "Rotate PDF"
+msgstr ""
+
+msgid "Rotate all or some pages."
+msgstr ""
+
+msgid "Rotate left"
+msgstr ""
+
+msgid "Rotate page"
+msgstr ""
+
+msgid "Rotate right"
+msgstr ""
+
+msgid "Rotation:"
+msgstr ""
+
+msgid "Run on files…"
+msgstr ""
+
+msgid "Runs on this computer: the document never leaves it."
+msgstr ""
+
+msgid "Same as image"
+msgstr ""
+
+msgid "Save"
+msgstr ""
+
+msgid "Save PDF"
+msgstr ""
+
+msgid "Save as"
+msgstr ""
+
+msgid "Save as:"
+msgstr ""
+
+msgid "Save as…"
+msgstr ""
+
+#, python-format
+msgid "Save changes to «%s»?"
+msgstr ""
+
+msgid "Save protected PDF"
+msgstr ""
+
+msgid "Save signed PDF"
+msgstr ""
+
+msgid "Save this signature to reuse it"
+msgstr ""
+
+msgid "Save to:"
+msgstr ""
+
+msgid "Save without password"
+msgstr ""
+
+msgid "Saved password removed."
+msgstr ""
+
+#, python-format
+msgid ""
+"Saved without password:\n"
+"%s"
+msgstr ""
+
+msgid "Saved workflows"
+msgstr ""
+
+#, python-format
+msgid "Saved: %(path)s (%(size)d KB)"
+msgstr ""
+
+msgid "Scan page"
+msgstr ""
+
+msgid "Scan to PDF"
+msgstr ""
+
+msgid "Scanner"
+msgstr ""
+
+msgid "Search scanners"
+msgstr ""
+
+msgid "Searching DNI/NIE numbers (images are read with OCR)…"
+msgstr ""
+
+msgid "Select / resize"
+msgstr ""
+
+msgid "Select text"
+msgstr ""
+
+msgid "Sending…"
+msgstr ""
+
+msgid "Set a password first."
+msgstr ""
+
+msgid "Set password…"
+msgstr ""
+
+msgid "Show name, date and reason"
+msgstr ""
+
+msgid "Show/hide side panel"
+msgstr ""
+
+msgid "Show/hide tools pane"
+msgstr ""
+
+msgid "Sign"
+msgstr ""
+
+msgid "Sign PDF"
+msgstr ""
+
+msgid "Sign above the line"
+msgstr ""
+
+msgid "Sign digitally (draw area)"
+msgstr ""
+
+msgid "Sign this field with a certificate…"
+msgstr ""
+
+msgid "Sign with a digital certificate"
+msgstr ""
+
+msgid "Sign with a digital certificate…"
+msgstr ""
+
+msgid "Sign with certificate"
+msgstr ""
+
+msgid ""
+"Sign yourself (handwritten or certificate) or request signatures by "
+"e-mail."
+msgstr ""
+
+msgid "Sign ▾"
+msgstr ""
+
+msgid "Signature"
+msgstr ""
+
+msgid "Signature field"
+msgstr ""
+
+msgid "Signature image"
+msgstr ""
+
+msgid "Signature image:"
+msgstr ""
+
+msgid "Signature images"
+msgstr ""
+
+msgid "Signature panel"
+msgstr ""
+
+#, python-format
+msgid "Signature request: %s"
+msgstr ""
+
+msgid "Signatures"
+msgstr ""
+
+#, python-format
+msgid "Signed and all signatures are valid: %s."
+msgstr ""
+
+#, python-format
+msgid ""
+"Signed by %s. The signatures are intact, but at least one signer's "
+"identity could not be verified."
+msgstr ""
+
+#, python-format
+msgid "Signed by <b>%(name)s</b>.<br><br>Saved to:<br>%(path)s"
+msgstr ""
+
+msgid "Signed document"
+msgstr ""
+
+msgid "Signers' e-mail addresses (separated by commas):"
+msgstr ""
+
+#, python-format
+msgid "Signing failed: %s"
+msgstr ""
+
+msgid "Size"
+msgstr ""
+
+msgid "Size:"
+msgstr ""
+
+#, python-format
+msgid "Size: %d KB"
+msgstr ""
+
+msgid "Smaller text"
+msgstr ""
+
+msgid "Smallest file (images at 150 dpi)"
+msgstr ""
+
+msgid ""
+"Some pages are images: install Tesseract to read them (sudo apt install "
+"tesseract-ocr tesseract-ocr-spa)."
+msgstr ""
+
+msgid "Sort, rotate, duplicate and delete pages visually."
+msgstr ""
+
+msgid "Source"
+msgstr ""
+
+msgid "Split"
+msgstr ""
+
+msgid "Split PDF"
+msgstr ""
+
+msgid "Split by page ranges or every N pages."
+msgstr ""
+
+msgid "Spreadsheets to PDF with columns fitted to the page width."
+msgstr ""
+
+msgid "Stamp"
+msgstr ""
+
+msgid "Stamp image"
+msgstr ""
+
+msgid "Stamps"
+msgstr ""
+
+msgid "Start on page:"
+msgstr ""
+
+msgid "Status"
+msgstr ""
+
+msgid "Steps (run from top to bottom):"
+msgstr ""
+
+msgid "Strikethrough"
+msgstr ""
+
+msgid "Style:"
+msgstr ""
+
+msgid "Subtitle:"
+msgstr ""
+
+msgid "Summarize"
+msgstr ""
+
+msgid "Summarize with AI"
+msgstr ""
+
+#, python-format
+msgid "Summary of %s"
+msgstr ""
+
+msgid "System default"
+msgstr ""
+
+msgid "Tables to XLSX spreadsheets."
+msgstr ""
+
+msgid "Take photos of each page. They appear on your computer instantly."
+msgstr ""
+
+msgid ""
+"Tesseract OCR is not installed. Install the packages tesseract-ocr and "
+"tesseract-ocr-spa."
+msgstr ""
+
+msgid ""
+"Tesseract is not installed: sudo apt install tesseract-ocr tesseract-ocr-"
+"spa"
+msgstr ""
+
+msgid "Text"
+msgstr ""
+
+msgid "Text box"
+msgstr ""
+
+msgid "Text copied"
+msgstr ""
+
+msgid "Text field"
+msgstr ""
+
+msgid "Text or image over your pages."
+msgstr ""
+
+msgid "Text recognized. Click any word to edit it; Ctrl+F searches the text."
+msgstr ""
+
+msgid "Text stamps (vector)"
+msgstr ""
+
+msgid "Text to remove from the whole document:"
+msgstr ""
+
+msgid "Text:"
+msgstr ""
+
+#, python-format
+msgid "The %s API key is not valid."
+msgstr ""
+
+msgid "The Anthropic API key is not valid."
+msgstr ""
+
+msgid "The answer was too long; try a shorter document or range."
+msgstr ""
+
+msgid "The anthropic package is not installed."
+msgstr ""
+
+msgid ""
+"The document has no empty signature fields. Add one for each signer on "
+"the last page?"
+msgstr ""
+
+msgid "The document has no text (run OCR first if it is scanned)."
+msgstr ""
+
+msgid "The document is not protected."
+msgstr ""
+
+msgid "The document was changed after signing."
+msgstr ""
+
+msgid "The file could not be repaired."
+msgstr ""
+
+msgid "The language change applies after restarting ACRPDF."
+msgstr ""
+
+msgid "The model declined this request."
+msgstr ""
+
+msgid "The model returned an invalid answer."
+msgstr ""
+
+#, python-format
+msgid ""
+"The operation could not be completed:\n"
+"%s"
+msgstr ""
+
+msgid "The passwords do not match."
+msgstr ""
+
+msgid "The signature is empty."
+msgstr ""
+
+msgid "The workflow has no steps."
+msgstr ""
+
+msgid "There are no pages yet."
+msgstr ""
+
+msgid "There is no text in the selected area."
+msgstr ""
+
+msgid "Thickness:"
+msgstr ""
+
+#, python-format
+msgid "This document has %d signature field(s) waiting to be signed."
+msgstr ""
+
+msgid ""
+"This document has digital signatures.\n"
+"\n"
+"Changes are saved as an incremental revision: the signatures stay valid "
+"for the signed version, but readers will report that the document was "
+"changed afterwards.\n"
+"\n"
+"Continue?"
+msgstr ""
+
+msgid "This step has no options."
+msgstr ""
+
+msgid "Tool"
+msgstr ""
+
+msgid "Tooltip:"
+msgstr ""
+
+msgid "Top"
+msgstr ""
+
+msgid "Top center"
+msgstr ""
+
+msgid "Top left"
+msgstr ""
+
+msgid "Top right"
+msgstr ""
+
+msgid "Translate PDF"
+msgstr ""
+
+msgid "Translate to:"
+msgstr ""
+
+msgid "Translate with AI keeping fonts, layout and formatting."
+msgstr ""
+
+msgid "Translate…"
+msgstr ""
+
+msgid "Trim white margins of every page."
+msgstr ""
+
+msgid "Type"
+msgstr ""
+
+msgid "Type your name"
+msgstr ""
+
+msgid "Underline"
+msgstr ""
+
+msgid "Undo"
+msgstr ""
+
+msgid "Unexpected error:"
+msgstr ""
+
+msgid "Unlock PDF"
+msgstr ""
+
+msgid "Untitled.pdf"
+msgstr ""
+
+msgid "Up"
+msgstr ""
+
+msgid "Upload"
+msgstr ""
+
+msgid "Upload PNG/SVG…"
+msgstr ""
+
+msgid "Use a .p12/.pfx file without importing it"
+msgstr ""
+
+msgid "Use an image…"
+msgstr ""
+
+msgid "Use signature"
+msgstr ""
+
+msgid "Use this color"
+msgstr ""
+
+msgid "Use your phone camera (QR code) or a scanner."
+msgstr ""
+
+msgid ""
+"Uses the AI provider chosen in Preferences (Claude, ChatGPT, DeepSeek or "
+"a local Ollama model). With online providers the document text is sent to"
+" that company."
+msgstr ""
+
+msgid "VOID"
+msgstr ""
+
+msgid "Valid"
+msgstr ""
+
+msgid "Valid until"
+msgstr ""
+
+msgid "Validate signatures"
+msgstr ""
+
+msgid "Value"
+msgstr ""
+
+#, python-brace-format
+msgid "Variables: {n} page, {total} total, {date} today"
+msgstr ""
+
+msgid "View, edit, fill, sign and certify PDF documents."
+msgstr ""
+
+msgid "Watermark"
+msgstr ""
+
+msgid ""
+"Watermark \"DNI for … procedure\" and mask the number (AEPD ***4567**), "
+"also on photos."
+msgstr ""
+
+msgid "Watermark image"
+msgstr ""
+
+msgid "Watermark:"
+msgstr ""
+
+msgid "Web address:"
+msgstr ""
+
+msgid "Web pages (paste the address) or HTML files to PDF."
+msgstr ""
+
+#, python-format
+msgid "When you summarize or translate, the document text is sent to %s."
+msgstr ""
+
+msgid "Wi-Fi"
+msgstr ""
+
+msgid "Width"
+msgstr ""
+
+msgid "Word to PDF"
+msgstr ""
+
+#, python-format
+msgid "Workflow: %s"
+msgstr ""
+
+msgid "Workflows"
+msgstr ""
+
+msgid "Wrong password or invalid certificate."
+msgstr ""
+
+msgid "Wrong password."
+msgstr ""
+
+msgid "Wrong primary password for the Firefox certificate store."
+msgstr ""
+
+msgid "Zoom in"
+msgstr ""
+
+msgid "Zoom out"
+msgstr ""
+
+msgid "_flattened"
+msgstr ""
+
+msgid "_numbered"
+msgstr ""
+
+msgid "_pages"
+msgstr ""
+
+msgid "_protected"
+msgstr ""
+
+msgid "_redacted"
+msgstr ""
+
+msgid "_signed"
+msgstr ""
+
+msgid "_unlocked"
+msgstr ""
+
+msgid "_watermark"
+msgstr ""
+
+msgid "all pages"
+msgstr ""
+
+msgid "e.g. 1-3, 4-6, 7-"
+msgstr ""
+
+msgid "e.g. 1-3, 5, 8-"
+msgstr ""
+
+msgid "e.g. RENTAL WITH IDEALISTA"
+msgstr ""
+
+msgid "field"
+msgstr ""
+
+msgid "local, offline"
+msgstr ""
+
+msgid "pk12util was not found (package libnss3-tools)."
+msgstr ""
+
+msgid "saved in the system keyring"
+msgstr ""
+
+msgid "until"
+msgstr ""
+
+msgid "virtual"
+msgstr ""
+
+#, python-brace-format
+msgid "{doc} for {purpose}"
+msgstr ""
+
+msgid "↺ Rotate left"
+msgstr ""
+
+msgid "↻ Rotate right"
+msgstr ""
+
+msgid "✔ The virtual printer <b>ACRPDF</b> is installed."
+msgstr ""
+
+msgid "✖ The virtual printer is not installed (install the .deb package)."
+msgstr ""
+
+msgid "📷 Take photo"
+msgstr ""
+

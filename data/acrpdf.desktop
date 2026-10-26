@@ -1,0 +1,18 @@
+[Desktop Entry]
+Type=Application
+Name=ACRPDF Reader
+GenericName=PDF Editor
+GenericName[es]=Editor de PDF
+GenericName[fr]=Éditeur PDF
+GenericName[pt]=Editor de PDF
+Comment=View, edit, fill, sign and certify PDF documents
+Comment[es]=Vea, edite, rellene, firme y certifique documentos PDF
+Comment[fr]=Affichez, modifiez, remplissez, signez et certifiez vos PDF
+Comment[pt]=Veja, edite, preencha, assine e certifique documentos PDF
+Exec=acrpdf %F
+Icon=acrpdf
+Terminal=false
+Categories=Office;Viewer;Graphics;Publishing;
+MimeType=application/pdf;application/x-pdf;
+Keywords=pdf;sign;signature;certificate;form;stamp;merge;compress;ocr;firma;firmar;certificado;formulario;sello;unir;comprimir;
+StartupWMClass=acrpdf

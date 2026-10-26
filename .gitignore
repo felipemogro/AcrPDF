@@ -1,0 +1,8 @@
+.venv/
+build/
+releases/
+__pycache__/
+*.pyc
+.pytest_cache/
+*.egg-info/
+src/acrpdf/locale/

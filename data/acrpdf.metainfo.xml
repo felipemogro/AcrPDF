@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="desktop-application">
+  <id>acrpdf</id>
+  <name>ACRPDF Reader</name>
+  <summary>Open-source PDF editor and digital signing tool</summary>
+  <summary xml:lang="es">Editor de PDF y firma digital de código abierto</summary>
+  <metadata_license>CC0-1.0</metadata_license>
+  <project_license>AGPL-3.0-or-later</project_license>
+  <developer id="felipemogro"><name>Felipe Mogro</name></developer>
+  <description>
+    <p>View, annotate, fill and create forms, sign with handwritten signatures and with
+      digital certificates (PAdES), stamp, organize pages, convert, compress, protect and
+      redact PDF documents. Includes a virtual PDF printer.</p>
+    <p xml:lang="es">Visualice, anote, rellene y cree formularios, firme con firma manuscrita y con
+      certificado digital (PAdES), selle, organice páginas, convierta, comprima, proteja y
+      censure documentos PDF. Incluye una impresora PDF virtual.</p>
+  </description>
+  <launchable type="desktop-id">acrpdf.desktop</launchable>
+  <provides><mediatype>application/pdf</mediatype></provides>
+  <releases>
+    <release version="2.1.0" date="2026-10-26"/>
+    <release version="2.0.4" date="2026-10-26"/>
+    <release version="2.0.3" date="2026-10-26"/>
+    <release version="2.0.2" date="2026-10-26"/>
+    <release version="2.0.1" date="2026-10-26"/>
+    <release version="2.0.0" date="2026-10-26"/>
+  </releases>
+  <content_rating type="oars-1.1"/>
+</component>

@@ -1,0 +1,45 @@
+[build-system]
+requires = ["setuptools>=69"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "acrpdf"
+dynamic = ["version"]
+description = "Open-source alternative to Adobe Acrobat for Linux, with iLovePDF-style tools"
+readme = "README.md"
+license = "AGPL-3.0-or-later"
+requires-python = ">=3.11"
+authors = [{ name = "Felipe Mogro", email = "felipemogro@hotmail.com" }]
+dependencies = [
+    "PyQt6>=6.7",
+    "PyMuPDF>=1.26",
+    "pyhanko[image-support,opentype]>=0.25",
+    "pyhanko-certvalidator>=0.26",
+    "keyring>=24",
+    "pdf2docx>=0.5.8",
+    "openpyxl>=3.1",
+    "python-pptx>=1.0",
+    "pymupdf4llm>=0.2",
+    "qrcode>=7.4",
+    "anthropic>=2.0",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "pyflakes>=3", "babel>=2.14"]
+
+[project.gui-scripts]
+acrpdf = "acrpdf.app:main"
+
+[tool.setuptools.dynamic]
+version = { attr = "acrpdf.__version__" }
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+acrpdf = ["resources/*", "locale/*/LC_MESSAGES/*.mo"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+filterwarnings = ["ignore::DeprecationWarning", "ignore::FutureWarning"]

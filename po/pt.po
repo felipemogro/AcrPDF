@@ -1,0 +1,2155 @@
+# Portuguese translations for ACRPDF Reader.
+# Copyright (C) 2026 Felipe Mogro
+# This file is distributed under the same license as the ACRPDF Reader project.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ACRPDF Reader 2.0.0\n"
+"Report-Msgid-Bugs-To: felipemogro@hotmail.com\n"
+"POT-Creation-Date: 2026-10-26 17:53+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: Felipe Mogro <felipemogro@hotmail.com>\n"
+"Language: pt\n"
+"Language-Team: Portuguese <felipemogro@hotmail.com>\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Generated-By: Babel 2.18.0\n"
+
+#, python-format
+msgid "%(file)s: %(n)d ID numbers hidden"
+msgstr "%(file)s: %(n)d números de identificação ocultados"
+
+#, python-format
+msgid "%(i)d of %(n)d"
+msgstr "%(i)d de %(n)d"
+
+#, python-format
+msgid "%d differences highlighted."
+msgstr "%d diferenças destacadas."
+
+#, python-format
+msgid "%d fields created. Click one to adjust it."
+msgstr "%d campos criados. Clique num para ajustá-lo."
+
+msgid "&Edit"
+msgstr "&Editar"
+
+msgid "&File"
+msgstr "&Arquivo"
+
+msgid "&Help"
+msgstr "Aj&uda"
+
+msgid "&Tools"
+msgstr "&Ferramentas"
+
+msgid "&View"
+msgstr "&Ver"
+
+msgid "(not saved)"
+msgstr "(não salvo)"
+
+msgid "(text watermark)"
+msgstr "(marca d'água de texto)"
+
+msgid ""
+"1. Connect the phone to the same Wi-Fi network.\n"
+"2. Scan the QR code with the camera.\n"
+"3. Take a photo of each page; they appear here.\n"
+"\n"
+"The link only works while this window is open."
+msgstr ""
+"1. Conecte o celular à mesma rede Wi-Fi.\n"
+"2. Leia o código QR com a câmera.\n"
+"3. Fotografe cada página; elas aparecem aqui.\n"
+"\n"
+"O link só funciona enquanto esta janela estiver aberta."
+
+msgid "90° clockwise"
+msgstr "90° sentido horário"
+
+msgid "90° counter-clockwise"
+msgstr "90° sentido anti-horário"
+
+msgid "AI (summaries and translations)"
+msgstr "IA (resumos e traduções)"
+
+msgid "AI assistant"
+msgstr "Assistente de IA"
+
+msgid "API key:"
+msgstr "Chave de API:"
+
+msgid "APPROVED"
+msgstr "APROVADO"
+
+msgid "About ACRPDF Reader"
+msgstr "Sobre o ACRPDF Reader"
+
+msgid "Add a trusted timestamp (TSA, needs Internet)"
+msgstr "Adicionar carimbo do tempo (TSA, requer Internet)"
+
+msgid "Add at least one file."
+msgstr "Adicione pelo menos um arquivo."
+
+msgid "Add files"
+msgstr "Adicionar arquivos"
+
+msgid "Add files and drag them to change the order."
+msgstr "Adicione arquivos e arraste-os para mudar a ordem."
+
+msgid "Add files…"
+msgstr "Adicionar arquivos…"
+
+msgid "Add image"
+msgstr "Adicionar imagem"
+
+msgid "Add initials…"
+msgstr "Adicionar iniciais…"
+
+msgid "Add page numbers"
+msgstr "Numerar páginas"
+
+msgid "Add signature (draw, type or upload PNG/SVG)…"
+msgstr "Adicionar assinatura (desenhar, digitar ou enviar PNG/SVG)…"
+
+msgid "Add step"
+msgstr "Adicionar passo"
+
+msgid "Add text"
+msgstr "Adicionar texto"
+
+msgid "Add text, images, shapes and change fonts."
+msgstr "Adicione texto, imagens, formas e mude as fontes."
+
+msgid "Add watermark"
+msgstr "Adicionar marca d'água"
+
+msgid "Add watermark with the purpose"
+msgstr "Adicionar marca d'água com a finalidade"
+
+msgid "Adjust the position and size of the signature, then press Sign."
+msgstr "Ajuste a posição e o tamanho da assinatura e clique em Assinar."
+
+msgid "After Continue you can move and resize the signature on the page before signing."
+msgstr "Depois de Continuar, poderá mover e redimensionar a assinatura na página antes de assinar."
+
+msgid "All PDF tools"
+msgstr "Todas as ferramentas"
+
+msgid "All files"
+msgstr "Todos os arquivos"
+
+msgid "All supported files"
+msgstr "Todos os suportados"
+
+msgid "Allow copying text"
+msgstr "Permitir copiar texto"
+
+msgid "Allow editing, filling and commenting"
+msgstr "Permitir editar, preencher e comentar"
+
+msgid "Allow printing"
+msgstr "Permitir imprimir"
+
+msgid "Angle:"
+msgstr "Ângulo:"
+
+msgid "Appearance"
+msgstr "Aparência"
+
+msgid ""
+"Applied when saving and, before signing, to the document that gets signed. Documents that are "
+"already signed are never recompressed."
+msgstr ""
+"Aplicada ao salvar e, antes de assinar, ao documento que é assinado. Documentos já assinados "
+"nunca são recomprimidos."
+
+msgid "Apply"
+msgstr "Aplicar"
+
+msgid "Apply (Ctrl+Enter)"
+msgstr "Aplicar (Ctrl+Enter)"
+
+msgid "Apply to document"
+msgstr "Aplicar ao documento"
+
+msgid "Arrow"
+msgstr "Seta"
+
+msgid "At least one signature is invalid: the document was altered or the signature is damaged."
+msgstr "Pelo menos uma assinatura é inválida: o documento foi alterado ou a assinatura está danificada."
+
+msgid "Author name for comments:"
+msgstr "Nome do autor dos comentários:"
+
+msgid "Auto"
+msgstr "Automático"
+
+msgid "Automatic (cheapest available)"
+msgstr "Automático (o mais barato disponível)"
+
+msgid "Black"
+msgstr "Preto"
+
+msgid "Black and white"
+msgstr "Preto e branco"
+
+msgid "Black box (remove completely)"
+msgstr "Caixa preta (remover totalmente)"
+
+msgid "Blank PDF"
+msgstr "PDF em branco"
+
+msgid "Blank.pdf"
+msgstr "Em branco.pdf"
+
+msgid "Blue"
+msgstr "Azul"
+
+msgid "Bookmarks"
+msgstr "Marcadores"
+
+msgid "Bottom"
+msgstr "Embaixo"
+
+msgid "Bottom center"
+msgstr "Inferior central"
+
+msgid "Bottom left"
+msgstr "Inferior esquerda"
+
+msgid "Bottom right"
+msgstr "Inferior direita"
+
+msgid "Built with PyMuPDF, pyHanko and Qt 6."
+msgstr "Feito com PyMuPDF, pyHanko e Qt 6."
+
+msgid "CONFIDENTIAL"
+msgstr "CONFIDENCIAL"
+
+msgid "COPY"
+msgstr "CÓPIA"
+
+msgid "Cancel"
+msgstr "Cancelar"
+
+msgid "Cancel (Esc)"
+msgstr "Cancelar (Esc)"
+
+msgid "Cannot remove every page."
+msgstr "Não é possível remover todas as páginas."
+
+msgid "Center"
+msgstr "Centro"
+
+msgid "Certificate"
+msgstr "Certificado"
+
+#, python-format
+msgid "Certificate «%s» imported."
+msgstr "Certificado «%s» importado."
+
+msgid "Certificates"
+msgstr "Certificados"
+
+#, python-format
+msgid ""
+"Certificates imported into ACRPDF are copied to %s (only your user can read them). Certificates "
+"from Firefox/Thunderbird are used directly from their store."
+msgstr ""
+"Os certificados importados no ACRPDF são copiados para %s (só o seu usuário pode lê-los). Os "
+"certificados do Firefox/Thunderbird são usados diretamente do seu repositório."
+
+msgid "Certificates…"
+msgstr "Certificados…"
+
+msgid "Certify document (author signature, DocMDP)"
+msgstr "Certificar documento (assinatura do autor, DocMDP)"
+
+msgid "Chain your favourite tools and reuse them any time."
+msgstr "Encadeie suas ferramentas favoritas e reutilize-as quando quiser."
+
+msgid "Check"
+msgstr "Caixa"
+
+msgid "Check box"
+msgstr "Caixa de seleção"
+
+msgid "Check mark"
+msgstr "Marca ✓"
+
+msgid "Check the result. Nothing has been changed yet."
+msgstr "Confira o resultado. Nada foi alterado ainda."
+
+msgid "Choose PNG / SVG…"
+msgstr "Escolher PNG / SVG…"
+
+msgid "Choose an image."
+msgstr "Escolha uma imagem."
+
+msgid "Choose color"
+msgstr "Escolher cor"
+
+msgid "Choose exactly two PDF files (original first)."
+msgstr "Escolha exatamente dois PDF (o original primeiro)."
+
+msgid "Choose image…"
+msgstr "Escolher imagem…"
+
+msgid "Choose stamp…"
+msgstr "Escolher carimbo…"
+
+msgid "Clear"
+msgstr "Limpar"
+
+msgid "Clear, concise summaries with the key points."
+msgstr "Resumos claros e concisos com os pontos principais."
+
+msgid "Click a field to move or resize it. Del deletes it."
+msgstr "Clique num campo para movê-lo ou redimensioná-lo. Del o exclui."
+
+msgid "Click on a text to edit it."
+msgstr "Clique num texto para editá-lo."
+
+msgid "Click or drag on the page to create the field; then resize it."
+msgstr "Clique ou arraste na página para criar o campo; depois ajuste o tamanho."
+
+msgid "Click the fields to fill them in place, or use «Sign ▾» to add your signature."
+msgstr "Clique nos campos para preenchê-los na página, ou use «Assinar ▾» para adicionar sua assinatura."
+
+msgid "Click where you want to type."
+msgstr "Clique onde quer escrever."
+
+msgid "Close"
+msgstr "Fechar"
+
+msgid "Color"
+msgstr "Cor"
+
+msgid "Color:"
+msgstr "Cor:"
+
+msgid "Combine PDFs, images and documents in the order you want."
+msgstr "Junte PDF, imagens e documentos na ordem que quiser."
+
+msgid "Comment"
+msgstr "Comentar"
+
+msgid "Comments"
+msgstr "Comentários"
+
+msgid "Company seal or rubber stamp image (PNG with transparency or SVG)."
+msgstr "Imagem do carimbo da empresa (PNG com transparência ou SVG)."
+
+msgid "Compare PDF"
+msgstr "Comparar PDF"
+
+msgid "Compress PDF"
+msgstr "Comprimir PDF"
+
+msgid "Compress when saving:"
+msgstr "Comprimir ao salvar:"
+
+msgid "Compress…"
+msgstr "Comprimir…"
+
+msgid "Configure…"
+msgstr "Configurar…"
+
+msgid "Conformance:"
+msgstr "Conformidade:"
+
+msgid "Contact:"
+msgstr "Contato:"
+
+msgid "Continue"
+msgstr "Continuar"
+
+msgid "Convert every page to an image"
+msgstr "Converter cada página em imagem"
+
+msgid "Convert from PDF"
+msgstr "Converter de PDF"
+
+msgid "Convert to PDF"
+msgstr "Converter para PDF"
+
+msgid "Converting web addresses needs Google Chrome or Chromium installed."
+msgstr "Converter endereços web requer o Google Chrome ou o Chromium."
+
+#, python-format
+msgid "Copied: %s"
+msgstr "Copiado: %s"
+
+msgid "Copy"
+msgstr "Copiar"
+
+msgid "Copy all text"
+msgstr "Copiar todo o texto"
+
+msgid "Copy page text"
+msgstr "Copiar texto da página"
+
+#, python-format
+msgid "Could not connect to %s."
+msgstr "Não foi possível conectar a %s."
+
+msgid "Could not connect to the Anthropic API."
+msgstr "Não foi possível conectar à API da Anthropic."
+
+#, python-format
+msgid "Could not open the certificate: %s"
+msgstr "Não foi possível abrir o certificado: %s"
+
+#, python-format
+msgid ""
+"Could not open the file:\n"
+"%s"
+msgstr ""
+"Não foi possível abrir o arquivo:\n"
+"%s"
+
+#, python-format
+msgid "Could not reach Ollama at %s. Is it running?"
+msgstr "Não foi possível contactar o Ollama em %s. Está em execução?"
+
+#, python-format
+msgid "Could not read the certificate from Firefox: %s"
+msgstr "Não foi possível ler o certificado do Firefox: %s"
+
+msgid "Coverage"
+msgstr "Cobertura"
+
+msgid "Create"
+msgstr "Criar"
+
+msgid "Create PDF"
+msgstr "Criar PDF"
+
+msgid "Create PDF from files…"
+msgstr "Criar PDF a partir de arquivos…"
+
+msgid "Create a workflow"
+msgstr "Criar um fluxo de trabalho"
+
+msgid "Create initials"
+msgstr "Criar iniciais"
+
+msgid "Create signature"
+msgstr "Criar assinatura"
+
+msgid "Create…"
+msgstr "Criar…"
+
+msgid "Crop PDF"
+msgstr "Recortar PDF"
+
+msgid "Crop all pages"
+msgstr "Recortar todas as páginas"
+
+msgid "Crop page"
+msgstr "Recortar página"
+
+msgid "Crop this page"
+msgstr "Recortar esta página"
+
+msgid "Cross"
+msgstr "Xis ✗"
+
+msgid "Current password:"
+msgstr "Senha atual:"
+
+msgid "Custom"
+msgstr "Personalizada"
+
+msgid "Custom ranges"
+msgstr "Intervalos personalizados"
+
+msgid "Custom subtitle"
+msgstr "Subtítulo próprio"
+
+msgid "Custom text (optional)"
+msgstr "Texto próprio (opcional)"
+
+msgid "DOC, DOCX, ODT, RTF to PDF."
+msgstr "DOC, DOCX, ODT, RTF para PDF."
+
+msgid "DRAFT"
+msgstr "RASCUNHO"
+
+msgid "Date"
+msgstr "Data"
+
+msgid "Date only"
+msgstr "Só a data"
+
+#, python-format
+msgid "Date: %s"
+msgstr "Data: %s"
+
+msgid "Delete"
+msgstr "Excluir"
+
+#, python-format
+msgid "Delete %d page?"
+msgid_plural "Delete %d pages?"
+msgstr[0] "Excluir %d página?"
+msgstr[1] "Excluir %d páginas?"
+
+msgid "Delete (Del)"
+msgstr "Excluir (Del)"
+
+msgid "Delete comment"
+msgstr "Excluir comentário"
+
+msgid "Delete field"
+msgstr "Excluir campo"
+
+msgid "Delete field (Del)"
+msgstr "Excluir campo (Del)"
+
+msgid "Delete page"
+msgstr "Excluir página"
+
+msgid "Delete pages"
+msgstr "Excluir páginas"
+
+msgid "Delete saved signature"
+msgstr "Excluir assinatura salva"
+
+msgid "Delete the pages you list."
+msgstr "Exclui as páginas indicadas."
+
+msgid "Detailed, by sections"
+msgstr "Detalhado, por seções"
+
+msgid "Details"
+msgstr "Detalhes"
+
+msgid "Details only"
+msgstr "Só os dados"
+
+msgid "Detect fields"
+msgstr "Detectar campos"
+
+msgid "Detect fields automatically, create fillable forms or fill them in."
+msgstr "Detecte campos automaticamente, crie formulários preenchíveis ou preencha-os."
+
+msgid "Digital signature"
+msgstr "Assinatura digital"
+
+msgid "Digitally signed by:"
+msgstr "Assinado digitalmente por:"
+
+msgid "Discard (Esc)"
+msgstr "Descartar (Esc)"
+
+msgid "Document mode (grayscale, more contrast)"
+msgstr "Modo documento (tons de cinza, mais contraste)"
+
+msgid "Document properties…"
+msgstr "Propriedades do documento…"
+
+msgid "Documents"
+msgstr "Documentos"
+
+#, python-format
+msgid "Done: %d file(s) created."
+msgstr "Concluído: %d arquivo(s) criado(s)."
+
+msgid "Down"
+msgstr "Descer"
+
+msgid "Drag to move, use the handles to resize, Del to delete."
+msgstr "Arraste para mover, use as alças para redimensionar e Del para excluir."
+
+msgid "Drag to move, use the handles to resize, then press Place or Enter."
+msgstr "Arraste para mover, use as alças para redimensionar e clique em Colocar ou Enter."
+
+msgid "Draw"
+msgstr "Desenhar"
+
+msgid "Draw the area to keep."
+msgstr "Desenhe a área a manter."
+
+msgid "Draw the rectangle where the signature will appear."
+msgstr "Desenhe o retângulo onde a assinatura aparecerá."
+
+msgid "Dropdown"
+msgstr "Lista suspensa"
+
+msgid "Duplicate"
+msgstr "Duplicar"
+
+msgid "E-mail prepared in your mail client."
+msgstr "E-mail preparado no seu cliente de correio."
+
+msgid "Each page as a JPG image, or extract the images."
+msgstr "Cada página como imagem JPG, ou extrai as imagens."
+
+msgid "Each page as a PNG image."
+msgstr "Cada página como imagem PNG."
+
+msgid "Edit PDF"
+msgstr "Editar PDF"
+
+msgid "Edit text"
+msgstr "Editar texto"
+
+msgid "Edit text…"
+msgstr "Editar texto…"
+
+msgid "Editable DOCX keeping the layout."
+msgstr "DOCX editável mantendo o layout."
+
+msgid "Ellipse"
+msgstr "Elipse"
+
+msgid "Empty"
+msgstr "Vazia"
+
+msgid "Encrypt with AES-256 and set permissions."
+msgstr "Criptografa com AES-256 e define permissões."
+
+msgid "Encrypt with password"
+msgstr "Criptografar com senha"
+
+#, python-format
+msgid ""
+"Encrypted with AES-256:\n"
+"%s"
+msgstr ""
+"Criptografado com AES-256:\n"
+"%s"
+
+msgid "Encryption: AES-256"
+msgstr "Criptografia: AES-256"
+
+msgid "Enter at least one password."
+msgstr "Informe pelo menos uma senha."
+
+msgid "Error"
+msgstr "Erro"
+
+msgid "Ethernet"
+msgstr "Ethernet"
+
+msgid "Every N pages"
+msgstr "A cada N páginas"
+
+msgid "Excel to PDF"
+msgstr "Excel para PDF"
+
+msgid "Export to"
+msgstr "Exportar para"
+
+msgid "Extract"
+msgstr "Extrair"
+
+msgid "Extract pages"
+msgstr "Extrair páginas"
+
+msgid "Extract pages…"
+msgstr "Extrair páginas…"
+
+msgid "Extract the embedded images"
+msgstr "Extrair as imagens incorporadas"
+
+msgid "Extreme compression (less quality, 72 dpi)"
+msgstr "Compressão extrema (menos qualidade, 72 dpi)"
+
+msgid "FINAL"
+msgstr "FINAL"
+
+msgid "Field"
+msgstr "Campo"
+
+msgid "Field properties"
+msgstr "Propriedades do campo"
+
+msgid "Fields"
+msgstr "Campos"
+
+msgid "File"
+msgstr "Arquivo"
+
+#, python-format
+msgid ""
+"File not found:\n"
+"%s"
+msgstr ""
+"Arquivo não encontrado:\n"
+"%s"
+
+msgid "File:"
+msgstr "Arquivo:"
+
+#, python-format
+msgid ""
+"File: %(file)s\n"
+"Pages: %(pages)d\n"
+"Size: %(size).1f KB\n"
+"Encrypted: %(enc)s\n"
+"Form: %(form)s"
+msgstr ""
+"Arquivo: %(file)s\n"
+"Páginas: %(pages)d\n"
+"Tamanho: %(size).1f KB\n"
+"Criptografado: %(enc)s\n"
+"Formulário: %(form)s"
+
+msgid "Files (drag and drop here; the order matters for merging):"
+msgstr "Arquivos (arraste para cá; a ordem importa ao juntar):"
+
+msgid "File…"
+msgstr "Arquivo…"
+
+msgid "Fill & Sign"
+msgstr "Preencher e assinar"
+
+#, python-format
+msgid "Fill «%s»"
+msgstr "Preencher «%s»"
+
+msgid "Find in document…"
+msgstr "Localizar no documento…"
+
+msgid "Find:"
+msgstr "Localizar:"
+
+msgid "Find…"
+msgstr "Localizar…"
+
+msgid "Firefox primary password:"
+msgstr "Senha principal do Firefox:"
+
+msgid "First number:"
+msgstr "Primeiro número:"
+
+msgid "Fit all columns to the page width"
+msgstr "Ajustar todas as colunas à largura da página"
+
+msgid "Fit page"
+msgstr "Página inteira"
+
+msgid "Fit width"
+msgstr "Ajustar à largura"
+
+msgid "Flatten form"
+msgstr "Achatar formulário"
+
+msgid "Font"
+msgstr "Fonte"
+
+msgid "Font (embedded in the PDF)"
+msgstr "Fonte (incorporada no PDF)"
+
+msgid "Font size:"
+msgstr "Tamanho da fonte:"
+
+msgid "Font:"
+msgstr "Fonte:"
+
+msgid "Footer"
+msgstr "Rodapé"
+
+msgid "Forget saved password"
+msgstr "Esquecer senha salva"
+
+msgid "Format:"
+msgstr "Formato:"
+
+msgid "Found in"
+msgstr "Encontrado em"
+
+msgid "Full screen"
+msgstr "Tela cheia"
+
+msgid "Ghostscript PDF/A resources were not found."
+msgstr "Os recursos PDF/A do Ghostscript não foram encontrados."
+
+msgid "Ghostscript is not installed."
+msgstr "O Ghostscript não está instalado."
+
+msgid "Grayscale"
+msgstr "Tons de cinza"
+
+msgid "Group"
+msgstr "Grupo"
+
+msgid "HTML to PDF"
+msgstr "HTML para PDF"
+
+msgid "Hand / fill forms"
+msgstr "Mão / preencher formulários"
+
+msgid "Headings, lists, tables and links as Markdown (ideal for notes and LLMs)."
+msgstr "Títulos, listas, tabelas e links em Markdown (ideal para notas e LLMs)."
+
+msgid ""
+"Hello,\n"
+"\n"
+"Please sign the attached document with your digital certificate (for example with ACRPDF Reader, "
+"Adobe Acrobat Reader or AutoFirma) and send it back.\n"
+"\n"
+"Thank you."
+msgstr ""
+"Olá,\n"
+"\n"
+"Por favor, assine o documento anexo com o seu certificado digital (por exemplo com o ACRPDF "
+"Reader, Adobe Acrobat Reader ou AutoFirma) e devolva-o.\n"
+"\n"
+"Obrigado."
+
+msgid "Hide the DNI/NIE in the visible name (***4567**, AEPD)"
+msgstr "Ocultar o DNI/NIE no nome visível (***4567**, AEPD)"
+
+msgid "High quality (images at 300 dpi)"
+msgstr "Alta qualidade (imagens a 300 dpi)"
+
+msgid "Highlight"
+msgstr "Destacar"
+
+msgid "Highlight the differences between two versions."
+msgstr "Destaca as diferenças entre duas versões."
+
+msgid "Home"
+msgstr "Início"
+
+msgid "How it looks inside a digital signature"
+msgstr "Como fica dentro de uma assinatura digital"
+
+msgid "I am the author of this document"
+msgstr "Sou o autor deste documento"
+
+msgid "ID numbers found"
+msgstr "Números de identificação encontrados"
+
+msgid "ISO archival format for long-term preservation."
+msgstr "Formato ISO de arquivamento para preservação a longo prazo."
+
+msgid "Image"
+msgstr "Imagem"
+
+msgid "Image (OCR)"
+msgstr "Imagem (OCR)"
+
+msgid "Image above, details below"
+msgstr "Imagem em cima, dados embaixo"
+
+msgid "Image left, details right"
+msgstr "Imagem à esquerda, dados à direita"
+
+msgid "Image only"
+msgstr "Só a imagem"
+
+msgid "Image stamp"
+msgstr "Carimbo de imagem"
+
+msgid "Image:"
+msgstr "Imagem:"
+
+msgid "Images"
+msgstr "Imagens"
+
+msgid "Images to PDF"
+msgstr "Imagens para PDF"
+
+msgid "Import"
+msgstr "Importar"
+
+msgid "Import .p12/.pfx…"
+msgstr "Importar .p12/.pfx…"
+
+msgid "Import a .p12/.pfx into ACRPDF"
+msgstr "Importar um .p12/.pfx no ACRPDF"
+
+msgid "Import certificate"
+msgstr "Importar certificado"
+
+msgid "Import or choose a certificate first."
+msgstr "Primeiro importe ou escolha um certificado."
+
+msgid "Import…"
+msgstr "Importar…"
+
+msgid "Ink:"
+msgstr "Tinta:"
+
+msgid "Insert blank"
+msgstr "Inserir em branco"
+
+msgid "Insert blank page"
+msgstr "Inserir página em branco"
+
+msgid "Insert file"
+msgstr "Inserir arquivo"
+
+msgid "Insert files"
+msgstr "Inserir arquivos"
+
+msgid "Insert from file…"
+msgstr "Inserir de arquivo…"
+
+msgid "Insert image"
+msgstr "Inserir imagem"
+
+msgid "Intact (CA not verified)"
+msgstr "Íntegra (AC não verificada)"
+
+msgid "Intelligence"
+msgstr "Inteligência"
+
+msgid "Intensity:"
+msgstr "Intensidade:"
+
+msgid "Invalid"
+msgstr "Inválida"
+
+#, python-format
+msgid "Invalid page range: %s"
+msgstr "Intervalo de páginas inválido: %s"
+
+msgid "Invisible signature"
+msgstr "Assinatura invisível"
+
+msgid "Issuer"
+msgstr "Emissor"
+
+msgid "JPG, PNG, SVG… to a single PDF."
+msgstr "JPG, PNG, SVG… num único PDF."
+
+msgid "Keep margin:"
+msgstr "Manter margem:"
+
+msgid "Landscape"
+msgstr "Paisagem"
+
+msgid "Language:"
+msgstr "Idioma:"
+
+msgid "Larger text"
+msgstr "Texto maior"
+
+msgid "Later changes"
+msgstr "Alterações posteriores"
+
+msgid "Layout:"
+msgstr "Layout:"
+
+msgid "Leave empty if Firefox has no primary password"
+msgstr "Deixe vazio se o Firefox não tiver senha principal"
+
+msgid "Letter"
+msgstr "Carta"
+
+msgid "Letter size:"
+msgstr "Tamanho da letra:"
+
+msgid "Level:"
+msgstr "Nível:"
+
+#, python-format
+msgid "LibreOffice could not convert %s"
+msgstr "O LibreOffice não conseguiu converter %s"
+
+msgid "LibreOffice is not installed (needed to convert office documents)."
+msgstr "O LibreOffice não está instalado (necessário para converter documentos de escritório)."
+
+msgid "License: AGPL-3.0-or-later"
+msgstr "Licença: AGPL-3.0 ou posterior"
+
+msgid "Line"
+msgstr "Linha"
+
+msgid "Line spacing:"
+msgstr "Espaçamento entre linhas:"
+
+msgid "List"
+msgstr "Lista"
+
+msgid "List box"
+msgstr "Caixa de lista"
+
+msgid "Load models"
+msgstr "Carregar modelos"
+
+msgid "Location:"
+msgstr "Local:"
+
+#, python-format
+msgid "Location: %s"
+msgstr "Local: %s"
+
+msgid "Lock the document after signing"
+msgstr "Bloquear o documento após assinar"
+
+msgid "Lossless (fonts and structure only)"
+msgstr "Sem perdas (só fontes e estrutura)"
+
+msgid "Low compression (high quality, 300 dpi)"
+msgstr "Compressão baixa (alta qualidade, 300 dpi)"
+
+msgid "Main"
+msgstr "Principal"
+
+msgid "Make a new PDF with selected pages."
+msgstr "Cria um novo PDF com as páginas escolhidas."
+
+msgid "Make scanned PDFs searchable and selectable."
+msgstr "Torna PDF digitalizados pesquisáveis e selecionáveis."
+
+msgid "Manage certificates"
+msgstr "Gerenciar certificados"
+
+msgid "Margin:"
+msgstr "Margem:"
+
+msgid "Mask, keeping 4 digits (AEPD): ***4567**"
+msgstr "Mascarar mantendo 4 dígitos (AEPD): ***4567**"
+
+msgid "Masked"
+msgstr "Mascarado"
+
+msgid "Merge PDF"
+msgstr "Juntar PDF"
+
+msgid "Merge into an image (the watermark cannot be removed)"
+msgstr "Mesclar numa imagem (a marca d'água não pode ser removida)"
+
+msgid "Mode:"
+msgstr "Modo:"
+
+msgid "Model:"
+msgstr "Modelo:"
+
+msgid "Mosaic (repeated)"
+msgstr "Mosaico (repetido)"
+
+msgid "Move / resize"
+msgstr "Mover / redimensionar"
+
+msgid "Multi-line"
+msgstr "Várias linhas"
+
+msgid "My workflow"
+msgstr "Meu fluxo de trabalho"
+
+msgid "Name / subtitle:"
+msgstr "Nome / subtítulo:"
+
+msgid "Name Surname"
+msgstr "Nome Sobrenome"
+
+msgid "Name and date"
+msgstr "Nome e data"
+
+msgid "Name · date"
+msgstr "Nome · data"
+
+msgid "Name:"
+msgstr "Nome:"
+
+msgid "Network card:"
+msgstr "Placa de rede:"
+
+msgid "New"
+msgstr "Novo"
+
+msgid "New document.pdf"
+msgstr "Novo documento.pdf"
+
+#, python-format
+msgid "No API key configured for %s (Preferences → AI)."
+msgstr "Nenhuma chave de API configurada para %s (Preferências → IA)."
+
+msgid "No Anthropic API key configured (Preferences → AI)."
+msgstr "Nenhuma chave da API da Anthropic configurada (Preferências → IA)."
+
+msgid "No certificates: import a .p12/.pfx"
+msgstr "Sem certificados: importe um .p12/.pfx"
+
+msgid "No digital signatures"
+msgstr "Sem assinaturas digitais"
+
+msgid "No image"
+msgstr "Sem imagem"
+
+msgid "No image selected"
+msgstr "Nenhuma imagem selecionada"
+
+msgid "No new fields were detected."
+msgstr "Nenhum campo novo foi detectado."
+
+msgid "No results"
+msgstr "Sem resultados"
+
+msgid "No scanner found (package sane-utils)"
+msgstr "Nenhum scanner encontrado (pacote sane-utils)"
+
+msgid "No subtitle"
+msgstr "Sem subtítulo"
+
+msgid "No suitable model found; choose one in Preferences → AI."
+msgstr "Nenhum modelo adequado encontrado; escolha um em Preferências → IA."
+
+msgid "No system keyring found: passwords cannot be remembered."
+msgstr "Nenhum chaveiro do sistema: as senhas não podem ser lembradas."
+
+msgid "No text"
+msgstr "Sem texto"
+
+msgid "No text found at that point."
+msgstr "Não há texto nesse ponto."
+
+msgid "None found (you can still add the watermark)"
+msgstr "Nenhum encontrado (você ainda pode adicionar a marca d'água)"
+
+msgid "Note"
+msgstr "Nota"
+
+msgid "Number"
+msgstr "Número"
+
+msgid "Numbering:"
+msgstr "Numeração:"
+
+msgid "OCR PDF"
+msgstr "OCR PDF"
+
+#, python-brace-format
+msgid "ONLY FOR {purpose} · {date}"
+msgstr "SOMENTE PARA {purpose} · {date}"
+
+msgid "Office documents"
+msgstr "Documentos de escritório"
+
+msgid "Ollama URL:"
+msgstr "URL do Ollama:"
+
+msgid "One short paragraph"
+msgstr "Um parágrafo curto"
+
+msgid "One slide per page."
+msgstr "Um slide por página."
+
+msgid "Only certificates imported into ACRPDF can be removed here."
+msgstr "Aqui só é possível remover certificados importados no ACRPDF."
+
+msgid "Only over the images (e.g. photo of the card)"
+msgstr "Só sobre as imagens (ex. foto do cartão)"
+
+msgid "Opacity:"
+msgstr "Opacidade:"
+
+msgid "Open"
+msgstr "Abrir"
+
+msgid "Open file"
+msgstr "Abrir arquivo"
+
+msgid "Open folder"
+msgstr "Abrir pasta"
+
+msgid "Open in ACRPDF"
+msgstr "Abrir no ACRPDF"
+
+msgid "Open recent"
+msgstr "Abrir recentes"
+
+msgid "Open…"
+msgstr "Abrir…"
+
+msgid "Optimize PDF"
+msgstr "Otimizar PDF"
+
+#, python-format
+msgid "Option %d"
+msgstr "Opção %d"
+
+msgid "Options (one per line):"
+msgstr "Opções (uma por linha):"
+
+msgid "Options…"
+msgstr "Opções…"
+
+msgid "Organize PDF"
+msgstr "Organizar PDF"
+
+msgid "Organize pages"
+msgstr "Organizar páginas"
+
+msgid "Original"
+msgstr "Original"
+
+msgid "Original colors"
+msgstr "Cores originais"
+
+msgid "Other font:"
+msgstr "Outra fonte:"
+
+msgid "Output folder"
+msgstr "Pasta de destino"
+
+msgid "Output folder:"
+msgstr "Pasta de destino:"
+
+msgid "Overview and key points"
+msgstr "Visão geral e pontos principais"
+
+msgid "PAID"
+msgstr "PAGO"
+
+msgid "PDF forms"
+msgstr "Formulários PDF"
+
+msgid "PDF printer"
+msgstr "Impressora PDF"
+
+msgid "PDF printer…"
+msgstr "Impressora PDF…"
+
+msgid "PDF security"
+msgstr "Segurança PDF"
+
+msgid "PDF to Excel"
+msgstr "PDF para Excel"
+
+msgid "PDF to JPG"
+msgstr "PDF para JPG"
+
+msgid "PDF to Markdown"
+msgstr "PDF para Markdown"
+
+msgid "PDF to PDF/A"
+msgstr "PDF para PDF/A"
+
+msgid "PDF to PNG"
+msgstr "PDF para PNG"
+
+msgid "PDF to PowerPoint"
+msgstr "PDF para PowerPoint"
+
+msgid "PDF to Word"
+msgstr "PDF para Word"
+
+msgid "PDF to text"
+msgstr "PDF para texto"
+
+msgid "PDF viewer, editor and digital signing tool for Linux."
+msgstr "Visualizador, editor e assinador digital de PDF para Linux."
+
+msgid ""
+"PNG or JPG (a transparent background is best) or SVG (vector, always sharp — the format used by "
+"professional signature pads)."
+msgstr ""
+"PNG ou JPG (de preferência com fundo transparente) ou SVG (vetorial, sempre nítido — o formato "
+"das mesas de assinatura profissionais)."
+
+msgid "PPT, PPTX, ODP to PDF."
+msgstr "PPT, PPTX, ODP para PDF."
+
+msgid "Page"
+msgstr "Página"
+
+#, python-format
+msgid "Page %(n)d of %(total)d"
+msgstr "Página %(n)d de %(total)d"
+
+#, python-format
+msgid "Page %d"
+msgstr "Página %d"
+
+msgid "Page numbers"
+msgstr "Números de página"
+
+msgid "Page size:"
+msgstr "Tamanho da página:"
+
+#, python-brace-format
+msgid "Page {n}"
+msgstr "Página {n}"
+
+#, python-brace-format
+msgid "Page {n} of {total}"
+msgstr "Página {n} de {total}"
+
+msgid "Pages"
+msgstr "Páginas"
+
+msgid "Pages (drag to reorder):"
+msgstr "Páginas (arraste para reordenar):"
+
+#, python-format
+msgid "Pages extracted to %s"
+msgstr "Páginas extraídas em %s"
+
+msgid "Pages per file:"
+msgstr "Páginas por arquivo:"
+
+msgid "Pages sent:"
+msgstr "Páginas enviadas:"
+
+msgid "Pages:"
+msgstr "Páginas:"
+
+#, python-format
+msgid "Password for %s:"
+msgstr "Senha de %s:"
+
+msgid "Password to open:"
+msgstr "Senha para abrir:"
+
+msgid "Password:"
+msgstr "Senha:"
+
+msgid "Permanently remove sensitive text or areas."
+msgstr "Remove permanentemente textos ou áreas sensíveis."
+
+msgid "Permissions password:"
+msgstr "Senha de permissões:"
+
+msgid "Phone camera"
+msgstr "Câmara do celular"
+
+msgid "Place"
+msgstr "Colocar"
+
+msgid "Place stamp"
+msgstr "Colocar carimbo"
+
+msgid "Plain text of every page."
+msgstr "Texto simples de cada página."
+
+msgid "Position, format and typography of your choice."
+msgstr "Posição, formato e fonte à sua escolha."
+
+msgid "Position:"
+msgstr "Posição:"
+
+msgid "PowerPoint to PDF"
+msgstr "PowerPoint para PDF"
+
+msgid "Preferences"
+msgstr "Preferências"
+
+msgid "Preferences…"
+msgstr "Preferências…"
+
+msgid "Prepare form"
+msgstr "Preparar formulário"
+
+msgid "Preview"
+msgstr "Pré-visualização"
+
+#, python-format
+msgid "Preview: %s"
+msgstr "Pré-visualização: %s"
+
+msgid "Print"
+msgstr "Imprimir"
+
+msgid ""
+"Print from any program (LibreOffice, Firefox, Chrome…) to the <b>ACRPDF</b> printer and the PDF "
+"is saved in your <b>~/PDF</b> folder."
+msgstr ""
+"Imprima de qualquer programa (LibreOffice, Firefox, Chrome…) na impressora <b>ACRPDF</b> e o PDF "
+"será salvo na sua pasta <b>~/PDF</b>."
+
+msgid "Printing could not be started."
+msgstr "Não foi possível iniciar a impressão."
+
+msgid "Printing…"
+msgstr "Imprimindo…"
+
+msgid "Print…"
+msgstr "Imprimir…"
+
+msgid "Procedure / purpose:"
+msgstr "Trâmite / finalidade:"
+
+msgid "Process the first file and show the result before saving anything"
+msgstr "Processa o primeiro arquivo e mostra o resultado antes de salvar qualquer coisa"
+
+msgid "Properties"
+msgstr "Propriedades"
+
+msgid "Properties…"
+msgstr "Propriedades…"
+
+msgid "Protect"
+msgstr "Proteger"
+
+msgid "Protect DNI / NIE"
+msgstr "Proteger DNI / NIE"
+
+msgid "Protect PDF"
+msgstr "Proteger PDF"
+
+msgid "Protect with password"
+msgstr "Proteger com senha"
+
+msgid "Protected document"
+msgstr "Documento protegido"
+
+msgid "Provider:"
+msgstr "Fornecedor:"
+
+msgid "Quit"
+msgstr "Sair"
+
+msgid "RECEIVED"
+msgstr "RECEBIDO"
+
+msgid "REJECTED"
+msgstr "REJEITADO"
+
+msgid "REVIEWED"
+msgstr "REVISADO"
+
+msgid "Radio button"
+msgstr "Botão de opção"
+
+msgid "Ranges:"
+msgstr "Intervalos:"
+
+msgid "Rate limit reached; try again in a minute."
+msgstr "Limite de pedidos atingido; tente de novo daqui a um minuto."
+
+msgid "Ready"
+msgstr "Pronto"
+
+msgid "Reason:"
+msgstr "Motivo:"
+
+#, python-format
+msgid "Reason: %s"
+msgstr "Motivo: %s"
+
+msgid "Recent files"
+msgstr "Arquivos recentes"
+
+msgid "Recognize text (OCR)"
+msgstr "Reconhecer texto (OCR)"
+
+msgid "Recognizing text…"
+msgstr "Reconhecendo texto…"
+
+msgid "Recommended (images at 200 dpi)"
+msgstr "Recomendada (imagens a 200 dpi)"
+
+msgid "Recommended compression (good quality, 150 dpi)"
+msgstr "Compressão recomendada (boa qualidade, 150 dpi)"
+
+msgid "Recover data from damaged PDF files."
+msgstr "Recupera dados de PDF danificados."
+
+msgid "Rectangle"
+msgstr "Retângulo"
+
+msgid "Redact"
+msgstr "Ocultar conteúdo"
+
+msgid "Redact PDF"
+msgstr "Ocultar conteúdo do PDF"
+
+msgid "Redact area"
+msgstr "Ocultar área"
+
+msgid "Redact permanently"
+msgstr "Ocultar definitivamente"
+
+msgid "Redact searched text"
+msgstr "Ocultar texto pesquisado"
+
+msgid "Redact text"
+msgstr "Ocultar texto"
+
+msgid "Redo"
+msgstr "Refazer"
+
+msgid "Reduce file size keeping the best possible quality."
+msgstr "Reduz o tamanho mantendo a melhor qualidade possível."
+
+msgid "Remember the password in the system keyring"
+msgstr "Lembrar a senha no chaveiro do sistema"
+
+msgid "Remove"
+msgstr "Remover"
+
+msgid "Remove pages"
+msgstr "Remover páginas"
+
+msgid "Remove password"
+msgstr "Remover senha"
+
+msgid "Remove the password of PDFs you can open."
+msgstr "Remove a senha dos PDF que você consegue abrir."
+
+msgid "Remove white background"
+msgstr "Remover fundo branco"
+
+#, python-format
+msgid "Remove «%s» from ACRPDF?"
+msgstr "Remover «%s» do ACRPDF?"
+
+msgid "Removed:"
+msgstr "Removido:"
+
+msgid "Repair PDF"
+msgstr "Reparar PDF"
+
+msgid "Repeat password:"
+msgstr "Repetir senha:"
+
+msgid "Request signatures"
+msgstr "Solicitar assinaturas"
+
+msgid "Request signatures…"
+msgstr "Solicitar assinaturas…"
+
+msgid "Required"
+msgstr "Obrigatório"
+
+msgid "Resolution:"
+msgstr "Resolução:"
+
+msgid "Rotate PDF"
+msgstr "Girar PDF"
+
+msgid "Rotate all or some pages."
+msgstr "Gira todas ou algumas páginas."
+
+msgid "Rotate left"
+msgstr "Girar para a esquerda"
+
+msgid "Rotate page"
+msgstr "Girar página"
+
+msgid "Rotate right"
+msgstr "Girar para a direita"
+
+msgid "Rotation:"
+msgstr "Rotação:"
+
+msgid "Run on files…"
+msgstr "Executar em arquivos…"
+
+msgid "Runs on this computer: the document never leaves it."
+msgstr "Roda neste computador: o documento nunca sai dele."
+
+msgid "Same as image"
+msgstr "Igual à imagem"
+
+msgid "Save"
+msgstr "Salvar"
+
+msgid "Save PDF"
+msgstr "Salvar PDF"
+
+msgid "Save as"
+msgstr "Salvar como"
+
+msgid "Save as:"
+msgstr "Salvar como:"
+
+msgid "Save as…"
+msgstr "Salvar como…"
+
+#, python-format
+msgid "Save changes to «%s»?"
+msgstr "Salvar as alterações em «%s»?"
+
+msgid "Save protected PDF"
+msgstr "Salvar PDF protegido"
+
+msgid "Save signed PDF"
+msgstr "Salvar PDF assinado"
+
+msgid "Save this signature to reuse it"
+msgstr "Salvar esta assinatura para reutilizá-la"
+
+msgid "Save to:"
+msgstr "Salvar em:"
+
+msgid "Save without password"
+msgstr "Salvar sem senha"
+
+msgid "Saved password removed."
+msgstr "Senha salva removida."
+
+#, python-format
+msgid ""
+"Saved without password:\n"
+"%s"
+msgstr ""
+"Salvo sem senha:\n"
+"%s"
+
+msgid "Saved workflows"
+msgstr "Fluxos salvos"
+
+#, python-format
+msgid "Saved: %(path)s (%(size)d KB)"
+msgstr "Salvo: %(path)s (%(size)d KB)"
+
+msgid "Scan page"
+msgstr "Digitalizar página"
+
+msgid "Scan to PDF"
+msgstr "Digitalizar para PDF"
+
+msgid "Scanner"
+msgstr "Scanner"
+
+msgid "Search scanners"
+msgstr "Procurar scanners"
+
+msgid "Searching DNI/NIE numbers (images are read with OCR)…"
+msgstr "Procurando DNI/NIE (as imagens são lidas com OCR)…"
+
+msgid "Select / resize"
+msgstr "Selecionar / redimensionar"
+
+msgid "Select text"
+msgstr "Selecionar texto"
+
+msgid "Sending…"
+msgstr "Enviando…"
+
+msgid "Set a password first."
+msgstr "Defina uma senha primeiro."
+
+msgid "Set password…"
+msgstr "Definir senha…"
+
+msgid "Show name, date and reason"
+msgstr "Mostrar nome, data e motivo"
+
+msgid "Show/hide side panel"
+msgstr "Mostrar/ocultar painel lateral"
+
+msgid "Show/hide tools pane"
+msgstr "Mostrar/ocultar painel de ferramentas"
+
+msgid "Sign"
+msgstr "Assinar"
+
+msgid "Sign PDF"
+msgstr "Assinar PDF"
+
+msgid "Sign above the line"
+msgstr "Assine acima da linha"
+
+msgid "Sign digitally (draw area)"
+msgstr "Assinar digitalmente (desenhar área)"
+
+msgid "Sign this field with a certificate…"
+msgstr "Assinar este campo com certificado…"
+
+msgid "Sign with a digital certificate"
+msgstr "Assinar com certificado digital"
+
+msgid "Sign with a digital certificate…"
+msgstr "Assinar com certificado digital…"
+
+msgid "Sign with certificate"
+msgstr "Assinar com certificado"
+
+msgid "Sign yourself (handwritten or certificate) or request signatures by e-mail."
+msgstr "Assine você mesmo (manuscrita ou certificado) ou solicite assinaturas por e-mail."
+
+msgid "Sign ▾"
+msgstr "Assinar ▾"
+
+msgid "Signature"
+msgstr "Assinatura"
+
+msgid "Signature field"
+msgstr "Campo de assinatura"
+
+msgid "Signature image"
+msgstr "Imagem da assinatura"
+
+msgid "Signature image:"
+msgstr "Imagem da assinatura:"
+
+msgid "Signature images"
+msgstr "Imagens de assinatura"
+
+msgid "Signature panel"
+msgstr "Painel de assinaturas"
+
+#, python-format
+msgid "Signature request: %s"
+msgstr "Pedido de assinatura: %s"
+
+msgid "Signatures"
+msgstr "Assinaturas"
+
+#, python-format
+msgid "Signed and all signatures are valid: %s."
+msgstr "Assinado e todas as assinaturas são válidas: %s."
+
+#, python-format
+msgid "Signed by %s. The signatures are intact, but at least one signer's identity could not be verified."
+msgstr ""
+"Assinado por %s. As assinaturas estão íntegras, mas não foi possível verificar a identidade de "
+"pelo menos um signatário."
+
+#, python-format
+msgid "Signed by <b>%(name)s</b>.<br><br>Saved to:<br>%(path)s"
+msgstr "Assinado por <b>%(name)s</b>.<br><br>Salvo em:<br>%(path)s"
+
+msgid "Signed document"
+msgstr "Documento assinado"
+
+msgid "Signers' e-mail addresses (separated by commas):"
+msgstr "E-mails dos signatários (separados por vírgulas):"
+
+#, python-format
+msgid "Signing failed: %s"
+msgstr "Falha ao assinar: %s"
+
+msgid "Size"
+msgstr "Tamanho"
+
+msgid "Size:"
+msgstr "Tamanho:"
+
+#, python-format
+msgid "Size: %d KB"
+msgstr "Tamanho: %d KB"
+
+msgid "Smaller text"
+msgstr "Texto menor"
+
+msgid "Smallest file (images at 150 dpi)"
+msgstr "Arquivo menor (imagens a 150 dpi)"
+
+msgid ""
+"Some pages are images: install Tesseract to read them (sudo apt install tesseract-ocr tesseract-"
+"ocr-spa)."
+msgstr ""
+"Algumas páginas são imagens: instale o Tesseract para lê-las (sudo apt install tesseract-ocr "
+"tesseract-ocr-spa)."
+
+msgid "Sort, rotate, duplicate and delete pages visually."
+msgstr "Ordene, gire, duplique e exclua páginas visualmente."
+
+msgid "Source"
+msgstr "Origem"
+
+msgid "Split"
+msgstr "Dividir"
+
+msgid "Split PDF"
+msgstr "Dividir PDF"
+
+msgid "Split by page ranges or every N pages."
+msgstr "Divide por intervalos de páginas ou a cada N páginas."
+
+msgid "Spreadsheets to PDF with columns fitted to the page width."
+msgstr "Planilhas para PDF com as colunas ajustadas à largura da página."
+
+msgid "Stamp"
+msgstr "Carimbo"
+
+msgid "Stamp image"
+msgstr "Imagem do carimbo"
+
+msgid "Stamps"
+msgstr "Carimbos"
+
+msgid "Start on page:"
+msgstr "Começar na página:"
+
+msgid "Status"
+msgstr "Estado"
+
+msgid "Steps (run from top to bottom):"
+msgstr "Passos (executados de cima para baixo):"
+
+msgid "Strikethrough"
+msgstr "Riscar"
+
+msgid "Style:"
+msgstr "Estilo:"
+
+msgid "Subtitle:"
+msgstr "Subtítulo:"
+
+msgid "Summarize"
+msgstr "Resumir"
+
+msgid "Summarize with AI"
+msgstr "Resumir com IA"
+
+#, python-format
+msgid "Summary of %s"
+msgstr "Resumo de %s"
+
+msgid "System default"
+msgstr "Padrão do sistema"
+
+msgid "Tables to XLSX spreadsheets."
+msgstr "Tabelas para planilhas XLSX."
+
+msgid "Take photos of each page. They appear on your computer instantly."
+msgstr "Fotografe cada página. Elas aparecem na hora no seu computador."
+
+msgid "Tesseract OCR is not installed. Install the packages tesseract-ocr and tesseract-ocr-spa."
+msgstr "O Tesseract OCR não está instalado. Instale os pacotes tesseract-ocr e tesseract-ocr-por."
+
+msgid "Tesseract is not installed: sudo apt install tesseract-ocr tesseract-ocr-spa"
+msgstr "O Tesseract não está instalado: sudo apt install tesseract-ocr tesseract-ocr-por"
+
+msgid "Text"
+msgstr "Texto"
+
+msgid "Text box"
+msgstr "Caixa de texto"
+
+msgid "Text copied"
+msgstr "Texto copiado"
+
+msgid "Text field"
+msgstr "Campo de texto"
+
+msgid "Text or image over your pages."
+msgstr "Texto ou imagem sobre as suas páginas."
+
+msgid "Text recognized. Click any word to edit it; Ctrl+F searches the text."
+msgstr "Texto reconhecido. Clique em qualquer palavra para editá-la; Ctrl+F pesquisa o texto."
+
+msgid "Text stamps (vector)"
+msgstr "Carimbos de texto (vetoriais)"
+
+msgid "Text to remove from the whole document:"
+msgstr "Texto a remover de todo o documento:"
+
+msgid "Text:"
+msgstr "Texto:"
+
+#, python-format
+msgid "The %s API key is not valid."
+msgstr "A chave de API de %s não é válida."
+
+msgid "The Anthropic API key is not valid."
+msgstr "A chave da API da Anthropic não é válida."
+
+msgid "The answer was too long; try a shorter document or range."
+msgstr "A resposta é longa demais; tente um documento ou intervalo menor."
+
+msgid "The anthropic package is not installed."
+msgstr "O pacote anthropic não está instalado."
+
+msgid "The document has no empty signature fields. Add one for each signer on the last page?"
+msgstr "O documento não tem campos de assinatura vazios. Adicionar um por signatário na última página?"
+
+msgid "The document has no text (run OCR first if it is scanned)."
+msgstr "O documento não tem texto (faça OCR primeiro se for digitalizado)."
+
+msgid "The document is not protected."
+msgstr "O documento não está protegido."
+
+msgid "The document was changed after signing."
+msgstr "O documento foi alterado depois de assinado."
+
+msgid "The file could not be repaired."
+msgstr "Não foi possível reparar o arquivo."
+
+msgid "The language change applies after restarting ACRPDF."
+msgstr "A mudança de idioma é aplicada ao reiniciar o ACRPDF."
+
+msgid "The model declined this request."
+msgstr "O modelo recusou este pedido."
+
+msgid "The model returned an invalid answer."
+msgstr "O modelo devolveu uma resposta inválida."
+
+#, python-format
+msgid ""
+"The operation could not be completed:\n"
+"%s"
+msgstr ""
+"Não foi possível concluir a operação:\n"
+"%s"
+
+msgid "The passwords do not match."
+msgstr "As senhas não coincidem."
+
+msgid "The signature is empty."
+msgstr "A assinatura está vazia."
+
+msgid "The workflow has no steps."
+msgstr "O fluxo de trabalho não tem passos."
+
+msgid "There are no pages yet."
+msgstr "Ainda não há páginas."
+
+msgid "There is no text in the selected area."
+msgstr "Não há texto na área selecionada."
+
+msgid "Thickness:"
+msgstr "Espessura:"
+
+#, python-format
+msgid "This document has %d signature field(s) waiting to be signed."
+msgstr "Este documento tem %d campo(s) de assinatura aguardando assinatura."
+
+msgid ""
+"This document has digital signatures.\n"
+"\n"
+"Changes are saved as an incremental revision: the signatures stay valid for the signed version, "
+"but readers will report that the document was changed afterwards.\n"
+"\n"
+"Continue?"
+msgstr ""
+"Este documento tem assinaturas digitais.\n"
+"\n"
+"As alterações são salvas como revisão incremental: as assinaturas continuam válidas para a versão"
+" assinada, mas os leitores indicarão que o documento foi alterado depois.\n"
+"\n"
+"Continuar?"
+
+msgid "This step has no options."
+msgstr "Este passo não tem opções."
+
+msgid "Tool"
+msgstr "Ferramenta"
+
+msgid "Tooltip:"
+msgstr "Dica:"
+
+msgid "Top"
+msgstr "Em cima"
+
+msgid "Top center"
+msgstr "Superior central"
+
+msgid "Top left"
+msgstr "Superior esquerda"
+
+msgid "Top right"
+msgstr "Superior direita"
+
+msgid "Translate PDF"
+msgstr "Traduzir PDF"
+
+msgid "Translate to:"
+msgstr "Traduzir para:"
+
+msgid "Translate with AI keeping fonts, layout and formatting."
+msgstr "Traduza com IA mantendo fontes, layout e formatação."
+
+msgid "Translate…"
+msgstr "Traduzir…"
+
+msgid "Trim white margins of every page."
+msgstr "Recorta as margens brancas de cada página."
+
+msgid "Type"
+msgstr "Digitar"
+
+msgid "Type your name"
+msgstr "Digite seu nome"
+
+msgid "Underline"
+msgstr "Sublinhar"
+
+msgid "Undo"
+msgstr "Desfazer"
+
+msgid "Unexpected error:"
+msgstr "Erro inesperado:"
+
+msgid "Unlock PDF"
+msgstr "Desbloquear PDF"
+
+msgid "Untitled.pdf"
+msgstr "Sem título.pdf"
+
+msgid "Up"
+msgstr "Subir"
+
+msgid "Upload"
+msgstr "Enviar imagem"
+
+msgid "Upload PNG/SVG…"
+msgstr "Enviar PNG/SVG…"
+
+msgid "Use a .p12/.pfx file without importing it"
+msgstr "Usar um arquivo .p12/.pfx sem importá-lo"
+
+msgid "Use an image…"
+msgstr "Usar uma imagem…"
+
+msgid "Use signature"
+msgstr "Usar assinatura"
+
+msgid "Use this color"
+msgstr "Usar esta cor"
+
+msgid "Use your phone camera (QR code) or a scanner."
+msgstr "Use a câmera do celular (código QR) ou um scanner."
+
+msgid ""
+"Uses the AI provider chosen in Preferences (Claude, ChatGPT, DeepSeek or a local Ollama model). "
+"With online providers the document text is sent to that company."
+msgstr ""
+"Usa o fornecedor de IA escolhido nas Preferências (Claude, ChatGPT, DeepSeek ou um modelo local "
+"do Ollama). Com fornecedores online, o texto do documento é enviado a essa empresa."
+
+msgid "VOID"
+msgstr "ANULADO"
+
+msgid "Valid"
+msgstr "Válida"
+
+msgid "Valid until"
+msgstr "Válido até"
+
+msgid "Validate signatures"
+msgstr "Validar assinaturas"
+
+msgid "Value"
+msgstr "Valor"
+
+#, python-brace-format
+msgid "Variables: {n} page, {total} total, {date} today"
+msgstr "Variáveis: {n} página, {total} total, {date} hoje"
+
+msgid "View, edit, fill, sign and certify PDF documents."
+msgstr "Veja, edite, preencha, assine e certifique documentos PDF."
+
+msgid "Watermark"
+msgstr "Marca d'água"
+
+msgid "Watermark \"DNI for … procedure\" and mask the number (AEPD ***4567**), also on photos."
+msgstr "Marca d'água «DNI para … trâmite» e mascaramento do número (AEPD ***4567**), também em fotos."
+
+msgid "Watermark image"
+msgstr "Imagem da marca d'água"
+
+msgid "Watermark:"
+msgstr "Marca d'água:"
+
+msgid "Web address:"
+msgstr "Endereço web:"
+
+msgid "Web pages (paste the address) or HTML files to PDF."
+msgstr "Páginas web (cole o endereço) ou arquivos HTML para PDF."
+
+#, python-format
+msgid "When you summarize or translate, the document text is sent to %s."
+msgstr "Ao resumir ou traduzir, o texto do documento é enviado a %s."
+
+msgid "Wi-Fi"
+msgstr "Wi-Fi"
+
+msgid "Width"
+msgstr "Espessura"
+
+msgid "Word to PDF"
+msgstr "Word para PDF"
+
+#, python-format
+msgid "Workflow: %s"
+msgstr "Fluxo de trabalho: %s"
+
+msgid "Workflows"
+msgstr "Fluxos de trabalho"
+
+msgid "Wrong password or invalid certificate."
+msgstr "Senha incorreta ou certificado inválido."
+
+msgid "Wrong password."
+msgstr "Senha incorreta."
+
+msgid "Wrong primary password for the Firefox certificate store."
+msgstr "Senha principal incorreta para o repositório de certificados do Firefox."
+
+msgid "Zoom in"
+msgstr "Ampliar"
+
+msgid "Zoom out"
+msgstr "Reduzir"
+
+msgid "_flattened"
+msgstr "_achatado"
+
+msgid "_numbered"
+msgstr "_numerado"
+
+msgid "_pages"
+msgstr "_paginas"
+
+msgid "_protected"
+msgstr "_protegido"
+
+msgid "_redacted"
+msgstr "_ocultado"
+
+msgid "_signed"
+msgstr "_assinado"
+
+msgid "_unlocked"
+msgstr "_desbloqueado"
+
+msgid "_watermark"
+msgstr "_marca_dagua"
+
+msgid "all pages"
+msgstr "todas as páginas"
+
+msgid "e.g. 1-3, 4-6, 7-"
+msgstr "ex. 1-3, 4-6, 7-"
+
+msgid "e.g. 1-3, 5, 8-"
+msgstr "ex. 1-3, 5, 8-"
+
+msgid "e.g. RENTAL WITH IDEALISTA"
+msgstr "ex. ALUGUEL NA IDEALISTA"
+
+msgid "field"
+msgstr "campo"
+
+msgid "local, offline"
+msgstr "local, offline"
+
+msgid "pk12util was not found (package libnss3-tools)."
+msgstr "pk12util não encontrado (pacote libnss3-tools)."
+
+msgid "saved in the system keyring"
+msgstr "salva no chaveiro do sistema"
+
+msgid "until"
+msgstr "até"
+
+msgid "virtual"
+msgstr "virtual"
+
+#, python-brace-format
+msgid "{doc} for {purpose}"
+msgstr "{doc} para {purpose}"
+
+msgid "↺ Rotate left"
+msgstr "↺ Girar para a esquerda"
+
+msgid "↻ Rotate right"
+msgstr "↻ Girar para a direita"
+
+msgid "✔ The virtual printer <b>ACRPDF</b> is installed."
+msgstr "✔ A impressora virtual <b>ACRPDF</b> está instalada."
+
+msgid "✖ The virtual printer is not installed (install the .deb package)."
+msgstr "✖ A impressora virtual não está instalada (instale o pacote .deb)."
+
+msgid "📷 Take photo"
+msgstr "📷 Tirar foto"
+

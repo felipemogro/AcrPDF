@@ -1,0 +1,54 @@
+#!/bin/bash
+
+if [ $# -eq 0 ]; then
+    echo 'file acrpdf:/ "ACRPDF Reader" "ACRPDF Reader - Print to PDF"'
+    exit 0
+fi
+if [ $# -lt 5 ]; then
+    echo "Usage: acrpdf job-id user title copies options [file]" >&2
+    exit 1
+fi
+
+JOBUSER="$2"; TITLE="$3"; INPUT="$6"
+CUPS_BACKEND_OK=0; CUPS_BACKEND_FAILED=1
+
+PW=$(getent passwd "$JOBUSER")
+if [ -z "$PW" ]; then
+    echo "ERROR: unknown user $JOBUSER" >&2
+    exit $CUPS_BACKEND_FAILED
+fi
+HOMEDIR=$(echo "$PW" | cut -d: -f6)
+GID=$(echo "$PW" | cut -d: -f4)
+OUTDIR="$HOMEDIR/PDF"
+if [ ! -d "$OUTDIR" ]; then
+    install -d -o "$JOBUSER" -g "$GID" -m 0755 "$OUTDIR" || exit $CUPS_BACKEND_FAILED
+fi
+
+NAME=$(basename -- "$TITLE" | sed -E 's/\.(pdf|odt|docx?|txt|html?)$//I; s/[^[:alnum:] ._()-]/_/g; s/^[ .]+//' | cut -c1-80)
+[ -z "$NAME" ] && NAME="document"
+OUT="$OUTDIR/$NAME.pdf"
+[ -e "$OUT" ] && OUT="$OUTDIR/${NAME}_$(date +%Y%m%d-%H%M%S).pdf"
+
+TMP=$(mktemp /tmp/acrpdf-XXXXXX) || exit $CUPS_BACKEND_FAILED
+trap 'rm -f "$TMP"' EXIT
+if [ -n "$INPUT" ]; then
+    cat -- "$INPUT" > "$TMP"
+else
+    cat > "$TMP"
+fi
+
+case "$(head -c 4 "$TMP")" in
+    %PDF)
+        cp -- "$TMP" "$OUT" ;;
+    %!*)
+        gs -q -dSAFER -dBATCH -dNOPAUSE -sDEVICE=pdfwrite -dAutoRotatePages=/None -dCompatibilityLevel=1.7 \
+           -sOutputFile="$OUT" "$TMP" || exit $CUPS_BACKEND_FAILED ;;
+    *)
+        echo "ERROR: unsupported job format" >&2
+        exit $CUPS_BACKEND_FAILED ;;
+esac
+
+chown "$JOBUSER:$GID" "$OUT"
+chmod 0644 "$OUT"
+echo "INFO: PDF saved to $OUT" >&2
+exit $CUPS_BACKEND_OK
