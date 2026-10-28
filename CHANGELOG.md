@@ -3,7 +3,7 @@
 Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/); el proyecto
 sigue [versionado semántico](https://semver.org/lang/es/).
 
-## [Sin publicar]
+## [2.3.0] - 2026-10-28
 
 ### Cambiado
 - La aplicación pasa a llamarse **AcrPDF** (antes *ACRPDF Reader*).
