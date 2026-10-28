@@ -54,14 +54,6 @@ def test_set_field_without_page_reference(sample_pdf):
     assert ops.all_fields(doc)[0][3] == "Madrid"
 
 
-def test_hide_ids(sample_pdf):
-    doc = pymupdf.open(sample_pdf)
-    assert len(ops.find_ids(doc)) == 3
-    assert ops.hide_ids(doc, "mask") == 3
-    text = doc[0].get_text()
-    assert "12345678Z" not in text and "***4567**" in text
-
-
 def test_page_operations(sample_pdf):
     doc = pymupdf.open(sample_pdf)
     ops.reorder(doc, [2, 0, 1])
@@ -103,15 +95,6 @@ def test_protect_and_unlock(sample_pdf, tmp_path):
         ops.unlock(locked, unlocked, "bad")
     ops.unlock(locked, unlocked, "pw")
     assert not pymupdf.open(unlocked).needs_pass
-
-
-def test_compare(sample_pdf, tmp_path):
-    changed = str(tmp_path / "b.pdf")
-    doc = pymupdf.open(sample_pdf)
-    doc[1].insert_text((72, 200), "new paragraph")
-    doc.save(changed)
-    _files, n = ops.compare(sample_pdf, changed, str(tmp_path / "diff.pdf"))
-    assert n >= 2
 
 
 @pytest.mark.skipif(not os.path.exists("/usr/bin/gs"), reason="Ghostscript not installed")
@@ -162,24 +145,6 @@ def test_save_compression_levels(tmp_path):
     assert sizes["small"] < sizes["recommended"] < sizes["high"] <= sizes["lossless"] <= len(data)
 
 
-@pytest.mark.skipif(not ops.ocr_languages(), reason="Tesseract not installed")
-def test_hide_ids_in_scanned_image():
-    import io
-    from PIL import Image, ImageDraw, ImageFont
-    img = Image.new("RGB", (1000, 160), "white")
-    font = ImageFont.truetype(ops.font_file("DejaVu Sans"), 52)
-    ImageDraw.Draw(img).text((30, 40), "DNI 12345678Z", fill="black", font=font)
-    buf = io.BytesIO()
-    img.save(buf, "PNG")
-    doc = pymupdf.open()
-    page = doc.new_page()
-    page.insert_image(pymupdf.Rect(50, 50, 410, 108), stream=buf.getvalue())
-    hits = ops.scan_ids(doc)
-    assert [h.value for h in hits] == ["12345678Z"] and hits[0].source == "ocr"
-    ops.apply_id_hits(doc, hits, "mask")
-    assert ops.scan_ids(doc) == []
-
-
 def test_placed_graphics_can_be_moved_and_survive_saving(tmp_path, svg):
     doc = pymupdf.open()
     page = doc.new_page()
@@ -195,24 +160,6 @@ def test_placed_graphics_can_be_moved_and_survive_saving(tmp_path, svg):
     rects = [r for _x, r in ops.placed_graphics(pymupdf.open(path)[0])]
     assert pymupdf.Rect(300, 600, 500, 667) in rects and pymupdf.Rect(50, 200, 250, 267) not in rects
     assert len(rects) == 3
-
-
-def test_protect_identity_watermark_and_flatten(sample_pdf):
-    data = open(sample_pdf, "rb").read()
-    hits = ops.scan_ids(pymupdf.open("pdf", data), ocr=False)
-    wm = ops.IdWatermark(purpose="ALQUILER")
-    visible = pymupdf.open("pdf", ops.protect_identity(data, hits, "mask", wm, flatten=False))
-    text = visible[0].get_text()
-    assert "***4567**" in text and "DNI para ALQUILER" in text
-    assert "12345678Z" not in "".join(p.get_text() for p in visible)
-    flat = pymupdf.open("pdf", ops.protect_identity(data, hits, "mask", wm, flatten=True))
-    assert flat.page_count == 3 and flat[0].get_text().strip() == ""
-    preview = pymupdf.open("pdf", ops.protect_identity(data, hits, "mask", wm, flatten=False, pages=[1]))
-    assert preview.page_count == 1
-
-
-def test_watermark_template_with_unknown_placeholder():
-    assert ops.IdWatermark(purpose="X").render("Copia {nombre}") == "Copia {nombre}"
 
 
 @pytest.mark.skipif(not ops.ocr_languages(), reason="Tesseract not installed")

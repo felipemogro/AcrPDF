@@ -15,7 +15,7 @@ from PyQt6.QtWidgets import (QApplication, QButtonGroup, QCheckBox, QColorDialog
                              QMessageBox, QPlainTextEdit, QPushButton, QRadioButton, QScrollArea, QSpinBox,
                              QTabWidget, QTextBrowser, QTreeWidget, QTreeWidgetItem, QVBoxLayout, QWidget)
 
-from . import certstore, dni, i18n, ops, signing
+from . import certstore, i18n, ops, signing
 from .i18n import _
 
 DATA_DIR = certstore.DATA_DIR
@@ -560,7 +560,7 @@ class CertificateManager(QDialog):
         super().__init__(parent)
         self.setWindowTitle(_("Certificates"))
         lay = QVBoxLayout(self)
-        lay.addWidget(QLabel(_("Certificates imported into ACRPDF are copied to %s (only your user can "
+        lay.addWidget(QLabel(_("Certificates imported into AcrPDF are copied to %s (only your user can "
                                "read them). Certificates from Firefox/Thunderbird are used directly from "
                                "their store.") % certstore.CERT_DIR))
         self.tree = QTreeWidget()
@@ -587,7 +587,7 @@ class CertificateManager(QDialog):
     def _load(self):
         self.tree.clear()
         self.certs = certstore.all_certificates()
-        names = {"store": "ACRPDF", "mozilla": "Firefox / Thunderbird", "file": _("File")}
+        names = {"store": "AcrPDF", "mozilla": "Firefox / Thunderbird", "file": _("File")}
         for c in self.certs:
             v = c.valid_to
             when = (v if isinstance(v, str) else v.strftime("%Y-%m-%d"))[:10] if v else ""
@@ -607,9 +607,9 @@ class CertificateManager(QDialog):
     def _remove(self):
         c = self._selected()
         if not c or c.source != "store":
-            QMessageBox.information(self, _("Certificates"), _("Only certificates imported into ACRPDF can be removed here."))
+            QMessageBox.information(self, _("Certificates"), _("Only certificates imported into AcrPDF can be removed here."))
             return
-        if QMessageBox.question(self, _("Certificates"), _("Remove «%s» from ACRPDF?") % c.label) == QMessageBox.StandardButton.Yes:
+        if QMessageBox.question(self, _("Certificates"), _("Remove «%s» from AcrPDF?") % c.label) == QMessageBox.StandardButton.Yes:
             certstore.remove_from_store(c)
             self._load()
 
@@ -669,7 +669,7 @@ class DigitalSignDialog(QDialog):
         self.cert_combo.setMinimumWidth(360)
         row.addWidget(self.cert_combo, 1)
         b = QPushButton(_("Import…"))
-        b.setToolTip(_("Import a .p12/.pfx into ACRPDF"))
+        b.setToolTip(_("Import a .p12/.pfx into AcrPDF"))
         b.clicked.connect(self._import)
         row.addWidget(b)
         b = QPushButton(_("File…"))
@@ -1034,204 +1034,6 @@ class PreviewDialog(QDialog):
             self.accept()
 
 
-class IdProtectDialog(QDialog):
-
-    def __init__(self, parent, data, hits, default_path, on_apply=None):
-        super().__init__(parent)
-        from . import ops
-        self.ops = ops
-        self.setWindowTitle(_("Protect DNI / NIE"))
-        self.data = data
-        self.hits = hits
-        self.default_path = default_path
-        self.on_apply = on_apply
-        settings = QSettings()
-        lay = QHBoxLayout(self)
-        left = QVBoxLayout()
-        lay.addLayout(left, 2)
-
-        g = QGroupBox(_("ID numbers found"))
-        gl = QVBoxLayout(g)
-        self.tree = QTreeWidget()
-        self.tree.setHeaderLabels([_("Number"), _("Page"), _("Masked"), _("Found in")])
-        self.tree.setRootIsDecorated(False)
-        self.tree.setMaximumHeight(130)
-        for hit in hits:
-            source = _("Text") if hit.source == "text" else _("Image (OCR)")
-            it = QTreeWidgetItem(self.tree, [hit.value, str(hit.page + 1), dni.mask(hit.value), source])
-            it.setCheckState(0, Qt.CheckState.Checked)
-        if not hits:
-            QTreeWidgetItem(self.tree, [_("None found (you can still add the watermark)"), "", "", ""])
-        for i in range(4):
-            self.tree.resizeColumnToContents(i)
-        gl.addWidget(self.tree)
-        self.mode = QComboBox()
-        self.mode.addItem(_("Mask, keeping 4 digits (AEPD): ***4567**"), "mask")
-        self.mode.addItem(_("Black box (remove completely)"), "black")
-        gl.addWidget(self.mode)
-        left.addWidget(g)
-
-        g = QGroupBox(_("Watermark"))
-        g.setCheckable(True)
-        g.setChecked(True)
-        self.wm_group = g
-        form = QFormLayout(g)
-        self.purpose = QLineEdit(settings.value("idwm/purpose", ""))
-        self.purpose.setPlaceholderText(_("e.g. RENTAL WITH IDEALISTA"))
-        form.addRow(_("Procedure / purpose:"), self.purpose)
-        self.text = QLineEdit(settings.value("idwm/text", _("ONLY FOR {purpose} · {date}")))
-        form.addRow(_("Text:"), self.text)
-        self.size = QSpinBox()
-        self.size.setRange(6, 72)
-        self.size.setValue(int(settings.value("idwm/size", 16)))
-        self.size.setSuffix(" pt")
-        form.addRow(_("Letter size:"), self.size)
-        self.stroke = QSpinBox()
-        self.stroke.setRange(0, 10)
-        self.stroke.setValue(int(settings.value("idwm/stroke", 0)))
-        form.addRow(_("Thickness:"), self.stroke)
-        self.opacity = QSpinBox()
-        self.opacity.setRange(5, 95)
-        self.opacity.setSuffix(" %")
-        self.opacity.setValue(int(settings.value("idwm/opacity", 35)))
-        form.addRow(_("Intensity:"), self.opacity)
-        self.spacing = QSpinBox()
-        self.spacing.setRange(50, 400)
-        self.spacing.setSuffix(" %")
-        self.spacing.setValue(int(settings.value("idwm/spacing", 100)))
-        form.addRow(_("Line spacing:"), self.spacing)
-        self.angle = QSpinBox()
-        self.angle.setRange(-90, 90)
-        self.angle.setSuffix("°")
-        self.angle.setValue(int(settings.value("idwm/angle", 30)))
-        form.addRow(_("Angle:"), self.angle)
-        self.color = ColorButton(settings.value("idwm/color", "#1f408c"), lambda _c: self._schedule())
-        form.addRow(_("Color:"), self.color)
-        self.only_images = QCheckBox(_("Only over the images (e.g. photo of the card)"))
-        self.only_images.setChecked(settings.value("idwm/only_images", "false") == "true")
-        form.addRow(self.only_images)
-        self.footer_on = QCheckBox(_("Footer"))
-        self.footer_on.setChecked(True)
-        self.footer = QLineEdit(settings.value("idwm/footer", _("{doc} for {purpose}")))
-        row = QHBoxLayout()
-        row.addWidget(self.footer_on)
-        row.addWidget(self.footer, 1)
-        form.addRow(row)
-        left.addWidget(g)
-
-        self.flatten = QCheckBox(_("Merge into an image (the watermark cannot be removed)"))
-        self.flatten.setChecked(settings.value("idwm/flatten", "true") == "true")
-        left.addWidget(self.flatten)
-        left.addStretch()
-        row = QHBoxLayout()
-        cancel = QPushButton(_("Cancel"))
-        cancel.clicked.connect(self.reject)
-        row.addWidget(cancel)
-        row.addStretch()
-        if on_apply:
-            apply_btn = QPushButton(_("Apply to document"))
-            apply_btn.clicked.connect(self._apply)
-            row.addWidget(apply_btn)
-        save = QPushButton(_("Save as…"))
-        save.setObjectName("primary")
-        save.clicked.connect(self._save)
-        row.addWidget(save)
-        left.addLayout(row)
-
-        right = QVBoxLayout()
-        right.addWidget(QLabel("<b>" + _("Preview") + "</b>"))
-        self.preview = PagePreview()
-        self.preview.setMinimumWidth(460)
-        self.preview.on_page_changed = lambda _p: self._schedule()
-        right.addWidget(self.preview, 1)
-        lay.addLayout(right, 3)
-
-        self._timer = QTimer(self, singleShot=True, interval=350, timeout=self._update_preview)
-        for w in (self.purpose, self.text, self.footer):
-            w.textChanged.connect(self._schedule)
-        for w in (self.size, self.stroke, self.opacity, self.spacing, self.angle):
-            w.valueChanged.connect(self._schedule)
-        for w in (self.only_images, self.footer_on, self.flatten, self.wm_group):
-            w.toggled.connect(self._schedule)
-        self.mode.currentIndexChanged.connect(self._schedule)
-        self.tree.itemChanged.connect(self._schedule)
-        self.resize(1180, 820)
-        QTimer.singleShot(0, self._update_preview)
-
-    def _schedule(self, *_args):
-        self._timer.start()
-
-    def watermark(self):
-        if not self.wm_group.isChecked():
-            return None
-        return self.ops.IdWatermark(
-            text=self.text.text(), purpose=self.purpose.text().strip(), size=self.size.value(),
-            stroke=self.stroke.value() / 2, opacity=self.opacity.value() / 100, color=rgb(self.color.color),
-            angle=self.angle.value(), spacing=self.spacing.value() / 100,
-            footer=self.footer.text() if self.footer_on.isChecked() else "",
-            only_images=self.only_images.isChecked(),
-            document="NIE" if any(h.value[:1] in "XYZxyz" for h in self.hits) else "DNI")
-
-    def selected_hits(self):
-        return [hit for i, hit in enumerate(self.hits)
-                if self.tree.topLevelItem(i).checkState(0) == Qt.CheckState.Checked]
-
-    def build(self, pages=None):
-        return self.ops.protect_identity(self.data, self.selected_hits(), self.mode.currentData(),
-                                         self.watermark(), self.flatten.isChecked(), pages=pages)
-
-    def _update_preview(self):
-        page = self.preview.page
-        QApplication.setOverrideCursor(Qt.CursorShape.WaitCursor)
-        try:
-            single = self.build(pages=[page])
-        finally:
-            QApplication.restoreOverrideCursor()
-        full = pymupdf.open("pdf", self.data)
-        result = pymupdf.open()
-        for i in range(full.page_count):
-            if i == page:
-                result.insert_pdf(pymupdf.open("pdf", single))
-            else:
-                result.insert_pdf(full, from_page=i, to_page=i)
-        self.preview.set_pdf(result.tobytes(), page)
-
-    def _remember(self):
-        settings = QSettings()
-        for key, value in (("purpose", self.purpose.text()), ("text", self.text.text()),
-                           ("size", self.size.value()), ("stroke", self.stroke.value()),
-                           ("opacity", self.opacity.value()), ("spacing", self.spacing.value()),
-                           ("angle", self.angle.value()), ("color", self.color.color),
-                           ("footer", self.footer.text()),
-                           ("only_images", "true" if self.only_images.isChecked() else "false"),
-                           ("flatten", "true" if self.flatten.isChecked() else "false")):
-            settings.setValue(f"idwm/{key}", value)
-
-    def _result(self):
-        QApplication.setOverrideCursor(Qt.CursorShape.WaitCursor)
-        try:
-            return self.build()
-        finally:
-            QApplication.restoreOverrideCursor()
-
-    def _apply(self):
-        self._remember()
-        self.on_apply(self._result())
-        self.accept()
-
-    def _save(self):
-        path, _f = QFileDialog.getSaveFileName(self, _("Save as"), self.default_path, "PDF (*.pdf)")
-        if not path:
-            return
-        if not path.lower().endswith(".pdf"):
-            path += ".pdf"
-        self._remember()
-        with open(path, "wb") as f:
-            f.write(self._result())
-        self.saved_path = path
-        self.accept()
-
-
 class FieldDialog(QDialog):
     def __init__(self, parent, kind, name, options=None):
         super().__init__(parent)
@@ -1445,7 +1247,7 @@ class PreferencesDialog(QDialog):
             self.language.addItem(_(name) if not code else name, code)
         self.language.setCurrentIndex(max(0, self.language.findData(settings.value("language", ""))))
         form.addRow(_("Language:"), self.language)
-        form.addRow(QLabel(_("The language change applies after restarting ACRPDF.")))
+        form.addRow(QLabel(_("The language change applies after restarting AcrPDF.")))
         self.author = QLineEdit(settings.value("author", os.environ.get("USER", "")))
         form.addRow(_("Author name for comments:"), self.author)
         self.compression = QComboBox()

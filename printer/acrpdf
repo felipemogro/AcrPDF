@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if [ $# -eq 0 ]; then
-    echo 'file acrpdf:/ "ACRPDF Reader" "ACRPDF Reader - Print to PDF"'
+    echo 'file acrpdf:/ "AcrPDF" "AcrPDF - Print to PDF"'
     exit 0
 fi
 if [ $# -lt 5 ]; then

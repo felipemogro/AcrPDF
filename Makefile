@@ -31,7 +31,7 @@ lint: $(PY)  ## Static checks
 
 pot: $(PY)  ## Extract translatable strings to po/acrpdf.pot
 	$(VENV)/bin/pybabel extract -F babel.cfg -k _ -k N_ -k ngettext:1,2 --no-location --sort-output \
-		--project "ACRPDF Reader" --version $(VERSION) -o po/acrpdf.pot .
+		--project "AcrPDF" --version $(VERSION) -o po/acrpdf.pot .
 
 update-po: pot  ## Merge new strings into po/<lang>.po
 	@for l in $(LANGS); do $(VENV)/bin/pybabel update -i po/acrpdf.pot -o po/$$l.po -l $$l --no-wrap; done

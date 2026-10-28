@@ -6,8 +6,6 @@ import subprocess
 import tempfile
 from dataclasses import dataclass, field
 
-import pymupdf
-
 from PyQt6.QtCore import QSettings, QThread, QUrl, Qt, pyqtSignal
 from PyQt6.QtGui import QDesktopServices
 from PyQt6.QtWidgets import (QCheckBox, QComboBox, QDialog, QFileDialog, QFormLayout, QHBoxLayout,
@@ -91,8 +89,6 @@ TOOLS = [
          "Edit PDF", "#", "#7d4bc4", suffix="_numbered", options=["numbers"]),
     Tool("watermark", N_("Add watermark"), N_("Text or image over your pages."), "Edit PDF", "≋", "#7d4bc4",
          suffix="_watermark", options=["watermark"]),
-    Tool("crop", N_("Crop PDF"), N_("Trim white margins of every page."), "Edit PDF", "⌗", "#7d4bc4",
-         suffix="_cropped", options=["margin"]),
     Tool("edit", N_("Edit PDF"), N_("Add text, images, shapes and change fonts."), "Edit PDF", "✎", "#7d4bc4",
          multiple=False, editor="edit"),
     Tool("forms", N_("PDF forms"), N_("Detect fields automatically, create fillable forms or fill them in."),
@@ -105,11 +101,6 @@ TOOLS = [
          "✍", "#2c6fd6", multiple=False, editor="certs"),
     Tool("redact", N_("Redact PDF"), N_("Permanently remove sensitive text or areas."), "PDF security", "▬",
          "#2c6fd6", multiple=False, editor="redact"),
-    Tool("hideid", N_("Protect DNI / NIE"),
-         N_("Watermark \"DNI for … procedure\" and mask the number (AEPD ***4567**), also on photos."),
-         "PDF security", "ID", "#2c6fd6", suffix="_protected", options=["hideid"]),
-    Tool("compare", N_("Compare PDF"), N_("Highlight the differences between two versions."), "PDF security",
-         "⇄", "#2c6fd6", "pdf", True, "file", ext="pdf"),
     Tool("summarize", N_("Summarize with AI"), N_("Clear, concise summaries with the key points."), "Intelligence",
          "✦", "#6a3fd4", suffix="_summary", ext="md", options=["summary"]),
     Tool("translate", N_("Translate PDF"), N_("Translate with AI keeping fonts, layout and formatting."),
@@ -269,14 +260,6 @@ class Options(QWidget):
         self.form.addRow(_("Watermark:"), btn)
         self.getters.append(lambda: self._wm_opts)
 
-    def _margin(self):
-        margin = QSpinBox()
-        margin.setRange(0, 200)
-        margin.setValue(10)
-        margin.setSuffix(" pt")
-        self.form.addRow(_("Keep margin:"), margin)
-        self.getters.append(lambda: {"margin": margin.value()})
-
     def _password(self):
         pw = QLineEdit()
         pw.setEchoMode(QLineEdit.EchoMode.Password)
@@ -344,22 +327,6 @@ class Options(QWidget):
         note.setStyleSheet("color:#666;")
         self.form.addRow(note)
 
-    def _hideid(self):
-        mode = QComboBox()
-        mode.addItem(_("Mask, keeping 4 digits (AEPD): ***4567**"), "mask")
-        mode.addItem(_("Black box (remove completely)"), "black")
-        purpose = QLineEdit(QSettings().value("idwm/purpose", ""))
-        purpose.setPlaceholderText(_("e.g. RENTAL WITH IDEALISTA"))
-        watermark = QCheckBox(_("Add watermark with the purpose"))
-        watermark.setChecked(True)
-        flatten = QCheckBox(_("Merge into an image (the watermark cannot be removed)"))
-        flatten.setChecked(True)
-        self.form.addRow(_("Mode:"), mode)
-        self.form.addRow(_("Procedure / purpose:"), purpose)
-        self.form.addRow(watermark)
-        self.form.addRow(flatten)
-        self.getters.append(lambda: {"mode": mode.currentData(), "purpose": purpose.text().strip(),
-                                     "watermark": watermark.isChecked(), "flatten": flatten.isChecked()})
 
 
 def _out_name(out_dir, path, suffix, ext):
@@ -384,11 +351,6 @@ def run_tool(tool, inputs, target, opts):
                                else os.path.join(target, "web.pdf")), ""
     if k == "workflow":
         return run_workflow(opts["steps"], inputs, target, opts.get("name", "workflow"))
-    if k == "compare":
-        if len(inputs) != 2:
-            raise ops.OperationError(_("Choose exactly two PDF files (original first)."))
-        outputs, n = ops.compare(inputs[0], inputs[1], target)
-        return outputs, _("%d differences highlighted.") % n
     outputs, notes = [], []
     for path in inputs:
         out = _out_name(target, path, tool.suffix, tool.ext)
@@ -454,34 +416,17 @@ def run_tool(tool, inputs, target, opts):
             outputs += ops.numbers_file(path, out, **opts)
         elif k == "watermark":
             outputs += ops.watermark_file(path, out, **opts)
-        elif k == "crop":
-            outputs += ops.crop_margins_file(path, out, opts.get("margin", 10))
         elif k == "unlock":
             outputs += ops.unlock(path, out, opts.get("password", ""))
         elif k == "protect":
             if not opts:
                 raise ops.OperationError(_("Set a password first."))
             outputs += ops.protect(path, out, **opts)
-        elif k == "hideid":
-            with open(path, "rb") as f:
-                data = f.read()
-            hits = ops.scan_ids(pymupdf.open("pdf", data))
-            wm = None
-            if opts.get("watermark", True):
-                s = QSettings()
-                wm = ops.IdWatermark(purpose=opts.get("purpose", ""),
-                                     text=s.value("idwm/text", _("ONLY FOR {purpose} · {date}")),
-                                     footer=s.value("idwm/footer", _("{doc} for {purpose}")),
-                                     size=float(s.value("idwm/size", 16)), opacity=float(s.value("idwm/opacity", 35)) / 100)
-            with open(out, "wb") as f:
-                f.write(ops.protect_identity(data, hits, opts.get("mode", "mask"), wm, opts.get("flatten", True)))
-            outputs.append(out)
-            notes.append(_("%(file)s: %(n)d ID numbers hidden") % {"file": os.path.basename(path), "n": len(hits)})
     return outputs, "\n".join(notes)
 
 
-WORKFLOW_STEPS = ("unlock", "repair", "rotate", "remove", "extract", "numbers", "watermark", "crop", "hideid",
-                  "ocr", "compress", "pdf2pdfa", "translate", "protect")
+WORKFLOW_STEPS = ("unlock", "repair", "rotate", "remove", "extract", "numbers", "watermark", "ocr",
+                  "compress", "pdf2pdfa", "translate", "protect")
 
 
 def _encode(value):
@@ -789,7 +734,7 @@ class ToolDialog(QDialog):
         row = QHBoxLayout()
         self.open_dir = QPushButton(_("Open folder"))
         self.open_dir.hide()
-        self.open_doc = QPushButton(_("Open in ACRPDF"))
+        self.open_doc = QPushButton(_("Open in AcrPDF"))
         self.open_doc.hide()
         self.preview_btn = QPushButton(_("Preview"))
         self.preview_btn.setToolTip(_("Process the first file and show the result before saving anything"))

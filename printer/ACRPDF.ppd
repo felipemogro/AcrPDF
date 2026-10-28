@@ -4,11 +4,11 @@
 *LanguageVersion: English
 *LanguageEncoding: ISOLatin1
 *PCFileName: "ACRPDF.PPD"
-*Manufacturer: "ACRPDF Reader"
-*Product: "(ACRPDF Reader)"
-*ModelName: "ACRPDF Reader Virtual Printer"
-*ShortNickName: "ACRPDF Reader"
-*NickName: "ACRPDF Reader Virtual Printer"
+*Manufacturer: "AcrPDF"
+*Product: "(AcrPDF)"
+*ModelName: "AcrPDF Virtual Printer"
+*ShortNickName: "AcrPDF"
+*NickName: "AcrPDF Virtual Printer"
 *PSVersion: "(3010.000) 0"
 *LanguageLevel: "3"
 *ColorDevice: True

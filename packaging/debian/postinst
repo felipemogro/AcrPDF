@@ -7,12 +7,12 @@ if [ "$1" = "configure" ]; then
 
     if command -v lpadmin >/dev/null && lpstat -r >/dev/null 2>&1; then
         lpadmin -x LumenPDF 2>/dev/null || true
-        lpadmin -p ACRPDF -E -v acrpdf:/ -P /usr/share/ppd/acrpdf/ACRPDF.ppd \
-            -D "ACRPDF Reader (print to PDF)" -L "~/PDF" -o printer-is-shared=false 2>/dev/null \
-            || echo "Warning: the ACRPDF printer could not be created (is CUPS running?)"
+        lpadmin -p AcrPDF -E -v acrpdf:/ -P /usr/share/ppd/acrpdf/ACRPDF.ppd \
+            -D "AcrPDF (print to PDF)" -L "~/PDF" -o printer-is-shared=false 2>/dev/null \
+            || echo "Warning: the AcrPDF printer could not be created (is CUPS running?)"
     else
         echo "CUPS is not running. Create the printer later with:"
-        echo "  sudo lpadmin -p ACRPDF -E -v acrpdf:/ -P /usr/share/ppd/acrpdf/ACRPDF.ppd"
+        echo "  sudo lpadmin -p AcrPDF -E -v acrpdf:/ -P /usr/share/ppd/acrpdf/ACRPDF.ppd"
     fi
 fi
 

@@ -1,15 +1,14 @@
-# Translations template for ACRPDF Reader.
+# Translations template for AcrPDF.
 # Copyright (C) 2026 ORGANIZATION
-# This file is distributed under the same license as the ACRPDF Reader
-# project.
+# This file is distributed under the same license as the AcrPDF project.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2026.
 #
 #, fuzzy
 msgid ""
 msgstr ""
-"Project-Id-Version: ACRPDF Reader 2.1.0\n"
+"Project-Id-Version: AcrPDF 2.2.0\n"
 "Report-Msgid-Bugs-To: EMAIL@ADDRESS\n"
-"POT-Creation-Date: 2026-10-26 18:55+0100\n"
+"POT-Creation-Date: 2026-10-28 13:36+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -19,15 +18,7 @@ msgstr ""
 "Generated-By: Babel 2.18.0\n"
 
 #, python-format
-msgid "%(file)s: %(n)d ID numbers hidden"
-msgstr ""
-
-#, python-format
 msgid "%(i)d of %(n)d"
-msgstr ""
-
-#, python-format
-msgid "%d differences highlighted."
 msgstr ""
 
 #, python-format
@@ -41,6 +32,9 @@ msgid "&File"
 msgstr ""
 
 msgid "&Help"
+msgstr ""
+
+msgid "&Insert"
 msgstr ""
 
 msgid "&Tools"
@@ -69,10 +63,6 @@ msgstr ""
 msgid "90° counter-clockwise"
 msgstr ""
 
-#, python-format
-msgid "ACRPDF Reader %(new)s is available (you have %(old)s)."
-msgstr ""
-
 msgid "AI (summaries and translations)"
 msgstr ""
 
@@ -85,7 +75,11 @@ msgstr ""
 msgid "APPROVED"
 msgstr ""
 
-msgid "About ACRPDF Reader"
+msgid "About AcrPDF"
+msgstr ""
+
+#, python-format
+msgid "AcrPDF %(new)s is available (you have %(old)s)."
 msgstr ""
 
 msgid "Add a trusted timestamp (TSA, needs Internet)"
@@ -127,15 +121,21 @@ msgstr ""
 msgid "Add watermark"
 msgstr ""
 
-msgid "Add watermark with the purpose"
-msgstr ""
-
 msgid "Adjust the position and size of the signature, then press Sign."
 msgstr ""
 
 msgid ""
 "After Continue you can move and resize the signature on the page before "
 "signing."
+msgstr ""
+
+msgid "Align center"
+msgstr ""
+
+msgid "Align left"
+msgstr ""
+
+msgid "Align right"
 msgstr ""
 
 msgid "All PDF tools"
@@ -202,16 +202,13 @@ msgstr ""
 msgid "Black and white"
 msgstr ""
 
-msgid "Black box (remove completely)"
-msgstr ""
-
 msgid "Blank PDF"
 msgstr ""
 
-msgid "Blank.pdf"
+msgid "Blue"
 msgstr ""
 
-msgid "Blue"
+msgid "Bold"
 msgstr ""
 
 msgid "Bookmarks"
@@ -230,6 +227,9 @@ msgid "Bottom right"
 msgstr ""
 
 msgid "Built with PyMuPDF, pyHanko and Qt 6."
+msgstr ""
+
+msgid "Bulleted list"
 msgstr ""
 
 msgid "CONFIDENTIAL"
@@ -262,7 +262,7 @@ msgstr ""
 
 #, python-format
 msgid ""
-"Certificates imported into ACRPDF are copied to %s (only your user can "
+"Certificates imported into AcrPDF are copied to %s (only your user can "
 "read them). Certificates from Firefox/Thunderbird are used directly from "
 "their store."
 msgstr ""
@@ -303,9 +303,6 @@ msgstr ""
 msgid "Choose color"
 msgstr ""
 
-msgid "Choose exactly two PDF files (original first)."
-msgstr ""
-
 msgid "Choose image…"
 msgstr ""
 
@@ -344,6 +341,9 @@ msgstr ""
 msgid "Color:"
 msgstr ""
 
+msgid "Columns:"
+msgstr ""
+
 msgid "Combine PDFs, images and documents in the order you want."
 msgstr ""
 
@@ -354,9 +354,6 @@ msgid "Comments"
 msgstr ""
 
 msgid "Company seal or rubber stamp image (PNG with transparency or SVG)."
-msgstr ""
-
-msgid "Compare PDF"
 msgstr ""
 
 msgid "Compress PDF"
@@ -384,6 +381,10 @@ msgid "Convert every page to an image"
 msgstr ""
 
 msgid "Convert from PDF"
+msgstr ""
+
+#, python-format
+msgid "Convert this document into a PDF and open it in %s"
 msgstr ""
 
 msgid "Convert to PDF"
@@ -433,6 +434,12 @@ msgstr ""
 msgid "Could not read the certificate from Firefox: %s"
 msgstr ""
 
+#, python-format
+msgid ""
+"Could not save:\n"
+"%s"
+msgstr ""
+
 msgid "Coverage"
 msgstr ""
 
@@ -455,9 +462,6 @@ msgid "Create signature"
 msgstr ""
 
 msgid "Create…"
-msgstr ""
-
-msgid "Crop PDF"
 msgstr ""
 
 msgid "Crop all pages"
@@ -487,6 +491,9 @@ msgstr ""
 msgid "Custom text (optional)"
 msgstr ""
 
+msgid "Cut"
+msgstr ""
+
 msgid "DOC, DOCX, ODT, RTF to PDF."
 msgstr ""
 
@@ -501,6 +508,9 @@ msgstr ""
 
 #, python-format
 msgid "Date: %s"
+msgstr ""
+
+msgid "Decrease indent"
 msgstr ""
 
 msgid "Delete"
@@ -558,6 +568,9 @@ msgid "Digitally signed by:"
 msgstr ""
 
 msgid "Discard (Esc)"
+msgstr ""
+
+msgid "Document"
 msgstr ""
 
 msgid "Document mode (grayscale, more contrast)"
@@ -661,6 +674,12 @@ msgstr ""
 msgid "Export to"
 msgstr ""
 
+msgid "Export to PDF"
+msgstr ""
+
+msgid "Export to PDF…"
+msgstr ""
+
 msgid "Extract"
 msgstr ""
 
@@ -677,6 +696,9 @@ msgid "Extract the text of scanned PDFs to an editable .txt file."
 msgstr ""
 
 msgid "Extreme compression (less quality, 72 dpi)"
+msgstr ""
+
+msgid "F&ormat"
 msgstr ""
 
 msgid "FINAL"
@@ -764,16 +786,13 @@ msgstr ""
 msgid "Font:"
 msgstr ""
 
-msgid "Footer"
-msgstr ""
-
 msgid "Forget saved password"
 msgstr ""
 
-msgid "Format:"
+msgid "Format"
 msgstr ""
 
-msgid "Found in"
+msgid "Format:"
 msgstr ""
 
 msgid "Full screen"
@@ -804,8 +823,8 @@ msgid ""
 "Hello,\n"
 "\n"
 "Please sign the attached document with your digital certificate (for "
-"example with ACRPDF Reader, Adobe Acrobat Reader or AutoFirma) and send "
-"it back.\n"
+"example with AcrPDF, Adobe Acrobat Reader or AutoFirma) and send it back."
+"\n"
 "\n"
 "Thank you."
 msgstr ""
@@ -819,10 +838,10 @@ msgstr ""
 msgid "Highlight"
 msgstr ""
 
-msgid "Highlight the differences between two versions."
+msgid "Home"
 msgstr ""
 
-msgid "Home"
+msgid "Horizontal line"
 msgstr ""
 
 msgid "How it looks inside a digital signature"
@@ -831,16 +850,10 @@ msgstr ""
 msgid "I am the author of this document"
 msgstr ""
 
-msgid "ID numbers found"
-msgstr ""
-
 msgid "ISO archival format for long-term preservation."
 msgstr ""
 
 msgid "Image"
-msgstr ""
-
-msgid "Image (OCR)"
 msgstr ""
 
 msgid "Image above, details below"
@@ -864,13 +877,16 @@ msgstr ""
 msgid "Images to PDF"
 msgstr ""
 
+msgid "Image…"
+msgstr ""
+
 msgid "Import"
 msgstr ""
 
 msgid "Import .p12/.pfx…"
 msgstr ""
 
-msgid "Import a .p12/.pfx into ACRPDF"
+msgid "Import a .p12/.pfx into AcrPDF"
 msgstr ""
 
 msgid "Import certificate"
@@ -880,6 +896,9 @@ msgid "Import or choose a certificate first."
 msgstr ""
 
 msgid "Import…"
+msgstr ""
+
+msgid "Increase indent"
 msgstr ""
 
 msgid "Ink:"
@@ -903,6 +922,9 @@ msgstr ""
 msgid "Insert image"
 msgstr ""
 
+msgid "Insert table"
+msgstr ""
+
 #, python-format
 msgid ""
 "Install it with:\n"
@@ -918,9 +940,6 @@ msgstr ""
 msgid "Intelligence"
 msgstr ""
 
-msgid "Intensity:"
-msgstr ""
-
 msgid "Invalid"
 msgstr ""
 
@@ -934,10 +953,13 @@ msgstr ""
 msgid "Issuer"
 msgstr ""
 
+msgid "Italic"
+msgstr ""
+
 msgid "JPG, PNG, SVG… to a single PDF."
 msgstr ""
 
-msgid "Keep margin:"
+msgid "Justify"
 msgstr ""
 
 msgid "Landscape"
@@ -964,14 +986,14 @@ msgstr ""
 msgid "Letter"
 msgstr ""
 
-msgid "Letter size:"
-msgstr ""
-
 msgid "Level:"
 msgstr ""
 
 #, python-format
 msgid "LibreOffice could not convert %s"
+msgstr ""
+
+msgid "LibreOffice is needed to open .odt files."
 msgstr ""
 
 msgid "LibreOffice is not installed (needed to convert office documents)."
@@ -981,9 +1003,6 @@ msgid "License: AGPL-3.0-or-later"
 msgstr ""
 
 msgid "Line"
-msgstr ""
-
-msgid "Line spacing:"
 msgstr ""
 
 msgid "List"
@@ -1023,16 +1042,7 @@ msgstr ""
 msgid "Margin:"
 msgstr ""
 
-msgid "Mask, keeping 4 digits (AEPD): ***4567**"
-msgstr ""
-
-msgid "Masked"
-msgstr ""
-
 msgid "Merge PDF"
-msgstr ""
-
-msgid "Merge into an image (the watermark cannot be removed)"
 msgstr ""
 
 msgid "Mode:"
@@ -1123,23 +1133,16 @@ msgstr ""
 msgid "No text found at that point."
 msgstr ""
 
-msgid "None found (you can still add the watermark)"
-msgstr ""
-
 msgid "Note"
 msgstr ""
 
-msgid "Number"
+msgid "Numbered list"
 msgstr ""
 
 msgid "Numbering:"
 msgstr ""
 
 msgid "OCR PDF"
-msgstr ""
-
-#, python-brace-format
-msgid "ONLY FOR {purpose} · {date}"
 msgstr ""
 
 msgid "Office documents"
@@ -1154,10 +1157,7 @@ msgstr ""
 msgid "One slide per page."
 msgstr ""
 
-msgid "Only certificates imported into ACRPDF can be removed here."
-msgstr ""
-
-msgid "Only over the images (e.g. photo of the card)"
+msgid "Only certificates imported into AcrPDF can be removed here."
 msgstr ""
 
 msgid "Opacity:"
@@ -1172,7 +1172,7 @@ msgstr ""
 msgid "Open folder"
 msgstr ""
 
-msgid "Open in ACRPDF"
+msgid "Open in AcrPDF"
 msgstr ""
 
 msgid "Open recent"
@@ -1279,6 +1279,9 @@ msgstr ""
 msgid "Page %d"
 msgstr ""
 
+msgid "Page break"
+msgstr ""
+
 msgid "Page numbers"
 msgstr ""
 
@@ -1322,6 +1325,9 @@ msgstr ""
 msgid "Password:"
 msgstr ""
 
+msgid "Paste"
+msgstr ""
+
 msgid "Permanently remove sensitive text or areas."
 msgstr ""
 
@@ -1335,6 +1341,9 @@ msgid "Place"
 msgstr ""
 
 msgid "Place stamp"
+msgstr ""
+
+msgid "Plain text"
 msgstr ""
 
 msgid "Plain text of every page."
@@ -1370,7 +1379,7 @@ msgstr ""
 
 msgid ""
 "Print from any program (LibreOffice, Firefox, Chrome…) to the "
-"<b>ACRPDF</b> printer and the PDF is saved in your <b>~/PDF</b> folder."
+"<b>AcrPDF</b> printer and the PDF is saved in your <b>~/PDF</b> folder."
 msgstr ""
 
 msgid "Printing could not be started."
@@ -1380,9 +1389,6 @@ msgid "Printing…"
 msgstr ""
 
 msgid "Print…"
-msgstr ""
-
-msgid "Procedure / purpose:"
 msgstr ""
 
 msgid "Process the first file and show the result before saving anything"
@@ -1395,9 +1401,6 @@ msgid "Properties…"
 msgstr ""
 
 msgid "Protect"
-msgstr ""
-
-msgid "Protect DNI / NIE"
 msgstr ""
 
 msgid "Protect PDF"
@@ -1511,10 +1514,7 @@ msgid "Remove white background"
 msgstr ""
 
 #, python-format
-msgid "Remove «%s» from ACRPDF?"
-msgstr ""
-
-msgid "Removed:"
+msgid "Remove «%s» from AcrPDF?"
 msgstr ""
 
 msgid "Repair PDF"
@@ -1554,6 +1554,9 @@ msgid "Rotate right"
 msgstr ""
 
 msgid "Rotation:"
+msgstr ""
+
+msgid "Rows:"
 msgstr ""
 
 msgid "Run on files…"
@@ -1630,10 +1633,10 @@ msgstr ""
 msgid "Search scanners"
 msgstr ""
 
-msgid "Searching DNI/NIE numbers (images are read with OCR)…"
+msgid "Select / resize"
 msgstr ""
 
-msgid "Select / resize"
+msgid "Select all"
 msgstr ""
 
 msgid "Select text"
@@ -1754,11 +1757,6 @@ msgstr ""
 msgid "Smallest file (images at 150 dpi)"
 msgstr ""
 
-msgid ""
-"Some pages are images: install Tesseract to read them (sudo apt install "
-"tesseract-ocr tesseract-ocr-spa)."
-msgstr ""
-
 msgid "Sort, rotate, duplicate and delete pages visually."
 msgstr ""
 
@@ -1820,6 +1818,9 @@ msgstr ""
 msgid "Tables to XLSX spreadsheets."
 msgstr ""
 
+msgid "Table…"
+msgstr ""
+
 msgid "Take photos of each page. They appear on your computer instantly."
 msgstr ""
 
@@ -1837,6 +1838,9 @@ msgid "Text"
 msgstr ""
 
 msgid "Text box"
+msgstr ""
+
+msgid "Text color"
 msgstr ""
 
 msgid "Text copied"
@@ -1878,6 +1882,9 @@ msgstr ""
 msgid "The document has no text (run OCR first if it is scanned)."
 msgstr ""
 
+msgid "The document has unsaved changes. Save them?"
+msgstr ""
+
 msgid "The document is not protected."
 msgstr ""
 
@@ -1896,7 +1903,7 @@ msgstr ""
 msgid "The installation was cancelled."
 msgstr ""
 
-msgid "The language change applies after restarting ACRPDF."
+msgid "The language change applies after restarting AcrPDF."
 msgstr ""
 
 msgid "The latest version has no package for this computer."
@@ -1985,9 +1992,6 @@ msgstr ""
 msgid "Translate…"
 msgstr ""
 
-msgid "Trim white margins of every page."
-msgstr ""
-
 msgid "Type"
 msgstr ""
 
@@ -2004,6 +2008,9 @@ msgid "Unexpected error:"
 msgstr ""
 
 msgid "Unlock PDF"
+msgstr ""
+
+msgid "Untitled document"
 msgstr ""
 
 msgid "Untitled.pdf"
@@ -2065,18 +2072,13 @@ msgid "Variables: {n} page, {total} total, {date} today"
 msgstr ""
 
 #, python-format
-msgid "Version %s is installed. Restart ACRPDF Reader now?"
+msgid "Version %s is installed. Restart AcrPDF now?"
 msgstr ""
 
 msgid "View, edit, fill, sign and certify PDF documents."
 msgstr ""
 
 msgid "Watermark"
-msgstr ""
-
-msgid ""
-"Watermark \"DNI for … procedure\" and mask the number (AEPD ***4567**), "
-"also on photos."
 msgstr ""
 
 msgid "Watermark image"
@@ -2163,9 +2165,6 @@ msgstr ""
 msgid "e.g. 1-3, 5, 8-"
 msgstr ""
 
-msgid "e.g. RENTAL WITH IDEALISTA"
-msgstr ""
-
 msgid "field"
 msgstr ""
 
@@ -2184,17 +2183,13 @@ msgstr ""
 msgid "virtual"
 msgstr ""
 
-#, python-brace-format
-msgid "{doc} for {purpose}"
-msgstr ""
-
 msgid "↺ Rotate left"
 msgstr ""
 
 msgid "↻ Rotate right"
 msgstr ""
 
-msgid "✔ The virtual printer <b>ACRPDF</b> is installed."
+msgid "✔ The virtual printer <b>AcrPDF</b> is installed."
 msgstr ""
 
 msgid "✖ The virtual printer is not installed (install the .deb package)."

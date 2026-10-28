@@ -2,7 +2,7 @@
   <img src="src/acrpdf/resources/acrpdf.svg" width="96" alt="">
 </p>
 
-<h1 align="center">ACRPDF Reader</h1>
+<h1 align="center">AcrPDF</h1>
 
 <p align="center">
   <b>Alternativa de código abierto a Adobe Acrobat, pensada para Linux.</b><br>
@@ -14,7 +14,7 @@
 
 ![Pantalla de inicio](docs/screenshots/inicio.png)
 
-ACRPDF Reader nace para cubrir en Linux lo que normalmente obliga a usar Adobe Acrobat o
+AcrPDF nace para cubrir en Linux lo que normalmente obliga a usar Adobe Acrobat o
 servicios web: firmar contratos con el certificado de la FNMT, rellenar y crear formularios,
 estampar sellos o comprimir y convertir PDF. Todo se procesa en tu equipo; los documentos no
 se suben a ningún servidor (salvo el asistente IA opcional, cuando eliges un proveedor en
@@ -55,7 +55,6 @@ código (ver más abajo), pero no se han probado.
 | **Sello** | Sellos vectoriales (APROBADO, RECIBIDO, CONFIDENCIAL…) y sellos de imagen |
 | **Organizar páginas** | Reordenar arrastrando miniaturas, rotar, duplicar, eliminar, insertar, extraer y dividir |
 | **Proteger / Censurar** | Cifrado AES-256 con permisos, quitar contraseña y censura real del contenido |
-| **Proteger DNI / NIE** | Marca de agua «SOLO PARA {trámite} · {fecha}» configurable (tamaño, grosor, intensidad, separación, ángulo, color), franja «DNI para … trámite» y enmascarado AEPD (`***4567**`), también en fotos del DNI mediante OCR |
 | **Asistente IA** | Resumir y traducir conservando el diseño, con Claude, ChatGPT, DeepSeek u Ollama (local) |
 
 Al abrir un documento firmado se muestra si las firmas son válidas, si la identidad del
@@ -68,13 +67,13 @@ todo el documento muestran una vista previa antes de aplicarse o guardarse.
 |---|---|---|---|---|---|
 | Unir | Comprimir (3 niveles) | Imágenes (JPG, PNG, SVG…) | JPG / PNG | Numerar páginas | Desbloquear |
 | Dividir | Reparar | Word | Word | Marca de agua | Proteger |
-| Eliminar páginas | OCR (a .txt) | PowerPoint | PowerPoint | Recortar márgenes | Firmar |
+| Eliminar páginas | OCR (a .txt) | PowerPoint | PowerPoint | Editar PDF | Firmar |
 | Extraer páginas | | Excel | Excel | Formularios | Censurar |
-| Ordenar | | HTML o URL | PDF/A | | Proteger DNI/NIE |
-| Rotar | | Escanear (móvil o escáner) | Texto · Markdown | | Comparar |
+| Ordenar | | HTML o URL | PDF/A | | |
+| Rotar | | Escanear (móvil o escáner) | Texto · Markdown | | |
 
 También permite crear **flujos de trabajo** (encadenar herramientas y reutilizarlos) e
-incluye la impresora virtual **ACRPDF**, que guarda en `~/PDF` lo que imprimas desde
+incluye la impresora virtual **AcrPDF**, que guarda en `~/PDF` lo que imprimas desde
 cualquier programa.
 
 Idiomas de la interfaz: español, inglés, francés y portugués (según el idioma del sistema).
@@ -127,9 +126,10 @@ la vista previa, ajusta la posición y pulsa *Firmar*. El documento se comprime 
 antes de firmarse y la cadena de certificación (por ejemplo, *AC FNMT Usuarios*) se incluye
 para que los validadores reconozcan la firma.
 
-**Proteger una copia del DNI.** *Proteger DNI / NIE*: escribe el trámite, ajusta la marca de
-agua, revisa la vista previa y pulsa *Guardar como…*. Con *Fusionar en una imagen*, ni la
-marca ni el número ocultado se pueden recuperar.
+**Escribir un documento nuevo.** *Archivo → PDF en blanco* abre un editor de textos al estilo de
+Word: estilos de título, tipografía y tamaño, negrita, cursiva, subrayado, colores, alineación,
+listas, sangrías, imágenes, tablas y saltos de página. Se puede guardar como `.odt`, HTML,
+Markdown o texto, y *Crear PDF* lo convierte en un PDF que se abre en AcrPDF.
 
 **Escanear con el móvil.** *Escanear a PDF*: escanea el código QR con el móvil conectado a la
 misma red Wi-Fi y fotografía cada página. Se usa la tarjeta de red física aunque haya una VPN
@@ -150,7 +150,7 @@ texto del documento se envía a esa empresa; Ollama funciona sin conexión.
 
 ```
 src/acrpdf/   aplicación (app, document, viewer, overlay, ops, tools, signing,
-              certstore, dni, scan, ai, i18n, dialogs)
+              certstore, dni, scan, ai, i18n, dialogs, writer, updater)
 po/           traducciones
 printer/      impresora virtual CUPS
 packaging/    construcción del paquete .deb

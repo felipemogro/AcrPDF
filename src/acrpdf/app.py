@@ -31,7 +31,6 @@ GROUPS = [
     ("organize", N_("Organize pages"), "▦", "#3d9b35"),
     ("protect", N_("Protect"), "🔒", "#5a5a5a"),
     ("redact", N_("Redact"), "▬", "#a5243b"),
-    ("hideid", N_("Protect DNI / NIE"), "ID", "#2c6fd6"),
     ("ai", N_("AI assistant"), "✦", "#6a3fd4"),
     ("alltools", N_("All PDF tools"), "⋯", "#555555"),
 ]
@@ -65,8 +64,7 @@ CONTEXT = {
     "protect": [("-", "encrypt", N_("Encrypt with password")), ("-", "decrypt", N_("Remove password")),
                 ("redact", N_("Redact area"), "▬")],
     "ai": [("-", "ai_summarize", N_("Summarize")), ("-", "ai_translate", N_("Translate…"))],
-    "redact": [("redact", N_("Redact area"), "▬"), ("-", "redact_search", N_("Redact searched text")),
-               ("-", "hide_ids", N_("Protect DNI / NIE"))],
+    "redact": [("redact", N_("Redact area"), "▬"), ("-", "redact_search", N_("Redact searched text"))],
 }
 
 QSS = """
@@ -226,7 +224,7 @@ class MainWindow(QMainWindow):
         m.addAction(self._act(_("PDF printer…"), self.printer_info))
         m = mb.addMenu(_("&Help"))
         m.addAction(self._act(_("Check for updates…"), lambda: self.check_updates(manual=True)))
-        m.addAction(self._act(_("About ACRPDF Reader"), self.about))
+        m.addAction(self._act(_("About AcrPDF"), self.about))
 
     def _build_toolbars(self):
         tb = QToolBar(_("Main"))
@@ -494,8 +492,6 @@ class MainWindow(QMainWindow):
         t = self.require_doc()
         if not t:
             return
-        if key == "hideid":
-            return self.hide_ids()
         self.current_group = key
         self.ctx.clear()
         for a in list(self.tool_group.actions()):
@@ -1008,9 +1004,9 @@ class MainWindow(QMainWindow):
         self._build_from_dialog(_("Create PDF"), _("New document.pdf"))
 
     def create_blank(self):
-        doc = pymupdf.open()
-        doc.new_page(width=595, height=842)
-        self._new_tab(doc, _("Blank.pdf"))
+        from .writer import WriterWindow
+        w = WriterWindow(self)
+        w.show()
 
     def watermark(self):
         t = self.require_doc()
@@ -1038,27 +1034,6 @@ class MainWindow(QMainWindow):
         text, ok = QInputDialog.getText(self, _("Redact text"), _("Text to remove from the whole document:"))
         if ok and text:
             self.preview_change(_("Redact text"), lambda d: ops.redact_text(d, text), _("_redacted"))
-
-    def hide_ids(self):
-        t = self.require_doc()
-        if not t:
-            return
-        self.statusBar().showMessage(_("Searching DNI/NIE numbers (images are read with OCR)…"))
-        QApplication.setOverrideCursor(Qt.CursorShape.WaitCursor)
-        try:
-            hits = ops.scan_ids(t.doc)
-            data = t.bytes()
-        finally:
-            QApplication.restoreOverrideCursor()
-            self.statusBar().clearMessage()
-        if not hits and any(not p.get_text().strip() for p in t.doc) and not ops.ocr_languages():
-            QMessageBox.information(self, _("Protect DNI / NIE"),
-                                    _("Some pages are images: install Tesseract to read them "
-                                      "(sudo apt install tesseract-ocr tesseract-ocr-spa)."))
-        d = dialogs.IdProtectDialog(self, data, hits, self._derived_path(t, _("_protected")),
-                                    on_apply=lambda result: t.replace_document(result))
-        if d.exec() and getattr(d, "saved_path", None):
-            self.open_file(d.saved_path)
 
     def _derived_path(self, t, suffix):
         base = t.path or os.path.join(self.settings.value("last_dir", os.path.expanduser("~/Documentos")), t.title)
@@ -1154,7 +1129,7 @@ class MainWindow(QMainWindow):
         with open(attachment, "wb") as f:
             f.write(t.bytes())
         body = _("Hello,\n\nPlease sign the attached document with your digital certificate (for example with "
-                 "ACRPDF Reader, Adobe Acrobat Reader or AutoFirma) and send it back.\n\nThank you.")
+                 "AcrPDF, Adobe Acrobat Reader or AutoFirma) and send it back.\n\nThank you.")
         import subprocess
         try:
             subprocess.Popen(["xdg-email", "--subject", _("Signature request: %s") % t.title, "--body", body,
@@ -1309,9 +1284,9 @@ class MainWindow(QMainWindow):
         installed = os.path.exists("/usr/lib/cups/backend/acrpdf")
         QMessageBox.information(
             self, _("PDF printer"),
-            (_("✔ The virtual printer <b>ACRPDF</b> is installed.") if installed
+            (_("✔ The virtual printer <b>AcrPDF</b> is installed.") if installed
              else _("✖ The virtual printer is not installed (install the .deb package).")) + "<br><br>" +
-            _("Print from any program (LibreOffice, Firefox, Chrome…) to the <b>ACRPDF</b> printer and the PDF "
+            _("Print from any program (LibreOffice, Firefox, Chrome…) to the <b>AcrPDF</b> printer and the PDF "
               "is saved in your <b>~/PDF</b> folder."))
 
     def properties(self):
@@ -1356,7 +1331,7 @@ class MainWindow(QMainWindow):
             return
         box = QMessageBox(self)
         box.setWindowTitle(_("Update available"))
-        box.setText(_("ACRPDF Reader %(new)s is available (you have %(old)s).")
+        box.setText(_("AcrPDF %(new)s is available (you have %(old)s).")
                     % {"new": release.version, "old": __version__})
         box.setDetailedText(release.notes)
         install = box.addButton(_("Install now"), QMessageBox.ButtonRole.AcceptRole)
@@ -1389,12 +1364,12 @@ class MainWindow(QMainWindow):
             return
         QApplication.restoreOverrideCursor()
         answer = QMessageBox.question(self, _("Updates"),
-                                      _("Version %s is installed. Restart ACRPDF Reader now?") % release.version)
+                                      _("Version %s is installed. Restart AcrPDF now?") % release.version)
         if answer == QMessageBox.StandardButton.Yes and self.close():
             QProcess.startDetached("/usr/bin/acrpdf", [])
 
     def about(self):
-        QMessageBox.about(self, _("About ACRPDF Reader"),
+        QMessageBox.about(self, _("About AcrPDF"),
                           f"<h3>{APP_NAME} {__version__}</h3>"
                           + _("PDF viewer, editor and digital signing tool for Linux.") + "<br>"
                           + _("Built with PyMuPDF, pyHanko and Qt 6.") + "<br><br>"

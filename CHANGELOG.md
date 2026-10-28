@@ -3,6 +3,18 @@
 Formato basado en [Keep a Changelog](https://keepachangelog.com/es-ES/1.1.0/); el proyecto
 sigue [versionado semántico](https://semver.org/lang/es/).
 
+## [Sin publicar]
+
+### Cambiado
+- La aplicación pasa a llamarse **AcrPDF** (antes *ACRPDF Reader*).
+- *Archivo → PDF en blanco* abre un editor de textos al estilo de Word (estilos, tipografía,
+  formato, listas, imágenes, tablas, saltos de página) que guarda en `.odt`/HTML/Markdown/texto
+  y crea el PDF con un clic.
+
+### Eliminado
+- Herramientas *Proteger DNI / NIE*, *Comparar PDF* y *Recortar PDF* (recortar márgenes). La
+  ocultación del DNI en la firma visible se mantiene.
+
 ## [2.2.0] - 2026-10-26
 
 ### Añadido

@@ -1,5 +1,4 @@
 import datetime
-import difflib
 import glob
 import io
 import os
@@ -7,12 +6,10 @@ import re
 import shutil
 import subprocess
 import tempfile
-from dataclasses import dataclass
 from functools import lru_cache
 
 import pymupdf
 
-from . import dni
 from .i18n import N_, _
 
 BASE14 = {"Helvetica": "helv", "Times": "tiro", "Courier": "cour"}
@@ -489,220 +486,6 @@ def redact_text(doc, needle, fill=(0, 0, 0)):
             page.apply_redactions()
             count += len(hits)
     return count
-
-
-@dataclass
-class IdHit:
-    page: int
-    value: str
-    cells: list
-    source: str = "text"
-
-    @property
-    def rect(self):
-        r = pymupdf.Rect(self.cells[0])
-        for c in self.cells[1:]:
-            r |= c
-        return r
-
-
-def _ocr_variants(img):
-    from PIL import ImageOps
-    gray = ImageOps.grayscale(img)
-    blue = ImageOps.autocontrast(img.convert("RGB").split()[2])
-    return [gray.point(lambda x: 255 if x > 120 else 0),
-            blue.point(lambda x: 255 if x > 110 else 0),
-            ImageOps.autocontrast(gray)]
-
-
-def _tesseract_words(img, language):
-    with tempfile.TemporaryDirectory(prefix="acrpdf-ocr-") as tmp:
-        path = os.path.join(tmp, "page.png")
-        img.save(path)
-        out = subprocess.run(["tesseract", path, "stdout", "-l", language, "--psm", "11", "tsv"],
-                             capture_output=True, text=True, timeout=300).stdout
-    words = []
-    for line in out.splitlines()[1:]:
-        cols = line.split("\t")
-        if len(cols) == 12 and cols[11].strip():
-            words.append((cols[11].strip(), int(cols[6]), int(cols[7]), int(cols[8]), int(cols[9])))
-    return words
-
-
-def _ocr_id_hits(page, language):
-    from PIL import Image
-    regions = []
-    for info in page.get_image_info():
-        r = pymupdf.Rect(info["bbox"]) & page.rect
-        if r.width > 20 and r.height > 20:
-            native = info["width"] / (pymupdf.Rect(info["bbox"]).width / 72)
-            regions.append((r, int(min(500, max(200, native)))))
-    regions = regions or [(page.rect, 300)]
-    hits = []
-    for clip, dpi in regions:
-        pix = page.get_pixmap(clip=clip, dpi=dpi)
-        img = Image.open(io.BytesIO(pix.tobytes("png")))
-        scale = 72 / dpi
-        for variant in _ocr_variants(img):
-            for text, left, top, width, height in _tesseract_words(variant, language):
-                for start, end in dni.find_in_token(text):
-                    cell_w = width / len(text)
-                    cells = [pymupdf.Rect(clip.x0 + (left + k * cell_w) * scale, clip.y0 + top * scale,
-                                          clip.x0 + (left + (k + 1) * cell_w) * scale, clip.y0 + (top + height) * scale)
-                             * page.derotation_matrix for k in range(start, end)]
-                    value = text[start:end].upper()
-                    hit = IdHit(page.number, value, cells, "ocr")
-                    if not any(h.value == value and h.rect.intersects(hit.rect) for h in hits):
-                        hits.append(hit)
-    return hits
-
-
-def scan_ids(doc, validate=True, ocr="auto", language="spa"):
-    use_ocr = ocr and shutil.which("tesseract") is not None
-    hits = []
-    for page in doc:
-        for value in dni.find(page.get_text(), validate):
-            for r in page.search_for(value):
-                hits.append(IdHit(page.number, value, [r], "text"))
-        if use_ocr and (ocr == "always" or page.get_image_info()):
-            for hit in _ocr_id_hits(page, language):
-                if not any(h.page == hit.page and h.rect.intersects(hit.rect) for h in hits):
-                    hits.append(hit)
-    return hits
-
-
-def apply_id_hits(doc, hits, mode="mask"):
-    by_page = {}
-    for hit in hits:
-        by_page.setdefault(hit.page, []).append(hit)
-    for number, page_hits in by_page.items():
-        page = doc[number]
-        rewrite = []
-        sizes = {tuple(pymupdf.Rect(sp["bbox"])): sp["size"] for b in page.get_text("dict")["blocks"]
-                 for line in b.get("lines", []) for sp in line["spans"]}
-        for hit in page_hits:
-            if hit.source == "ocr":
-                keep = set(dni.visible_positions(hit.value)) if mode == "mask" else set()
-                offset = len(hit.value) - len(dni.normalize(hit.value))
-                for k, cell in enumerate(hit.cells):
-                    if k - offset not in keep:
-                        page.add_redact_annot(cell, fill=(0, 0, 0))
-            else:
-                page.add_redact_annot(hit.rect, fill=(0, 0, 0) if mode == "black" else None)
-                if mode == "mask":
-                    size = next((sz for bbox, sz in sizes.items() if pymupdf.Rect(bbox).intersects(hit.rect)),
-                                max(5.0, hit.rect.height * 0.78))
-                    rewrite.append((hit.rect, dni.mask(hit.value), size))
-        page.apply_redactions(images=pymupdf.PDF_REDACT_IMAGE_PIXELS,
-                              graphics=pymupdf.PDF_REDACT_LINE_ART_NONE)
-        for rect, masked, size in rewrite:
-            page.insert_text((rect.x0, rect.y1 - rect.height * 0.22), masked, fontsize=size,
-                             fontname="helv", color=(0, 0, 0))
-    return len(hits)
-
-
-@dataclass
-class IdWatermark:
-    text: str = "SOLO PARA {purpose} · {date}"
-    purpose: str = ""
-    size: float = 16
-    stroke: float = 0.0
-    opacity: float = 0.35
-    color: tuple = (0.12, 0.25, 0.55)
-    angle: float = 30
-    spacing: float = 1.0
-    footer: str = "{doc} para {purpose}"
-    footer_size: float = 11
-    document: str = "DNI"
-    only_images: bool = False
-
-    def render(self, template):
-        date = datetime.date.today().strftime("%d/%m/%Y")
-        try:
-            return template.format(purpose=self.purpose or "…", date=date, doc=self.document).strip()
-        except (KeyError, IndexError, ValueError):
-            return template.strip()
-
-
-def _watermark_pattern(width, height, wm, center):
-    text = wm.render(wm.text)
-    kw = font_args("DejaVu Sans", bold=True)
-    font = font_object("DejaVu Sans", bold=True)
-    unit = text + "      "
-    unit_w = max(font.text_length(unit, fontsize=wm.size), 20)
-    reach = width + height
-    line = unit * (int(reach * 2 / unit_w) + 2)
-    step = wm.size * 3.2 * wm.spacing
-    doc = pymupdf.open()
-    page = doc.new_page(width=width, height=height)
-    shape = page.new_shape()
-    y, row = center.y - reach, 0
-    while y < center.y + reach:
-        x = center.x - reach - (row % 2) * unit_w / 2
-        shape.insert_text(pymupdf.Point(x, y), line, fontsize=wm.size, color=wm.color, fill=wm.color,
-                          fill_opacity=wm.opacity, stroke_opacity=wm.opacity,
-                          render_mode=2 if wm.stroke > 0 else 0, border_width=wm.stroke / max(wm.size, 1),
-                          morph=(center, pymupdf.Matrix(-wm.angle)), **kw)
-        y += step
-        row += 1
-    shape.commit()
-    return doc
-
-
-def apply_id_watermark(page, wm):
-    r = page.rect
-    areas = [pymupdf.Rect(i["bbox"]) * page.rotation_matrix & r for i in page.get_image_info()] \
-        if wm.only_images else []
-    areas = [a for a in areas if a.width > 30 and a.height > 30] or [r]
-    for area in areas:
-        center = pymupdf.Point((area.x0 + area.x1) / 2, (area.y0 + area.y1) / 2)
-        pattern = _watermark_pattern(r.width, r.height, wm, center)
-        page.show_pdf_page(to_unrotated(page, area), pattern, 0, clip=area, rotate=page.rotation, overlay=True)
-        pattern.close()
-    if wm.footer:
-        kw = {"fontname": "hebo"}
-        h = wm.footer_size * 2.2
-        band = pymupdf.Rect(0, r.height - h, r.width, r.height)
-        page.draw_rect(to_unrotated(page, band), color=None, fill=(1, 1, 1), fill_opacity=0.85, overlay=True)
-        page.insert_textbox(to_unrotated(page, band + (10, h * 0.22, -10, 0)), wm.render(wm.footer),
-                            fontsize=wm.footer_size, align=1, color=wm.color, rotate=page.rotation, **kw)
-
-
-def flatten_to_images(doc, dpi=200, quality=85):
-    out = pymupdf.open()
-    for page in doc:
-        pix = page.get_pixmap(dpi=dpi, alpha=False)
-        new = out.new_page(width=page.rect.width, height=page.rect.height)
-        new.insert_image(new.rect, stream=pix.tobytes("jpeg", jpg_quality=quality))
-    return out
-
-
-def protect_identity(data, hits=(), mode="mask", watermark=None, flatten=True, dpi=200, pages=None):
-    doc = pymupdf.open("pdf", data)
-    if pages is not None:
-        doc.select(list(pages))
-        index = {old: new for new, old in enumerate(pages)}
-        hits = [IdHit(index[h.page], h.value, h.cells, h.source) for h in hits if h.page in index]
-    apply_id_hits(doc, hits, mode)
-    if watermark is not None:
-        for page in doc:
-            apply_id_watermark(page, watermark)
-    if flatten:
-        flat = flatten_to_images(doc, dpi)
-        doc.close()
-        doc = flat
-    out = doc.tobytes(garbage=3, deflate=True)
-    doc.close()
-    return out
-
-
-def find_ids(doc, validate=True, ocr="auto"):
-    return [(h.page, h.value) for h in scan_ids(doc, validate, ocr)]
-
-
-def hide_ids(doc, mode="mask", validate=True, only=None, ocr="auto"):
-    hits = [h for h in scan_ids(doc, validate, ocr) if only is None or h.value in only]
-    return apply_id_hits(doc, hits, mode)
 
 
 FIELD_TYPES = {
@@ -1315,33 +1098,6 @@ def unlock(path, out_path, password=""):
     return [out_path]
 
 
-def compare(path_a, path_b, out_path):
-    a, b = pymupdf.open(path_a), pymupdf.open(path_b)
-    changes = 0
-    for i, page in enumerate(b):
-        words_b = page.get_text("words")
-        words_a = a[i].get_text("words") if i < a.page_count else []
-        sm = difflib.SequenceMatcher(None, [w[4] for w in words_a], [w[4] for w in words_b], autojunk=False)
-        removed = []
-        for op, a0, a1, b0, b1 in sm.get_opcodes():
-            if op in ("replace", "insert"):
-                for w in words_b[b0:b1]:
-                    h = page.add_highlight_annot(pymupdf.Rect(w[:4]))
-                    h.set_colors(stroke=(0.55, 0.9, 0.55))
-                    h.update()
-                changes += b1 - b0
-            if op in ("replace", "delete"):
-                removed.append(" ".join(w[4] for w in words_a[a0:a1]))
-        if removed:
-            note = page.add_text_annot((page.rect.width - 30, 20), _("Removed:") + "\n" + "\n".join(removed),
-                                       icon="Note")
-            note.set_colors(stroke=(0.9, 0.2, 0.2))
-            note.update()
-            changes += len(removed)
-    b.save(out_path, garbage=3, deflate=True)
-    return [out_path], changes
-
-
 def numbers_file(path, out_path, **kwargs):
     doc = pymupdf.open(path)
     page_numbers(doc, **kwargs)
@@ -1352,24 +1108,6 @@ def numbers_file(path, out_path, **kwargs):
 def watermark_file(path, out_path, **kwargs):
     doc = pymupdf.open(path)
     watermark(doc, **kwargs)
-    save_doc(doc, out_path)
-    return [out_path]
-
-
-def crop_margins_file(path, out_path, margin=0):
-    doc = pymupdf.open(path)
-    for page in doc:
-        boxes = [pymupdf.Rect(b[:4]) for b in page.get_text("blocks")]
-        boxes += [d["rect"] for d in page.get_drawings()]
-        boxes += [page.get_image_bbox(img) for img in page.get_images(full=True)]
-        boxes = [r for r in boxes if r.is_valid and not r.is_empty and not r.is_infinite]
-        if not boxes:
-            continue
-        r = boxes[0]
-        for x in boxes[1:]:
-            r |= x
-        r = (r + (-margin, -margin, margin, margin)) & page.rect
-        page.set_cropbox(r + (page.cropbox.x0, page.cropbox.y0, page.cropbox.x0, page.cropbox.y0))
     save_doc(doc, out_path)
     return [out_path]
 

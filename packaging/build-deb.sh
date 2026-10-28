@@ -17,7 +17,7 @@ log() { printf '\033[1;34m==>\033[0m %s\n' "$*"; }
 ls "$ROOT"/src/acrpdf/locale/*/LC_MESSAGES/acrpdf.mo >/dev/null 2>&1 \
     || { echo "Translations are not compiled: run 'make mo' first." >&2; exit 1; }
 
-log "ACRPDF Reader $VERSION ($ARCH, Python $PY)"
+log "AcrPDF $VERSION ($ARCH, Python $PY)"
 rm -rf "$STAGE"
 install -d "$STAGE/DEBIAN" "$STAGE/opt/acrpdf" "$STAGE/usr/bin" "$STAGE/usr/share/applications" \
     "$STAGE/usr/share/metainfo" "$STAGE/usr/share/doc/acrpdf" "$STAGE/usr/lib/cups/backend" \

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <component type="desktop-application">
   <id>acrpdf</id>
-  <name>ACRPDF Reader</name>
+  <name>AcrPDF</name>
   <summary>Open-source PDF editor and digital signing tool</summary>
   <summary xml:lang="es">Editor de PDF y firma digital de código abierto</summary>
   <metadata_license>CC0-1.0</metadata_license>

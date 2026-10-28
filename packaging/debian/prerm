@@ -2,7 +2,7 @@
 set -e
 
 if [ "$1" = "remove" ] || [ "$1" = "purge" ]; then
-    lpadmin -x ACRPDF 2>/dev/null || true
+    lpadmin -x AcrPDF 2>/dev/null || true
 fi
 
 exit 0

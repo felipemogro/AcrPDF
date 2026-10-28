@@ -11,13 +11,13 @@ Conflicts: lumenpdf
 Replaces: lumenpdf
 Maintainer: Felipe Mogro <felipemogro@hotmail.com>
 Description: open-source alternative to Adobe Acrobat with iLovePDF-style tools
- ACRPDF Reader views, annotates and edits PDF files; fills and creates forms;
+ AcrPDF views, annotates and edits PDF files; fills and creates forms;
  signs with handwritten signatures (draw, type, PNG or SVG) and with digital
  certificates (PAdES, .p12/.pfx files or the Firefox certificate store);
  stamps, organizes, merges, splits, compresses, converts (Word, Excel,
  PowerPoint, images, HTML, Markdown, PDF/A), protects, redacts and hides
  Spanish ID numbers (DNI/NIE).
  .
- It also installs the "ACRPDF" virtual printer (CUPS) that saves PDF files in
+ It also installs the "AcrPDF" virtual printer (CUPS) that saves PDF files in
  ~/PDF. Optional AI summaries and translations use the Claude API or a local
  Ollama model.
